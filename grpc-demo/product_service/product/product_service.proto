@@ -1,0 +1,60 @@
+syntax = "proto3";
+
+// 一个方法不需要入参或没有返回值时，在gRPC中使用空的message代替
+
+service ProductService {
+    rpc AddProduct(AddProductRequest) returns (AddProductResponse) {}
+    rpc DeleteProduct(DeleteProductRequest) returns (EmptyResponse) {}
+    rpc QueryProductInfo(QueryProductRequest) returns(ProductInfoResponse) {}
+    rpc QueryProductsInfo(EmptyRequest) returns(ProductsInfoResponse) {}
+}
+
+message AddProductRequest {
+    enum Classfication {
+        FRUIT = 0;
+        MEAT = 1;
+        STAPLE = 2;
+        TOILETRIES = 3;
+        DRESS = 4;
+    }
+
+    string productName = 1;
+    Classfication classfication = 2;
+    string manufacturerID = 3;
+    double weight = 4;
+    int64 productionDate = 5;
+}
+
+message AddProductResponse {
+    string productID = 1;
+    string message = 2;
+}
+
+message DeleteProductRequest {
+    string productID =1 ;
+}
+
+message QueryProductRequest {
+    string productID = 1;
+}
+
+message ProductInfoResponse {
+    string productName = 1;
+    string productID = 2;
+    string manufacturerID = 3;
+    double weight = 4;
+    int64 productionDate = 5;
+    int64 importDate = 6;
+}
+
+message ProductsInfoResponse {
+    repeated ProductInfoResponse infos = 1;
+}
+
+message EmptyRequest {
+
+}
+
+message EmptyResponse {
+
+}

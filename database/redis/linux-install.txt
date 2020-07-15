@@ -1,0 +1,18 @@
+wget http://download.redis.io/releases/redis-5.0.7.tar.gz
+tar zxf redis-5.0.7.tar.gz
+make
+make PREFIX=/usr/local/redis-5.0.7 install
+
+vim redis.conf
+1.后台启动，daemonize yes
+2.绑定端口，port 6379 默认是6379 需要安全组开放端口
+3.绑定IP，bind 127.0.0.1
+4.指定数据存放路径，dir /usr/local/redis/log rdb存放的路径
+5.指定持久化方式，appendonly yes
+6.requirepass redis129 设置密码
+
+redis-server ./redis.conf
+
+redis-cli --raw # 处理中文乱码问题
+
+redis-cli shutdown # 关闭redis进程

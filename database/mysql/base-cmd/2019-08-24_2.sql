@@ -1,0 +1,14 @@
+-- create database if not exists test_db;
+-- show create database test_db;
+-- 字符集和校对规则 
+-- create database if not exists test_db_char default charset utf8 default collate utf8_general_ci;
+-- show create database test_db_char;
+
+-- 查看与 test_db 完全匹配的数据库：
+-- show databases like 'test_db';
+-- 查看名字中包含 test 的数据库：
+-- show databases like '%test%';
+-- 查看名字以 db 开头的数据库：
+-- show databases like 'db%';
+-- 查看名字以 db 结尾的数据库：
+-- show databases like '%db';

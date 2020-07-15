@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, INItial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Go WebSocket Tutorial</title>
+  </head>
+  <body>
+    <h2>Hello World</h2>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
+    <script>
+      const socket = io("http://localhost:8080/socket.io/");
+      //using client-side socket.io-1.X.X.js
+      socket.emit('chat', JSON.stringify(someData), function(data){
+         console.log('ACK from server wtih data: ', data)
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+[Unit]
+Description=mysql
+
+[Service]
+User=mysql
+Group=mysql
+WorkingDirectory=/usr/local/mysql
+ExecStart=/usr/local/mysql/support-files/mysql.server start
+ExecStop=/usr/local/mysql/support-files/mysql.server stop
+SuccessExitStatus=0
+TimeoutStopSec=10
+Restart=on-failure
+RestartSec=5
+KillMode=process
+Type=notify
+
+[Install]
+WantedBy=multi-user.target

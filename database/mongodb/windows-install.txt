@@ -1,0 +1,9 @@
+https://blog.csdn.net/slqgenius/article/details/83821061
+
+https://www.mongodb.com/
+下载zip文件,解压
+
+配置作为服务
+.\mongod.exe --config C:\Users\12948\mongodb-4.2.0\mongodb.config --serviceName MongoDB --install
+
+mongod.exe --logpath C:\Users\12948\mongodb-4.2.0\data\log\mongolog.log --logappend --dbpath C:\Users\12948\mongodb-4.2.0\data\db --directoryperdb --serviceName MongoDB --install

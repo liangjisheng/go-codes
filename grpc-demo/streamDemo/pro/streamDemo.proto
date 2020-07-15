@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package pro;
+
+// 声明grpc服务
+service Greeter {
+    // 服务端推送流
+    rpc GetStream(StreamReqData) returns (stream StreamResData) {}
+    // 客户端推送流
+    rpc PutStream(stream StreamReqData) returns (StreamResData ){}
+    // 双向流
+    rpc AllStream(stream StreamReqData) returns (stream StreamResData){}
+}
+
+message StreamReqData {
+    string data = 1;
+}
+
+message StreamResData {
+    string data = 1;
+}

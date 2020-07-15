@@ -1,0 +1,196 @@
+[DBUG] 2020/04/20 22:59 MVC dependencies of 'controllers.BookController':
+[1] Dynamic binding: 'context.Context' for field 'Ctx context.Context'
+
+[DBUG] 2020/04/20 22:59 MVC dependencies of 'controllers.DemoController':
+[1] Dynamic binding: 'context.Context' for field 'Ctx context.Context'
+
+[DBUG] 2020/04/20 22:59 HEAD: /content/*file -> github.com/kataras/iris/core/router.StripPrefix.func1() and 2 more
+[DBUG] 2020/04/20 22:59 GET: /demo/q/p -> controllers.DemoController.GetQPS() and 2 more
+[DBUG] 2020/04/20 22:59 GET: /demo/x/m -> controllers.DemoController.GetXML() and 2 more
+[DBUG] 2020/04/20 22:59 GET: /demo/record1 -> controllers.DemoController.GetRecord1() and 2 more
+[DBUG] 2020/04/20 22:59 GET: /demo/conf -> controllers.DemoController.GetConf() and 2 more
+[DBUG] 2020/04/20 22:59 GET: /demo/err -> controllers.DemoController.GetErr() and 2 more
+[DBUG] 2020/04/20 22:59 GET: /demo/orm -> controllers.DemoController.GetOrm() and 2 more
+[DBUG] 2020/04/20 22:59 GET: /content/*file -> github.com/kataras/iris/core/router.StripPrefix.func1() and 2 more
+[DBUG] 2020/04/20 22:59 GET: /book/ajaxbooks -> controllers.BookController.GetAjaxbooks() and 2 more
+[DBUG] 2020/04/20 22:59 GET: /book -> controllers.BookController.Get() and 2 more
+[DBUG] 2020/04/20 22:59 Application: 1 registered view engine(s)
+[DBUG] 2020/04/20 22:59 Application: running using 1 host(s)
+[DBUG] 2020/04/20 22:59 Host: addr is = 127.0.0.1:= 8080
+[DBUG] 2020/04/20 22:59 Host: virtual host is = 127.0.0.1
+[DBUG] 2020/04/20 22:59 Host: register startup notifier
+[DBUG] 2020/04/20 22:59 Host: register server shutdown on interrupt(CTRL+C/CMD+C)
+[DBUG] 2020/04/20 22:59 Host: server will ignore the following errors: [http: Server closed]
+[ERRO] 2020/04/20 22:59 listen tcp: lookup tcp/= 8080: getaddrinfow: The specified class was not found.
+[DBUG] 2020/04/20 23:01 MVC dependencies of 'controllers.BookController':
+[1] Dynamic binding: 'context.Context' for field 'Ctx context.Context'
+
+[DBUG] 2020/04/20 23:01 MVC dependencies of 'controllers.DemoController':
+[1] Dynamic binding: 'context.Context' for field 'Ctx context.Context'
+
+[DBUG] 2020/04/20 23:01 HEAD: /content/*file -> github.com/kataras/iris/core/router.StripPrefix.func1() and 2 more
+[DBUG] 2020/04/20 23:01 GET: /demo/q/p -> controllers.DemoController.GetQPS() and 2 more
+[DBUG] 2020/04/20 23:01 GET: /demo/x/m -> controllers.DemoController.GetXML() and 2 more
+[DBUG] 2020/04/20 23:01 GET: /demo/record1 -> controllers.DemoController.GetRecord1() and 2 more
+[DBUG] 2020/04/20 23:01 GET: /demo/conf -> controllers.DemoController.GetConf() and 2 more
+[DBUG] 2020/04/20 23:01 GET: /demo/err -> controllers.DemoController.GetErr() and 2 more
+[DBUG] 2020/04/20 23:01 GET: /demo/orm -> controllers.DemoController.GetOrm() and 2 more
+[DBUG] 2020/04/20 23:01 GET: /content/*file -> github.com/kataras/iris/core/router.StripPrefix.func1() and 2 more
+[DBUG] 2020/04/20 23:01 GET: /book/ajaxbooks -> controllers.BookController.GetAjaxbooks() and 2 more
+[DBUG] 2020/04/20 23:01 GET: /book -> controllers.BookController.Get() and 2 more
+[DBUG] 2020/04/20 23:01 Application: 1 registered view engine(s)
+[DBUG] 2020/04/20 23:01 Application: running using 1 host(s)
+[DBUG] 2020/04/20 23:01 Host: addr is = 127.0.0.1:= 8080
+[DBUG] 2020/04/20 23:01 Host: virtual host is = 127.0.0.1
+[DBUG] 2020/04/20 23:01 Host: register startup notifier
+[DBUG] 2020/04/20 23:01 Host: register server shutdown on interrupt(CTRL+C/CMD+C)
+[DBUG] 2020/04/20 23:01 Host: server will ignore the following errors: [http: Server closed]
+[ERRO] 2020/04/20 23:01 listen tcp: lookup tcp/= 8080: getaddrinfow: The specified class was not found.
+[DBUG] 2020/04/20 23:02 MVC dependencies of 'controllers.BookController':
+[1] Dynamic binding: 'context.Context' for field 'Ctx context.Context'
+
+[DBUG] 2020/04/20 23:02 MVC dependencies of 'controllers.DemoController':
+[1] Dynamic binding: 'context.Context' for field 'Ctx context.Context'
+
+[DBUG] 2020/04/20 23:02 HEAD: /content/*file -> github.com/kataras/iris/core/router.StripPrefix.func1() and 2 more
+[DBUG] 2020/04/20 23:02 GET: /demo/q/p -> controllers.DemoController.GetQPS() and 2 more
+[DBUG] 2020/04/20 23:02 GET: /demo/x/m -> controllers.DemoController.GetXML() and 2 more
+[DBUG] 2020/04/20 23:02 GET: /demo/record1 -> controllers.DemoController.GetRecord1() and 2 more
+[DBUG] 2020/04/20 23:02 GET: /demo/conf -> controllers.DemoController.GetConf() and 2 more
+[DBUG] 2020/04/20 23:02 GET: /demo/err -> controllers.DemoController.GetErr() and 2 more
+[DBUG] 2020/04/20 23:02 GET: /demo/orm -> controllers.DemoController.GetOrm() and 2 more
+[DBUG] 2020/04/20 23:02 GET: /content/*file -> github.com/kataras/iris/core/router.StripPrefix.func1() and 2 more
+[DBUG] 2020/04/20 23:02 GET: /book/ajaxbooks -> controllers.BookController.GetAjaxbooks() and 2 more
+[DBUG] 2020/04/20 23:02 GET: /book -> controllers.BookController.Get() and 2 more
+[DBUG] 2020/04/20 23:02 Application: 1 registered view engine(s)
+[DBUG] 2020/04/20 23:02 Application: running using 1 host(s)
+[DBUG] 2020/04/20 23:02 Host: addr is 127.0.0.1:8080
+[DBUG] 2020/04/20 23:02 Host: virtual host is 127.0.0.1:8080
+[DBUG] 2020/04/20 23:02 Host: register startup notifier
+[DBUG] 2020/04/20 23:02 Host: register server shutdown on interrupt(CTRL+C/CMD+C)
+[DBUG] 2020/04/20 23:02 Host: server will ignore the following errors: [http: Server closed]
+Now listening on: http://127.0.0.1:8080
+Application started. Press CTRL+C to shut down.
+[DBUG] 2020/04/20 23:03 MVC dependencies of 'controllers.BookController':
+[1] Dynamic binding: 'context.Context' for field 'Ctx context.Context'
+
+[DBUG] 2020/04/20 23:03 MVC dependencies of 'controllers.DemoController':
+[1] Dynamic binding: 'context.Context' for field 'Ctx context.Context'
+
+[DBUG] 2020/04/20 23:03 HEAD: /content/*file -> github.com/kataras/iris/core/router.StripPrefix.func1() and 2 more
+[DBUG] 2020/04/20 23:03 GET: /demo/q/p -> controllers.DemoController.GetQPS() and 2 more
+[DBUG] 2020/04/20 23:03 GET: /demo/x/m -> controllers.DemoController.GetXML() and 2 more
+[DBUG] 2020/04/20 23:03 GET: /demo/record1 -> controllers.DemoController.GetRecord1() and 2 more
+[DBUG] 2020/04/20 23:03 GET: /demo/conf -> controllers.DemoController.GetConf() and 2 more
+[DBUG] 2020/04/20 23:03 GET: /demo/err -> controllers.DemoController.GetErr() and 2 more
+[DBUG] 2020/04/20 23:03 GET: /demo/orm -> controllers.DemoController.GetOrm() and 2 more
+[DBUG] 2020/04/20 23:03 GET: /content/*file -> github.com/kataras/iris/core/router.StripPrefix.func1() and 2 more
+[DBUG] 2020/04/20 23:03 GET: /book/ajaxbooks -> controllers.BookController.GetAjaxbooks() and 2 more
+[DBUG] 2020/04/20 23:03 GET: /book -> controllers.BookController.Get() and 2 more
+[DBUG] 2020/04/20 23:03 Application: 1 registered view engine(s)
+[DBUG] 2020/04/20 23:03 Application: running using 1 host(s)
+[DBUG] 2020/04/20 23:03 Host: addr is 127.0.0.1:8080
+[DBUG] 2020/04/20 23:03 Host: virtual host is 127.0.0.1:8080
+[DBUG] 2020/04/20 23:03 Host: register startup notifier
+[DBUG] 2020/04/20 23:03 Host: register server shutdown on interrupt(CTRL+C/CMD+C)
+[DBUG] 2020/04/20 23:03 Host: server will ignore the following errors: [http: Server closed]
+Now listening on: http://127.0.0.1:8080
+Application started. Press CTRL+C to shut down.
+[INFO] 2020/04/20 23:04 200   0s 127.0.0.1 GET /demo/q/p curl/7.65.1
+[INFO] 2020/04/20 23:05 200   0s 127.0.0.1 GET /demo/q/p curl/7.65.1
+[DBUG] 2020/04/20 23:06 MVC dependencies of 'controllers.BookController':
+[1] Dynamic binding: 'context.Context' for field 'Ctx context.Context'
+
+[DBUG] 2020/04/20 23:06 MVC dependencies of 'controllers.DemoController':
+[1] Dynamic binding: 'context.Context' for field 'Ctx context.Context'
+
+[DBUG] 2020/04/20 23:06 HEAD: /content/*file -> github.com/kataras/iris/core/router.StripPrefix.func1() and 2 more
+[DBUG] 2020/04/20 23:06 GET: /demo/q/p -> controllers.DemoController.GetQPS() and 2 more
+[DBUG] 2020/04/20 23:06 GET: /demo/x/m -> controllers.DemoController.GetXML() and 2 more
+[DBUG] 2020/04/20 23:06 GET: /demo/record1 -> controllers.DemoController.GetRecord1() and 2 more
+[DBUG] 2020/04/20 23:06 GET: /demo/conf -> controllers.DemoController.GetConf() and 2 more
+[DBUG] 2020/04/20 23:06 GET: /demo/err -> controllers.DemoController.GetErr() and 2 more
+[DBUG] 2020/04/20 23:06 GET: /demo/orm -> controllers.DemoController.GetOrm() and 2 more
+[DBUG] 2020/04/20 23:06 GET: /content/*file -> github.com/kataras/iris/core/router.StripPrefix.func1() and 2 more
+[DBUG] 2020/04/20 23:06 GET: /book/ajaxbooks -> controllers.BookController.GetAjaxbooks() and 2 more
+[DBUG] 2020/04/20 23:06 GET: /book -> controllers.BookController.Get() and 2 more
+[DBUG] 2020/04/20 23:06 Application: 1 registered view engine(s)
+[DBUG] 2020/04/20 23:06 Application: running using 1 host(s)
+[DBUG] 2020/04/20 23:06 Host: addr is 127.0.0.1:8080
+[DBUG] 2020/04/20 23:06 Host: virtual host is 127.0.0.1:8080
+[DBUG] 2020/04/20 23:06 Host: register startup notifier
+[DBUG] 2020/04/20 23:06 Host: register server shutdown on interrupt(CTRL+C/CMD+C)
+[DBUG] 2020/04/20 23:06 Host: server will ignore the following errors: [http: Server closed]
+Now listening on: http://127.0.0.1:8080
+Application started. Press CTRL+C to shut down.
+[INFO] 2020/04/20 23:06 200 182.5379ms 127.0.0.1 GET /demo/x/m curl/7.65.1
+[INFO] 2020/04/20 23:07 200 18.9456ms 127.0.0.1 GET /demo/x/m curl/7.65.1
+[INFO] 2020/04/20 23:07 200 16.5473ms 127.0.0.1 GET /demo/x/m curl/7.65.1
+[INFO] 2020/04/20 23:07 200 15.957ms 127.0.0.1 GET /demo/x/m curl/7.65.1
+[INFO] 2020/04/20 23:07 200 58.8425ms 127.0.0.1 GET /demo/record1 curl/7.65.1
+[INFO] 2020/04/20 23:07 200   0s 127.0.0.1 GET /demo/conf curl/7.65.1
+[WARN] 2020/04/20 23:08 从错误中回复：('github.com/kataras/iris/mvc.(*ControllerActivator).handlerOf.func2')
+错误信息: i'm a painc
+
+C:/Go/src/runtime/panic.go:679
+C:/Users/12948/go/src/go-demos/iris-demo/project/demo.book.com/web/controllers/demo_controllers.go:61
+C:/Go/src/reflect/value.go:460
+C:/Go/src/reflect/value.go:321
+C:/Users/12948/go/pkg/mod/github.com/kataras/iris@v11.1.1+incompatible/mvc/controller.go:409
+C:/Users/12948/go/pkg/mod/github.com/kataras/iris@v11.1.1+incompatible/context/context.go:1208
+C:/Users/12948/go/pkg/mod/github.com/kataras/iris@v11.1.1+incompatible/context/context.go:1217
+C:/Users/12948/go/src/go-demos/iris-demo/project/demo.book.com/main.go:91
+C:/Users/12948/go/pkg/mod/github.com/kataras/iris@v11.1.1+incompatible/context/context.go:1208
+C:/Users/12948/go/pkg/mod/github.com/kataras/iris@v11.1.1+incompatible/context/context.go:1217
+C:/Users/12948/go/pkg/mod/github.com/kataras/iris@v11.1.1+incompatible/middleware/logger/logger.go:50
+C:/Users/12948/go/pkg/mod/github.com/kataras/iris@v11.1.1+incompatible/context/context.go:922
+C:/Users/12948/go/pkg/mod/github.com/kataras/iris@v11.1.1+incompatible/context/context.go:1094
+C:/Users/12948/go/pkg/mod/github.com/kataras/iris@v11.1.1+incompatible/core/router/handler.go:227
+C:/Users/12948/go/pkg/mod/github.com/kataras/iris@v11.1.1+incompatible/core/router/router.go:84
+C:/Users/12948/go/pkg/mod/github.com/kataras/iris@v11.1.1+incompatible/core/router/router.go:161
+C:/Go/src/net/http/server.go:2802
+C:/Go/src/net/http/server.go:1890
+C:/Go/src/runtime/asm_amd64.s:1357
+
+[INFO] 2020/04/20 23:08 500   0s 127.0.0.1 GET /demo/err curl/7.65.1
+[INFO] 2020/04/20 23:08 200 46.8749ms 127.0.0.1 GET /demo/orm curl/7.65.1
+[DBUG] 2020/04/20 23:08 MVC dependencies of 'controllers.BookController':
+[1] Dynamic binding: 'context.Context' for field 'Ctx context.Context'
+
+[DBUG] 2020/04/20 23:08 MVC dependencies of 'controllers.DemoController':
+[1] Dynamic binding: 'context.Context' for field 'Ctx context.Context'
+
+[DBUG] 2020/04/20 23:08 HEAD: /content/*file -> github.com/kataras/iris/core/router.StripPrefix.func1() and 2 more
+[DBUG] 2020/04/20 23:08 GET: /demo/q/p -> controllers.DemoController.GetQPS() and 2 more
+[DBUG] 2020/04/20 23:08 GET: /demo/x/m -> controllers.DemoController.GetXML() and 2 more
+[DBUG] 2020/04/20 23:08 GET: /demo/record1 -> controllers.DemoController.GetRecord1() and 2 more
+[DBUG] 2020/04/20 23:08 GET: /demo/conf -> controllers.DemoController.GetConf() and 2 more
+[DBUG] 2020/04/20 23:08 GET: /demo/err -> controllers.DemoController.GetErr() and 2 more
+[DBUG] 2020/04/20 23:08 GET: /demo/orm -> controllers.DemoController.GetOrm() and 2 more
+[DBUG] 2020/04/20 23:08 GET: /content/*file -> github.com/kataras/iris/core/router.StripPrefix.func1() and 2 more
+[DBUG] 2020/04/20 23:08 GET: /book/ajaxbooks -> controllers.BookController.GetAjaxbooks() and 2 more
+[DBUG] 2020/04/20 23:08 GET: /book -> controllers.BookController.Get() and 2 more
+[DBUG] 2020/04/20 23:08 Application: 1 registered view engine(s)
+[DBUG] 2020/04/20 23:08 Application: running using 1 host(s)
+[DBUG] 2020/04/20 23:08 Host: addr is 127.0.0.1:8080
+[DBUG] 2020/04/20 23:08 Host: virtual host is 127.0.0.1:8080
+[DBUG] 2020/04/20 23:08 Host: register startup notifier
+[DBUG] 2020/04/20 23:08 Host: register server shutdown on interrupt(CTRL+C/CMD+C)
+[DBUG] 2020/04/20 23:08 Host: server will ignore the following errors: [http: Server closed]
+Now listening on: http://127.0.0.1:8080
+Application started. Press CTRL+C to shut down.
+[INFO] 2020/04/20 23:09 200 157.5799ms 127.0.0.1 GET /book curl/7.65.1
+[INFO] 2020/04/20 23:09 200 7.9774ms 127.0.0.1 GET /book Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:75.0) Gecko/20100101 Firefox/75.0
+[INFO] 2020/04/20 23:09 200 997.9µs 127.0.0.1 GET /mould/book/css/style.min.css Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:75.0) Gecko/20100101 Firefox/75.0
+[INFO] 2020/04/20 23:09 200 998.1µs 127.0.0.1 GET /mould/book/css/index.css Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:75.0) Gecko/20100101 Firefox/75.0
+[INFO] 2020/04/20 23:09 200   0s 127.0.0.1 GET /mould/book/mhimages/svg/tabbar_home_n.svg Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:75.0) Gecko/20100101 Firefox/75.0
+[INFO] 2020/04/20 23:09 200   0s 127.0.0.1 GET /mould/book/mhimages/svg/tabbar_book_n.svg Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:75.0) Gecko/20100101 Firefox/75.0
+[INFO] 2020/04/20 23:09 200   0s 127.0.0.1 GET /mould/book/mhimages/svg/tabbar_me_n.svg Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:75.0) Gecko/20100101 Firefox/75.0
+[INFO] 2020/04/20 23:09 200 6.9812ms 127.0.0.1 GET /book Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:75.0) Gecko/20100101 Firefox/75.0
+[INFO] 2020/04/20 23:09 200   0s 127.0.0.1 GET /mould/book/css/style.min.css Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:75.0) Gecko/20100101 Firefox/75.0
+[INFO] 2020/04/20 23:09 200 998µs 127.0.0.1 GET /mould/book/css/index.css Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:75.0) Gecko/20100101 Firefox/75.0
+[INFO] 2020/04/20 23:09 200 47.8517ms 127.0.0.1 GET /book Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:75.0) Gecko/20100101 Firefox/75.0
+[INFO] 2020/04/20 23:09 200 68.8178ms 127.0.0.1 GET /book Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:75.0) Gecko/20100101 Firefox/75.0
+[INFO] 2020/04/20 23:09 200 15.9948ms 127.0.0.1 GET /book Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:75.0) Gecko/20100101 Firefox/75.0
+[INFO] 2020/04/20 23:10 200 6.9814ms 127.0.0.1 GET /book Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:75.0) Gecko/20100101 Firefox/75.0
+[INFO] 2020/04/20 23:10 200   0s 127.0.0.1 GET /mould/book/css/style.min.css Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:75.0) Gecko/20100101 Firefox/75.0

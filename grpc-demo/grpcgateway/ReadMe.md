@@ -1,0 +1,5 @@
+# 调用流程
+
+curl用post向gateway发送请求，gateway作为proxy将请求转化一下通过grpc转发给greeter_server，greeter_server通过grpc返回结果，gateway收到结果后，转化成json返回给前端
+
+这样，就通过grpc-gateway完成了从http json到内部grpc的转化过程

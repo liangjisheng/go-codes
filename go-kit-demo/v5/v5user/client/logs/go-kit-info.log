@@ -1,0 +1,8 @@
+{"level":"info","ts":1584181096292,"caller":"log-zap/log.go:96","msg":"[NewLogger] success"}
+{"level":"info","ts":1584181689457,"caller":"log-zap/log.go:96","msg":"[NewLogger] success"}
+{"level":"info","ts":1584181839876,"caller":"log-zap/log.go:96","msg":"[NewLogger] success"}
+{"level":"info","ts":1584181982132,"caller":"log-zap/log.go:96","msg":"[NewLogger] success"}
+{"level":"info","ts":1584181988189,"caller":"log-zap/log.go:96","msg":"[NewLogger] success"}
+{"level":"info","ts":1584182248686,"caller":"log-zap/log.go:96","msg":"[NewLogger] success"}
+{"level":"info","ts":1584182293340,"caller":"log-zap/log.go:96","msg":"[NewLogger] success"}
+{"level":"info","ts":1584182295885,"caller":"log-zap/log.go:96","msg":"[NewLogger] success"}

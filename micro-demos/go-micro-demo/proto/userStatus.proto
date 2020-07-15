@@ -1,0 +1,131 @@
+syntax = "proto3";
+
+package pb;
+
+service UserStatus {
+    //通过uid获取session
+    rpc GetSessionByUID(GetSessionByUIDReq) returns (GetSessionByUIDRep) {}
+    //通过token获取session
+    rpc GetSessionByToken(GetSessionByTokenReq) returns (GetSessionByTokenRep) {}
+    //获取用户的长连接地址
+    rpc GetConnectorAddr(GetConnectorAddrReq) returns (GetConnectorAddrRep) {}
+    //更新用户长连接地址（用户建立长连接时调用)（备注：目前有没在用要问下其它服务的开发）
+    rpc UpdateConnectorAddr(UpdateConnectorAddrReq) returns (UpdateConnectorAddrRep) {}
+    //构建session用户登录时调用，此接口会清除旧session
+    rpc NewSession(NewSessionReq) returns (NewSessionRep) {}
+    //移除session登出时会调用
+    rpc RemoveSession(RemoveSessionReq) returns (RemoveSessionRep) {}
+    //token续期
+    rpc RefreshSession(RefreshSessionReq) returns (RefreshSessionRep) {}
+    //更新用户长连接地址（用户建立长连接时调用)
+    rpc UserConnected(UserConnectedReq) returns (UserConnectedRep) {}
+    //删除用户的长连接地址（用户长连接断开时调用）
+    rpc UserDisonnected(UserDisonnectedReq) returns (UserDisonnectedRep) {}
+    //通过uid来移除session
+    rpc RemoveSessionByUID(RemoveSessionByUIDReq) returns (RemoveSessionByUIDRep) {}
+    //通过token找uid
+    rpc GetUserIDByToken(GetUserIDByTokenReq) returns (GetUserIDByTokenRep) {}
+}
+
+message Session{
+    int32 id = 1 ;
+    string name = 2;
+    string Address = 3;
+    string Phone = 4;
+}
+
+message GetSessionByUIDReq {
+    int64 uid = 1;
+}
+
+message GetSessionByUIDRep {
+    Session session = 1;
+}
+
+message GetSessionByTokenReq {
+    string token = 1;
+}
+
+message GetSessionByTokenRep {
+    Session session = 1;
+}
+
+message GetConnectorAddrReq {
+    int64 uid = 1;
+}
+
+message GetConnectorAddrRep {
+    string connectorAddr = 1;
+    uint64 connectorSessionID = 2;
+}
+
+message UpdateConnectorAddrReq {
+    int64 uid = 1;
+    string connectorAddr = 2;
+    uint64 connectorSessionID = 3;
+}
+
+message UpdateConnectorAddrRep {
+
+}
+
+message NewSessionReq {
+    int32 id = 1 ;
+    string name = 2;
+    string Address = 3;
+    string Phone = 4;
+}
+
+message NewSessionRep {
+    string token = 1;
+}
+
+message RemoveSessionReq {
+    string token = 1;
+}
+
+message RemoveSessionRep {
+}
+
+message RefreshSessionReq {
+    string token = 1;
+}
+
+message RefreshSessionRep {
+    string token = 1;
+    Session session = 2;
+}
+
+message UserConnectedReq {
+    int64 userID               = 1;
+    string connectorAddress    = 2;
+    uint64 connectorSessionID  = 3;
+}
+
+message UserConnectedRep {
+}
+
+message UserDisonnectedReq {
+    int64 userID               = 1;
+    string connectorAddress    = 2;
+    uint64 connectorSessionID  = 3;
+    int32 onlineTime           = 4;
+}
+
+message UserDisonnectedRep {
+}
+
+message RemoveSessionByUIDReq {
+    int64 uid      = 1;
+}
+
+message RemoveSessionByUIDRep {
+}
+
+message GetUserIDByTokenReq {
+    string token      = 1;
+}
+
+message GetUserIDByTokenRep {
+    int64 uid      = 1;
+}

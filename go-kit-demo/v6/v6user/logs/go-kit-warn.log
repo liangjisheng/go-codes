@@ -1,0 +1,1 @@
+{"level":"warn","ts":1584262269511,"caller":"v6user/main.go:63","msg":"[user_agent] Listen","error":"listen tcp 127.0.0.1:8080: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted."}

@@ -1,0 +1,130 @@
+{"level":"debug","ts":1583757802936,"caller":"v4transport/transport.go:29","msg":"给请求添加uuid","UUID":"66a1c7fe-ecd8-5030-ac46-99ba79efbd46"}
+{"level":"debug","ts":1583757802936,"caller":"v4transport/transport.go:29","msg":"给请求添加uuid","UUID":"4481c31e-7acd-5ddb-bcfd-4ccb53ab485f"}
+{"level":"debug","ts":1583757802936,"caller":"v4transport/transport.go:29","msg":"给请求添加uuid","UUID":"62a8853e-54e6-5af7-a95e-0eac7580feff"}
+{"level":"debug","ts":1583757802936,"caller":"v4transport/transport.go:29","msg":"给请求添加uuid","UUID":"ca21bc7c-0df0-5d65-b92f-967acc506ee0"}
+{"level":"debug","ts":1583757802936,"caller":"v4transport/transport.go:29","msg":"给请求添加uuid","UUID":"e5d76afe-8573-5547-8536-396ed88f3f70"}
+{"level":"debug","ts":1583757802936,"caller":"v4transport/transport.go:29","msg":"给请求添加uuid","UUID":"5e71d331-6b5b-576f-8a25-353cdb7bb4e6"}
+{"level":"debug","ts":1583757802936,"caller":"v4transport/transport.go:29","msg":"给请求添加uuid","UUID":"8fc4088e-d3ff-552a-a973-68ee0415662e"}
+{"level":"debug","ts":1583757802936,"caller":"v4transport/transport.go:29","msg":"给请求添加uuid","UUID":"30d3a85c-2a42-5db8-8eb7-fef301a5dee1"}
+{"level":"debug","ts":1583757802936,"caller":"v4transport/transport.go:29","msg":"给请求添加uuid","UUID":"05dfd398-241c-5648-93fb-ce375ad4e101"}
+{"level":"debug","ts":1583757802936,"caller":"v4transport/transport.go:29","msg":"给请求添加uuid","UUID":"aeea8f3e-8a7e-54d5-8987-ac02f1dbb5e5"}
+{"level":"debug","ts":1583757802936,"caller":"v4transport/transport.go:29","msg":"给请求添加uuid","UUID":"a84797cc-56db-5914-a4e2-737afd244fb1"}
+{"level":"debug","ts":1583757802936,"caller":"v4transport/transport.go:29","msg":"给请求添加uuid","UUID":"d33506cc-36f9-501d-85e8-5a9629989142"}
+{"level":"debug","ts":1583757802936,"caller":"v4transport/transport.go:29","msg":"给请求添加uuid","UUID":"03792846-1426-5674-b1cc-cbdd0cbf6298"}
+{"level":"debug","ts":1583757802936,"caller":"v4transport/transport.go:29","msg":"给请求添加uuid","UUID":"e7fb2a86-61cc-5998-8aca-5141963cf469"}
+{"level":"debug","ts":1583757802937,"caller":"v4transport/transport.go:29","msg":"给请求添加uuid","UUID":"8863855f-610e-5dc4-a902-950c06ebe4d4"}
+{"level":"debug","ts":1583757802937,"caller":"v4transport/transport.go:29","msg":"给请求添加uuid","UUID":"9d3bcaaa-2c71-5800-9230-2253b78ba2ee"}
+{"level":"debug","ts":1583757802937,"caller":"v4transport/transport.go:29","msg":"给请求添加uuid","UUID":"a4b96c40-db3f-5934-9a02-b1b50518e61f"}
+{"level":"debug","ts":1583757802937,"caller":"v4transport/transport.go:29","msg":"给请求添加uuid","UUID":"685a7834-1be5-5a8c-a18b-a6e7aab6b0ec"}
+{"level":"debug","ts":1583757802937,"caller":"v4transport/transport.go:29","msg":"给请求添加uuid","UUID":"fb13edf0-0be3-54be-884a-772e0869f98f"}
+{"level":"debug","ts":1583757802937,"caller":"v4transport/transport.go:29","msg":"给请求添加uuid","UUID":"31eca6ef-4ee4-5233-a0f8-672e9311ece5"}
+{"level":"debug","ts":1583757802937,"caller":"v4transport/transport.go:32","msg":"把请求中的token发到Context中","Token":""}
+{"level":"debug","ts":1583757802938,"caller":"v4transport/transport.go:32","msg":"把请求中的token发到Context中","Token":""}
+{"level":"debug","ts":1583757802938,"caller":"v4transport/transport.go:32","msg":"把请求中的token发到Context中","Token":""}
+{"level":"debug","ts":1583757802938,"caller":"v4transport/transport.go:59","msg":"4481c31e-7acd-5ddb-bcfd-4ccb53ab485f"," 开始解析请求数据":{"account":"liangjisheng","password":"123456"}}
+{"level":"debug","ts":1583757802939,"caller":"v4transport/transport.go:32","msg":"把请求中的token发到Context中","Token":""}
+{"level":"debug","ts":1583757802939,"caller":"v4transport/transport.go:32","msg":"把请求中的token发到Context中","Token":""}
+{"level":"debug","ts":1583757802939,"caller":"v4transport/transport.go:32","msg":"把请求中的token发到Context中","Token":""}
+{"level":"debug","ts":1583757802939,"caller":"v4transport/transport.go:32","msg":"把请求中的token发到Context中","Token":""}
+{"level":"debug","ts":1583757802940,"caller":"v4transport/transport.go:32","msg":"把请求中的token发到Context中","Token":""}
+{"level":"debug","ts":1583757802940,"caller":"v4transport/transport.go:32","msg":"把请求中的token发到Context中","Token":""}
+{"level":"debug","ts":1583757802940,"caller":"v4transport/transport.go:32","msg":"把请求中的token发到Context中","Token":""}
+{"level":"debug","ts":1583757802940,"caller":"v4transport/transport.go:32","msg":"把请求中的token发到Context中","Token":""}
+{"level":"debug","ts":1583757802940,"caller":"v4transport/transport.go:32","msg":"把请求中的token发到Context中","Token":""}
+{"level":"debug","ts":1583757802941,"caller":"v4transport/transport.go:32","msg":"把请求中的token发到Context中","Token":""}
+{"level":"debug","ts":1583757802941,"caller":"v4transport/transport.go:32","msg":"把请求中的token发到Context中","Token":""}
+{"level":"debug","ts":1583757802941,"caller":"v4transport/transport.go:32","msg":"把请求中的token发到Context中","Token":""}
+{"level":"debug","ts":1583757802941,"caller":"v4transport/transport.go:32","msg":"把请求中的token发到Context中","Token":""}
+{"level":"debug","ts":1583757802942,"caller":"v4transport/transport.go:32","msg":"把请求中的token发到Context中","Token":""}
+{"level":"debug","ts":1583757802942,"caller":"v4transport/transport.go:32","msg":"把请求中的token发到Context中","Token":""}
+{"level":"debug","ts":1583757802942,"caller":"v4transport/transport.go:32","msg":"把请求中的token发到Context中","Token":""}
+{"level":"debug","ts":1583757802942,"caller":"v4transport/transport.go:32","msg":"把请求中的token发到Context中","Token":""}
+{"level":"debug","ts":1583757802943,"caller":"v4transport/transport.go:59","msg":"66a1c7fe-ecd8-5030-ac46-99ba79efbd46"," 开始解析请求数据":{"account":"liangjisheng","password":"123456"}}
+{"level":"debug","ts":1583757802943,"caller":"v4transport/transport.go:59","msg":"62a8853e-54e6-5af7-a95e-0eac7580feff"," 开始解析请求数据":{"account":"liangjisheng","password":"123456"}}
+{"level":"debug","ts":1583757802943,"caller":"v4service/service.go:42","msg":"4481c31e-7acd-5ddb-bcfd-4ccb53ab485f","调用 v3_service Service":"Login 处理请求"}
+{"level":"debug","ts":1583757802943,"caller":"v4transport/transport.go:59","msg":"ca21bc7c-0df0-5d65-b92f-967acc506ee0"," 开始解析请求数据":{"account":"liangjisheng","password":"123456"}}
+{"level":"debug","ts":1583757802944,"caller":"v4transport/transport.go:59","msg":"e5d76afe-8573-5547-8536-396ed88f3f70"," 开始解析请求数据":{"account":"liangjisheng","password":"123456"}}
+{"level":"debug","ts":1583757802944,"caller":"v4transport/transport.go:59","msg":"5e71d331-6b5b-576f-8a25-353cdb7bb4e6"," 开始解析请求数据":{"account":"liangjisheng","password":"123456"}}
+{"level":"debug","ts":1583757802944,"caller":"v4transport/transport.go:59","msg":"8fc4088e-d3ff-552a-a973-68ee0415662e"," 开始解析请求数据":{"account":"liangjisheng","password":"123456"}}
+{"level":"debug","ts":1583757802944,"caller":"v4transport/transport.go:59","msg":"30d3a85c-2a42-5db8-8eb7-fef301a5dee1"," 开始解析请求数据":{"account":"liangjisheng","password":"123456"}}
+{"level":"debug","ts":1583757802944,"caller":"v4transport/transport.go:59","msg":"05dfd398-241c-5648-93fb-ce375ad4e101"," 开始解析请求数据":{"account":"liangjisheng","password":"123456"}}
+{"level":"debug","ts":1583757802944,"caller":"v4transport/transport.go:59","msg":"aeea8f3e-8a7e-54d5-8987-ac02f1dbb5e5"," 开始解析请求数据":{"account":"liangjisheng","password":"123456"}}
+{"level":"debug","ts":1583757802945,"caller":"v4transport/transport.go:59","msg":"a84797cc-56db-5914-a4e2-737afd244fb1"," 开始解析请求数据":{"account":"liangjisheng","password":"123456"}}
+{"level":"debug","ts":1583757802945,"caller":"v4transport/transport.go:59","msg":"d33506cc-36f9-501d-85e8-5a9629989142"," 开始解析请求数据":{"account":"liangjisheng","password":"123456"}}
+{"level":"debug","ts":1583757802945,"caller":"v4transport/transport.go:59","msg":"03792846-1426-5674-b1cc-cbdd0cbf6298"," 开始解析请求数据":{"account":"liangjisheng","password":"123456"}}
+{"level":"debug","ts":1583757802945,"caller":"v4transport/transport.go:59","msg":"e7fb2a86-61cc-5998-8aca-5141963cf469"," 开始解析请求数据":{"account":"liangjisheng","password":"123456"}}
+{"level":"debug","ts":1583757802945,"caller":"v4transport/transport.go:59","msg":"8863855f-610e-5dc4-a902-950c06ebe4d4"," 开始解析请求数据":{"account":"liangjisheng","password":"123456"}}
+{"level":"debug","ts":1583757802946,"caller":"v4transport/transport.go:59","msg":"9d3bcaaa-2c71-5800-9230-2253b78ba2ee"," 开始解析请求数据":{"account":"liangjisheng","password":"123456"}}
+{"level":"debug","ts":1583757802946,"caller":"v4transport/transport.go:59","msg":"a4b96c40-db3f-5934-9a02-b1b50518e61f"," 开始解析请求数据":{"account":"liangjisheng","password":"123456"}}
+{"level":"debug","ts":1583757802946,"caller":"v4transport/transport.go:59","msg":"685a7834-1be5-5a8c-a18b-a6e7aab6b0ec"," 开始解析请求数据":{"account":"liangjisheng","password":"123456"}}
+{"level":"debug","ts":1583757802946,"caller":"v4transport/transport.go:59","msg":"fb13edf0-0be3-54be-884a-772e0869f98f"," 开始解析请求数据":{"account":"liangjisheng","password":"123456"}}
+{"level":"debug","ts":1583757802946,"caller":"v4transport/transport.go:59","msg":"31eca6ef-4ee4-5233-a0f8-672e9311ece5"," 开始解析请求数据":{"account":"liangjisheng","password":"123456"}}
+{"level":"debug","ts":1583757802948,"caller":"v4service/service.go:48","msg":"4481c31e-7acd-5ddb-bcfd-4ccb53ab485f","调用 v3_service Service":"Login 处理请求","处理返回值":{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJOYW1lIjoibGlhbmdqaXNoZW5nIiwiRGNJRCI6MSwiZXhwIjoxNTgzNzU3ODMyLCJpYXQiOjE1ODM3NTc4MDIsImlzcyI6ImdvLWtpdC12MyIsIm5iZiI6MTU4Mzc1NzgwMiwic3ViIjoibG9naW4ifQ.yJ7Aigk699e3X8DwoXEg0MZL5ONhVpUP5xgkegwGdrs"}}
+{"level":"debug","ts":1583757802953,"caller":"v4service/middleware.go:41","msg":"4481c31e-7acd-5ddb-bcfd-4ccb53ab485f","调用 Login logMiddlewareServer":"Login","req":{"account":"liangjisheng","password":"123456"},"res":{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJOYW1lIjoibGlhbmdqaXNoZW5nIiwiRGNJRCI6MSwiZXhwIjoxNTgzNzU3ODMyLCJpYXQiOjE1ODM3NTc4MDIsImlzcyI6ImdvLWtpdC12MyIsIm5iZiI6MTU4Mzc1NzgwMiwic3ViIjoibG9naW4ifQ.yJ7Aigk699e3X8DwoXEg0MZL5ONhVpUP5xgkegwGdrs"},"err":null}
+{"level":"debug","ts":1583757802959,"caller":"v4endpoint/middleware.go:23","msg":"4481c31e-7acd-5ddb-bcfd-4ccb53ab485f","调用 v3_endpoint LoggingMiddleware":"处理完请求","耗时毫秒":15}
+{"level":"debug","ts":1583757802959,"caller":"v4transport/transport.go:78","msg":"4481c31e-7acd-5ddb-bcfd-4ccb53ab485f","请求结束封装返回值":{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJOYW1lIjoibGlhbmdqaXNoZW5nIiwiRGNJRCI6MSwiZXhwIjoxNTgzNzU3ODMyLCJpYXQiOjE1ODM3NTc4MDIsImlzcyI6ImdvLWtpdC12MyIsIm5iZiI6MTU4Mzc1NzgwMiwic3ViIjoibG9naW4ifQ.yJ7Aigk699e3X8DwoXEg0MZL5ONhVpUP5xgkegwGdrs"}}
+{"level":"debug","ts":1583757876662,"caller":"v4transport/transport.go:29","msg":"给请求添加uuid","UUID":"5e121bcc-37e1-5754-8b6b-51c207df1e35"}
+{"level":"debug","ts":1583757876662,"caller":"v4transport/transport.go:29","msg":"给请求添加uuid","UUID":"2e2a66ef-f942-54a0-81a8-ecb9a90bb7a6"}
+{"level":"debug","ts":1583757876662,"caller":"v4transport/transport.go:29","msg":"给请求添加uuid","UUID":"44d8294a-12bd-538b-a02a-e073354512a4"}
+{"level":"debug","ts":1583757876662,"caller":"v4transport/transport.go:29","msg":"给请求添加uuid","UUID":"6622aeb3-9edc-56e7-beed-03d059aafc63"}
+{"level":"debug","ts":1583757876662,"caller":"v4transport/transport.go:29","msg":"给请求添加uuid","UUID":"11abb3d0-d677-5821-87fe-6b906fa44578"}
+{"level":"debug","ts":1583757876662,"caller":"v4transport/transport.go:29","msg":"给请求添加uuid","UUID":"9e58c82c-e5b5-5d7b-8768-4556cfe31b76"}
+{"level":"debug","ts":1583757876662,"caller":"v4transport/transport.go:29","msg":"给请求添加uuid","UUID":"9b81f0a0-dd4f-5437-a285-4c4e29e5b373"}
+{"level":"debug","ts":1583757876662,"caller":"v4transport/transport.go:29","msg":"给请求添加uuid","UUID":"32e8f396-8ab2-55fb-9daf-e7176ef6d551"}
+{"level":"debug","ts":1583757876662,"caller":"v4transport/transport.go:32","msg":"把请求中的token发到Context中","Token":""}
+{"level":"debug","ts":1583757876662,"caller":"v4transport/transport.go:29","msg":"给请求添加uuid","UUID":"11a50469-e17c-59b6-b360-868250a0f39b"}
+{"level":"debug","ts":1583757876663,"caller":"v4transport/transport.go:29","msg":"给请求添加uuid","UUID":"98647ac7-09b1-5f31-a334-8605e3e6432a"}
+{"level":"debug","ts":1583757876663,"caller":"v4transport/transport.go:29","msg":"给请求添加uuid","UUID":"3d7be01d-360f-580c-a694-20188e4df9b1"}
+{"level":"debug","ts":1583757876663,"caller":"v4transport/transport.go:29","msg":"给请求添加uuid","UUID":"7b8be49a-4d71-549e-aa63-af07c51627ad"}
+{"level":"debug","ts":1583757876663,"caller":"v4transport/transport.go:32","msg":"把请求中的token发到Context中","Token":""}
+{"level":"debug","ts":1583757876663,"caller":"v4transport/transport.go:29","msg":"给请求添加uuid","UUID":"5f3a1c6c-701e-5307-9734-0955621ccdec"}
+{"level":"debug","ts":1583757876663,"caller":"v4transport/transport.go:29","msg":"给请求添加uuid","UUID":"1ea77ba9-04d3-508a-82e2-8214c7d78bae"}
+{"level":"debug","ts":1583757876663,"caller":"v4transport/transport.go:29","msg":"给请求添加uuid","UUID":"b4dc05a1-50b2-5725-87d8-040a22d15a67"}
+{"level":"debug","ts":1583757876663,"caller":"v4transport/transport.go:29","msg":"给请求添加uuid","UUID":"c009723f-2e69-522f-9ff7-a3ae92c5555d"}
+{"level":"debug","ts":1583757876663,"caller":"v4transport/transport.go:32","msg":"把请求中的token发到Context中","Token":""}
+{"level":"debug","ts":1583757876663,"caller":"v4transport/transport.go:29","msg":"给请求添加uuid","UUID":"30a026b9-ed62-5851-891e-c0a005f1e29a"}
+{"level":"debug","ts":1583757876663,"caller":"v4transport/transport.go:29","msg":"给请求添加uuid","UUID":"e458e60c-8910-5c78-9d8a-2844ed04f47f"}
+{"level":"debug","ts":1583757876663,"caller":"v4transport/transport.go:29","msg":"给请求添加uuid","UUID":"9f02a9f5-b1ff-52c1-bca6-9727a6a5f03a"}
+{"level":"debug","ts":1583757876663,"caller":"v4transport/transport.go:32","msg":"把请求中的token发到Context中","Token":""}
+{"level":"debug","ts":1583757876663,"caller":"v4transport/transport.go:29","msg":"给请求添加uuid","UUID":"2c7dfb2f-c825-5f8f-a1ba-c89f49370085"}
+{"level":"debug","ts":1583757876664,"caller":"v4transport/transport.go:59","msg":"c009723f-2e69-522f-9ff7-a3ae92c5555d"," 开始解析请求数据":{"account":"liangjisheng","password":"123456"}}
+{"level":"debug","ts":1583757876664,"caller":"v4transport/transport.go:32","msg":"把请求中的token发到Context中","Token":""}
+{"level":"debug","ts":1583757876664,"caller":"v4transport/transport.go:32","msg":"把请求中的token发到Context中","Token":""}
+{"level":"debug","ts":1583757876664,"caller":"v4transport/transport.go:32","msg":"把请求中的token发到Context中","Token":""}
+{"level":"debug","ts":1583757876665,"caller":"v4transport/transport.go:32","msg":"把请求中的token发到Context中","Token":""}
+{"level":"debug","ts":1583757876665,"caller":"v4transport/transport.go:32","msg":"把请求中的token发到Context中","Token":""}
+{"level":"debug","ts":1583757876666,"caller":"v4transport/transport.go:59","msg":"5e121bcc-37e1-5754-8b6b-51c207df1e35"," 开始解析请求数据":{"account":"liangjisheng","password":"123456"}}
+{"level":"debug","ts":1583757876667,"caller":"v4transport/transport.go:32","msg":"把请求中的token发到Context中","Token":""}
+{"level":"debug","ts":1583757876667,"caller":"v4transport/transport.go:32","msg":"把请求中的token发到Context中","Token":""}
+{"level":"debug","ts":1583757876667,"caller":"v4transport/transport.go:32","msg":"把请求中的token发到Context中","Token":""}
+{"level":"debug","ts":1583757876668,"caller":"v4transport/transport.go:32","msg":"把请求中的token发到Context中","Token":""}
+{"level":"debug","ts":1583757876668,"caller":"v4transport/transport.go:59","msg":"2e2a66ef-f942-54a0-81a8-ecb9a90bb7a6"," 开始解析请求数据":{"account":"liangjisheng","password":"123456"}}
+{"level":"debug","ts":1583757876669,"caller":"v4transport/transport.go:32","msg":"把请求中的token发到Context中","Token":""}
+{"level":"debug","ts":1583757876669,"caller":"v4transport/transport.go:32","msg":"把请求中的token发到Context中","Token":""}
+{"level":"debug","ts":1583757876669,"caller":"v4transport/transport.go:32","msg":"把请求中的token发到Context中","Token":""}
+{"level":"debug","ts":1583757876669,"caller":"v4transport/transport.go:59","msg":"44d8294a-12bd-538b-a02a-e073354512a4"," 开始解析请求数据":{"account":"liangjisheng","password":"123456"}}
+{"level":"debug","ts":1583757876669,"caller":"v4transport/transport.go:32","msg":"把请求中的token发到Context中","Token":""}
+{"level":"debug","ts":1583757876670,"caller":"v4transport/transport.go:32","msg":"把请求中的token发到Context中","Token":""}
+{"level":"debug","ts":1583757876670,"caller":"v4transport/transport.go:32","msg":"把请求中的token发到Context中","Token":""}
+{"level":"debug","ts":1583757876670,"caller":"v4transport/transport.go:32","msg":"把请求中的token发到Context中","Token":""}
+{"level":"debug","ts":1583757876670,"caller":"v4service/service.go:42","msg":"c009723f-2e69-522f-9ff7-a3ae92c5555d","调用 v3_service Service":"Login 处理请求"}
+{"level":"debug","ts":1583757876670,"caller":"v4transport/transport.go:59","msg":"6622aeb3-9edc-56e7-beed-03d059aafc63"," 开始解析请求数据":{"account":"liangjisheng","password":"123456"}}
+{"level":"debug","ts":1583757876671,"caller":"v4transport/transport.go:59","msg":"11abb3d0-d677-5821-87fe-6b906fa44578"," 开始解析请求数据":{"account":"liangjisheng","password":"123456"}}
+{"level":"debug","ts":1583757876671,"caller":"v4transport/transport.go:59","msg":"9e58c82c-e5b5-5d7b-8768-4556cfe31b76"," 开始解析请求数据":{"account":"liangjisheng","password":"123456"}}
+{"level":"debug","ts":1583757876671,"caller":"v4transport/transport.go:59","msg":"9b81f0a0-dd4f-5437-a285-4c4e29e5b373"," 开始解析请求数据":{"account":"liangjisheng","password":"123456"}}
+{"level":"debug","ts":1583757876671,"caller":"v4transport/transport.go:59","msg":"32e8f396-8ab2-55fb-9daf-e7176ef6d551"," 开始解析请求数据":{"account":"liangjisheng","password":"123456"}}
+{"level":"debug","ts":1583757876672,"caller":"v4transport/transport.go:59","msg":"11a50469-e17c-59b6-b360-868250a0f39b"," 开始解析请求数据":{"account":"liangjisheng","password":"123456"}}
+{"level":"debug","ts":1583757876672,"caller":"v4transport/transport.go:59","msg":"98647ac7-09b1-5f31-a334-8605e3e6432a"," 开始解析请求数据":{"account":"liangjisheng","password":"123456"}}
+{"level":"debug","ts":1583757876672,"caller":"v4transport/transport.go:59","msg":"3d7be01d-360f-580c-a694-20188e4df9b1"," 开始解析请求数据":{"account":"liangjisheng","password":"123456"}}
+{"level":"debug","ts":1583757876672,"caller":"v4transport/transport.go:59","msg":"7b8be49a-4d71-549e-aa63-af07c51627ad"," 开始解析请求数据":{"account":"liangjisheng","password":"123456"}}
+{"level":"debug","ts":1583757876672,"caller":"v4transport/transport.go:59","msg":"5f3a1c6c-701e-5307-9734-0955621ccdec"," 开始解析请求数据":{"account":"liangjisheng","password":"123456"}}
+{"level":"debug","ts":1583757876673,"caller":"v4transport/transport.go:59","msg":"1ea77ba9-04d3-508a-82e2-8214c7d78bae"," 开始解析请求数据":{"account":"liangjisheng","password":"123456"}}
+{"level":"debug","ts":1583757876673,"caller":"v4transport/transport.go:59","msg":"b4dc05a1-50b2-5725-87d8-040a22d15a67"," 开始解析请求数据":{"account":"liangjisheng","password":"123456"}}
+{"level":"debug","ts":1583757876673,"caller":"v4transport/transport.go:59","msg":"30a026b9-ed62-5851-891e-c0a005f1e29a"," 开始解析请求数据":{"account":"liangjisheng","password":"123456"}}
+{"level":"debug","ts":1583757876673,"caller":"v4transport/transport.go:59","msg":"e458e60c-8910-5c78-9d8a-2844ed04f47f"," 开始解析请求数据":{"account":"liangjisheng","password":"123456"}}
+{"level":"debug","ts":1583757876673,"caller":"v4transport/transport.go:59","msg":"9f02a9f5-b1ff-52c1-bca6-9727a6a5f03a"," 开始解析请求数据":{"account":"liangjisheng","password":"123456"}}
+{"level":"debug","ts":1583757876673,"caller":"v4transport/transport.go:59","msg":"2c7dfb2f-c825-5f8f-a1ba-c89f49370085"," 开始解析请求数据":{"account":"liangjisheng","password":"123456"}}
+{"level":"debug","ts":1583757876674,"caller":"v4service/service.go:48","msg":"c009723f-2e69-522f-9ff7-a3ae92c5555d","调用 v3_service Service":"Login 处理请求","处理返回值":{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJOYW1lIjoibGlhbmdqaXNoZW5nIiwiRGNJRCI6MSwiZXhwIjoxNTgzNzU3OTA2LCJpYXQiOjE1ODM3NTc4NzYsImlzcyI6ImdvLWtpdC12MyIsIm5iZiI6MTU4Mzc1Nzg3Niwic3ViIjoibG9naW4ifQ.TTuyGGBbgfiKkOvFltqJczBxqp3LuV0NAEflSE3SDg8"}}
+{"level":"debug","ts":1583757876678,"caller":"v4service/middleware.go:41","msg":"c009723f-2e69-522f-9ff7-a3ae92c5555d","调用 Login logMiddlewareServer":"Login","req":{"account":"liangjisheng","password":"123456"},"res":{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJOYW1lIjoibGlhbmdqaXNoZW5nIiwiRGNJRCI6MSwiZXhwIjoxNTgzNzU3OTA2LCJpYXQiOjE1ODM3NTc4NzYsImlzcyI6ImdvLWtpdC12MyIsIm5iZiI6MTU4Mzc1Nzg3Niwic3ViIjoibG9naW4ifQ.TTuyGGBbgfiKkOvFltqJczBxqp3LuV0NAEflSE3SDg8"},"err":null}
+{"level":"debug","ts":1583757876682,"caller":"v4endpoint/middleware.go:23","msg":"c009723f-2e69-522f-9ff7-a3ae92c5555d","调用 v3_endpoint LoggingMiddleware":"处理完请求","耗时毫秒":11}
+{"level":"debug","ts":1583757876682,"caller":"v4transport/transport.go:78","msg":"c009723f-2e69-522f-9ff7-a3ae92c5555d","请求结束封装返回值":{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJOYW1lIjoibGlhbmdqaXNoZW5nIiwiRGNJRCI6MSwiZXhwIjoxNTgzNzU3OTA2LCJpYXQiOjE1ODM3NTc4NzYsImlzcyI6ImdvLWtpdC12MyIsIm5iZiI6MTU4Mzc1Nzg3Niwic3ViIjoibG9naW4ifQ.TTuyGGBbgfiKkOvFltqJczBxqp3LuV0NAEflSE3SDg8"}}

@@ -1,0 +1,19 @@
+{{define "page/welcome.html"}}
+    <!DOCTYPE html>
+    <html lang="en">
+    {{template "layouts/head" .}}
+    <body>
+    <div id="app">
+        {{template "layouts/nav" .}}
+        <main class="py-4">
+            <div class="container">
+                <h1>{{ .data }}</h1>
+                <h4> 使用gin + gorm + seesion 完成 laravel 的 make:auth </h4>
+                <a class="navbar-brand" href="/user/index?page=1&size=15">用户列表api</a>
+            </div>
+        </main>
+    </div>
+
+    </body>
+    </html>
+{{end}}

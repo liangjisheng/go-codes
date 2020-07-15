@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS user (
+    id INT UNSIGNED AUTO_INCREMENT,
+    name VARCHAR(20),
+ 	address VARCHAR(20),
+    phone VARCHAR(15),
+	PRIMARY KEY (id)
+);
