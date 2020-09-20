@@ -5,16 +5,17 @@ import (
 	"sort"
 )
 
+// Reverse ...
 type Reverse struct {
 	sort.Interface
 }
 
-// Reverse 只是将其中的 Interface.Less 的顺序对调了一下
+// Less 只是将其中的 Interface.Less 的顺序对调了一下
 func (r Reverse) Less(i, j int) bool {
 	return r.Interface.Less(j, i)
 }
 
-func main() {
+func sortReverse() {
 	ints := []int{5, 2, 6, 3, 1, 4}
 	sort.Ints(ints)
 	fmt.Println("After sort by Ints:", ints)

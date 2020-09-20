@@ -5,6 +5,7 @@ import (
 	"sort"
 )
 
+// GuessingGame ...
 func GuessingGame() {
 	var s string
 	fmt.Printf("Pick an integer from 0 to 100.\n")
@@ -16,7 +17,7 @@ func GuessingGame() {
 	fmt.Printf("Your number is %d.\n", answer)
 }
 
-func main() {
+func search() {
 	a := []int{1, 2, 3, 4, 5}
 	b := sort.Search(len(a), func(i int) bool { return a[i] >= 30 })
 	fmt.Println(b) // 5, 查找不到， 返回a slice的长度，而不是-1

@@ -5,7 +5,7 @@ import (
 	"sort"
 )
 
-func main() {
+func search2() {
 	a := []string{"a", "c"}
 	// 切片必须以升序排列，返回可以插入第二个参数的索引位置
 	// 如果不存在，返回切片的长度
