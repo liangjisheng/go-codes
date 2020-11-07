@@ -31,10 +31,15 @@ func parse() {
 	fmt.Println(tm2.Format("2006-01-02 03:04:05 PM"))
 	fmt.Println(tm2.Format("02/01/2006 15:04:05 PM"))
 
-	t, err = time.Parse("2006-Jan-02 15:04:05 UTC", "2020-May-05 02:42:22.000000000 UTC")
+	t, err = time.Parse("2006-01-02 15:04:05 +0800 CST", "2020-11-07 7:00:00 +0800 CST")
 	if err != nil {
 		fmt.Println("parse err:", err)
 		return
 	}
-	fmt.Printf("time: %+v", t)
+	fmt.Printf("time: %+v\n", t)
+	fmt.Println(t.UnixNano()/1e6)
+
+	t, err =	time.ParseInLocation("2006-01-02 15:04:05 CST", "2020-11-07 15:00:00 CST", time.Local)
+	fmt.Printf("time: %+v\n", t)
+	fmt.Println(t.UnixNano()/1e6)
 }

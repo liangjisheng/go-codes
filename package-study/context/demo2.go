@@ -31,3 +31,11 @@ func demo2() {
 
 	time.Sleep(3 * time.Second)
 }
+
+func demo2_1() {
+	ctx := context.WithValue(context.Background(), key, "ljs")
+	v := ctx.Value("name")
+	fmt.Println(v)
+	v = ctx.Value("name1")
+	fmt.Println(v)
+}
