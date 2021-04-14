@@ -91,8 +91,9 @@ func main() {
 			c.String(http.StatusBadRequest, "Bad request")
 			return
 		}
-		filename := header.Filename
-		// fmt.Println(file, err, filename)
+		dir, _ := os.Getwd()
+		filename := dir + "/" + header.Filename
+		fmt.Println(filename)
 
 		out, err := os.Create(filename)
 		if err != nil {

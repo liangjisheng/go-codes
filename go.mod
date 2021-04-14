@@ -3,6 +3,7 @@ module go-demos
 go 1.13
 
 require (
+	github.com/unknwon/com v1.0.1
 	bou.ke/monkey v1.0.2
 	github.com/BurntSushi/toml v0.3.1
 	github.com/InWeCrypto/sha3 v0.0.0-20171123094127-d0fd118c5827

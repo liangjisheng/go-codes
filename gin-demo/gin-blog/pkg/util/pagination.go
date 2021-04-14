@@ -3,7 +3,7 @@ package util
 import (
 	"go-demos/gin-demo/gin-blog/pkg/setting"
 
-	"github.com/Unknwon/com"
+	"github.com/unknwon/com"
 	"github.com/gin-gonic/gin"
 )
 
