@@ -1,5 +1,16 @@
 package main
 
 func main() {
-	snowflakeUUID()
+	//snowflakeUUID()
+
+	// getUUID()
+	// getUUID1()
+	// uuidgen()
+	genSid()
+	genShortUUID()
+	genUUID()
+	genXid()
+	genBetterGUID()
+	genUlid()
+	genSonyflake()
 }
