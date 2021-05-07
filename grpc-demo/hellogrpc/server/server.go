@@ -5,14 +5,14 @@ import (
 	"log"
 	"net"
 
-	pb "go-demos/grpc-demo/hellogrpc/helloworld"
+	pb "hellogrpc/helloworld"
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 )
 
 const (
-	port = ":50051"
+	port = "127.0.0.1:50051"
 )
 
 // server is used to implement helloproto.GreeterServer

@@ -3,13 +3,14 @@ package main
 import (
 	"context"
 	"flag"
+	"log"
 	"net/http"
 
 	"github.com/golang/glog"
 	"github.com/grpc-ecosystem/grpc-gateway/runtime"
 	"google.golang.org/grpc"
 
-	gw "go-demos/grpc-demo/grpcgateway/helloworld"
+	gw "grpcgateway/helloworld"
 )
 
 var (
@@ -28,7 +29,13 @@ func run() error {
 		return err
 	}
 
-	return http.ListenAndServe(":8080", mux)
+	log.Println("serve start at 127.0.0.1:8080")
+	err = http.ListenAndServe("127.0.0.1:8080", mux)
+	if err != nil {
+		return err
+	}
+
+	return nil
 }
 
 func main() {

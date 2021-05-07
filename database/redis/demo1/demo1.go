@@ -13,14 +13,14 @@ func demo1() {
 	client.Addr = "127.0.0.1:6379"
 
 	// 字符串操作
-	key := "a"
-	client.Set(key, []byte("hello"))
+	key := "foo"
+	client.Set(key, []byte("bar"))
 	val, _ := client.Get(key)
 	fmt.Println(string(val))
 	client.Del(key)
 
 	// list操作
-	key = "l"
+	key = "l1"
 	vals := []string{"a", "b", "c", "d", "e"}
 	for _, v := range vals {
 		client.Rpush(key, []byte(v))

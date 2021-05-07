@@ -1,0 +1,35 @@
+
+port 7000-7005
+
+port 7005 #设置启动端口
+cluster-enabled yes #允许集群启动
+cluster-config-file nodes7005.conf #集群配置文件名
+cluster-node-timeout 5000 #集群节点之间多少毫秒无法连接后判定节点挂掉
+pidfile /var/run/redis_7005.pid #修改pid文件创建位置
+logfile /usr/local/redis-cluster/redis_7005.log #修改日志文件存储位置
+dir /usr/local/redis-cluster/7005/data/ #修改数据文件存储位置
+
+cd /usr/local/redis-cluster
+
+sudo ./redis-server 7000/redis.conf
+sudo ./redis-server 7001/redis.conf
+sudo ./redis-server 7002/redis.conf
+sudo ./redis-server 7003/redis.conf
+sudo ./redis-server 7004/redis.conf
+sudo ./redis-server 7005/redis.conf
+
+// 使用任意一个节点创建集群，这里使用redis7000结点创建（注意，一次创建永久使用, 以后不需要再创建）
+./redis-cli --cluster create 127.0.0.1:7000 127.0.0.1:7001 127.0.0.1:7002 127.0.0.1:7003 127.0.0.1:7004 127.0.0.1:7005 --cluster-replicas 1
+
+// 执行该命令后会将16384个槽位平均分配给三组节点, 输入Y确认
+
+// 从某个实例登录集群
+./redis-cli -c -h 127.0.0.1 -p 7000
+
+// 关闭节点
+./redis-cli -c -h 127.0.0.1 -p 7000 shutdown
+./redis-cli -c -h 127.0.0.1 -p 7001 shutdown
+./redis-cli -c -h 127.0.0.1 -p 7002 shutdown
+./redis-cli -c -h 127.0.0.1 -p 7003 shutdown
+./redis-cli -c -h 127.0.0.1 -p 7004 shutdown
+./redis-cli -c -h 127.0.0.1 -p 7005 shutdown
