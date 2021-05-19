@@ -41,6 +41,7 @@ require (
 	github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b // indirect
 	github.com/golang/mock v1.4.3
 	github.com/golang/protobuf v1.3.3
+	github.com/google/gops v0.3.18
 	github.com/google/uuid v1.1.1 // indirect
 	github.com/google/wire v0.4.0
 	github.com/gorilla/mux v1.7.3

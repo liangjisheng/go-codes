@@ -6,7 +6,7 @@ import (
 )
 
 // 一段耗时的计算函数
-func consuemr(ch chan int) {
+func consumer(ch chan int) {
 	for {
 		data := <-ch
 		if 0 == data {
@@ -35,7 +35,7 @@ func main() {
 			continue
 		}
 
-		go consuemr(ch)
+		go consumer(ch)
 
 		fmt.Println("goroutines:", runtime.NumGoroutine())
 	}
