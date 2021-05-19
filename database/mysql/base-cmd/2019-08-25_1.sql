@@ -22,7 +22,7 @@
 -- desc tb_emp1;
 
 -- 修改字段数据类型
--- alter table tb_emp1 modify name varchar(30);
+-- alter table tb_emp1 modify name varchar(30) not null;
 -- desc tb_emp1;
 
 -- 删除字段

@@ -5,8 +5,11 @@ import (
 
 	"github.com/jinzhu/gorm"
 
+	// mysql
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 )
+
+// 注意: GORM 的AutoMigrate函数，仅支持建表，不支持修改字段和删除字段，避免意外导致丢失数据。
 
 const (
 	USER     = "root"

@@ -20,3 +20,12 @@ func TestAddOrSaveAdmin(t *testing.T) {
 	}
 	fmt.Println("AddOrSaveAdmin ok.")
 }
+
+func TestGetUsers(t *testing.T) {
+	res, err := NewDBClient().GetUsers()
+	if err != nil {
+		fmt.Errorf("%+v", err)
+		return
+	}
+	fmt.Printf("%+v\n", res)
+}
