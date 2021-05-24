@@ -13,7 +13,7 @@ func doTimeoutStuff(ctx context.Context) {
 		if deadline, ok := ctx.Deadline(); ok {
 			fmt.Println("deadline set:", deadline.Unix())
 			if time.Now().After(deadline) {
-				log.Fatal("error:", ctx.Err().Error())
+				log.Println("error:", ctx.Err())
 			}
 		}
 

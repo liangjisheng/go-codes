@@ -27,6 +27,7 @@ require (
 	github.com/flosch/pongo2 v0.0.0-20190707114632-bbf5a6c351f4 // indirect
 	github.com/fsnotify/fsnotify v1.4.9
 	github.com/garyburd/redigo v1.6.2 // indirect
+	github.com/gin-contrib/cache v1.1.0 // indirect
 	github.com/gin-gonic/gin v1.5.0
 	github.com/globalsign/mgo v0.0.0-20181015135952-eeefdecb41b8
 	github.com/go-kit/kit v0.8.0
@@ -40,7 +41,7 @@ require (
 	github.com/gogo/protobuf v1.3.1
 	github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b // indirect
 	github.com/golang/mock v1.4.3
-	github.com/golang/protobuf v1.3.3
+	github.com/golang/protobuf v1.5.2
 	github.com/google/gops v0.3.18
 	github.com/google/uuid v1.1.1 // indirect
 	github.com/google/wire v0.4.0
@@ -93,17 +94,20 @@ require (
 	github.com/spf13/cobra v0.0.5 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/spf13/viper v1.3.2
+	github.com/swaggo/gin-swagger v1.3.0 // indirect
 	github.com/tklauser/go-sysconf v0.3.5 // indirect
 	github.com/uber/jaeger-client-go v2.22.1+incompatible
 	github.com/uber/jaeger-lib v2.2.0+incompatible // indirect
 	github.com/unknwon/com v1.0.1
 	github.com/unrolled/secure v1.0.8 // indirect
+	github.com/vmihailenco/msgpack v4.0.4+incompatible // indirect
 	go.etcd.io/etcd v3.3.17+incompatible
 	go.opentelemetry.io/otel v0.20.0 // indirect
 	go.uber.org/zap v1.12.0
 	golang.org/x/crypto v0.0.0-20200622213623-75b288015ac9
-	golang.org/x/net v0.0.0-20210505214959-0714010a04ed // indirect
+	golang.org/x/net v0.0.0-20210510120150-4163338589ed // indirect
 	golang.org/x/sys v0.0.0-20210507014357-30e306a8bba5 // indirect
+	google.golang.org/appengine v1.6.7 // indirect
 	google.golang.org/grpc v1.29.1
 	gopkg.in/confluentinc/confluent-kafka-go.v1 v1.1.0
 	gopkg.in/jcmturner/gokrb5.v7 v7.3.0 // indirect
