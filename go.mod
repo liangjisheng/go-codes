@@ -79,6 +79,7 @@ require (
 	github.com/olivere/elastic/v7 v7.0.11
 	github.com/opentracing-contrib/go-stdlib v0.0.0-20190519235532-cf7a6c988dc9
 	github.com/opentracing/opentracing-go v1.1.0
+	github.com/parnurzeal/gorequest v0.2.16 // indirect
 	github.com/pierrec/lz4 v2.4.0+incompatible // indirect
 	github.com/prashantv/gostub v1.0.0
 	github.com/prometheus/client_golang v1.1.0
@@ -109,10 +110,12 @@ require (
 	golang.org/x/sys v0.0.0-20210507014357-30e306a8bba5 // indirect
 	google.golang.org/appengine v1.6.7 // indirect
 	google.golang.org/grpc v1.29.1
+	google.golang.org/protobuf v1.26.0 // indirect
 	gopkg.in/confluentinc/confluent-kafka-go.v1 v1.1.0
 	gopkg.in/jcmturner/gokrb5.v7 v7.3.0 // indirect
 	gopkg.in/mgo.v2 v2.0.0-20180705113604-9856a29383ce
 	gopkg.in/natefinch/lumberjack.v2 v2.0.0
 	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b // indirect
 	mellium.im/sasl v0.2.1 // indirect
+	moul.io/http2curl v1.0.0 // indirect
 )
