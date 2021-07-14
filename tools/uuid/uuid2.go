@@ -43,18 +43,18 @@ func getUUID() {
 func getUUID1() {
 	// Creating UUID Version 4
 	u1 := uuid.Must(uuid.NewV4(), nil)
-	fmt.Printf("UUID: %s\n", u1)
+	fmt.Printf("UUID: %s\n", u1.String())
 
 	// or err handling
 	u2 := uuid.NewV4()
-	fmt.Printf("UUID: %s\n", u2)
+	fmt.Printf("UUID: %s\n", u2.String())
 
-	u2, err := uuid.FromString("9f2e0f4c-5b02-4dc2-ab89-74ea8e53dbec")
-	if err != nil {
-		fmt.Printf("Something went wrong: %s", err)
-		return
-	}
-	fmt.Printf("Successfully parsed: %s\n", u2)
+	//u2, err := uuid.FromString("9f2e0f4c-5b02-4dc2-ab89-74ea8e53dbec")
+	//if err != nil {
+	//	fmt.Printf("Something went wrong: %s", err)
+	//	return
+	//}
+	//fmt.Printf("Successfully parsed: %s\n", u2)
 }
 
 func uuidgen() {

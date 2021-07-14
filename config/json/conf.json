@@ -1,4 +1,5 @@
 {
     "enabled": true,
-    "path": "/usr/local"
+    "path": "/usr/local",
+    "number": 1
 }
