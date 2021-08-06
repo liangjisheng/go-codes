@@ -1,11 +1,9 @@
 package main
 
 import (
-	"crypto/tls"
 	"fmt"
 	"io/ioutil"
 	"net/http"
-	"time"
 )
 
 func getHTTPDo() {
@@ -35,14 +33,14 @@ func httpGet() {
 	fmt.Println(string(body))
 }
 
-var httpClient = &http.Client{
-	Transport: &http.Transport{
-		TLSClientConfig:     &tls.Config{InsecureSkipVerify: true},
-		DisableCompression:  true,
-		MaxIdleConnsPerHost: 50,
-	},
-	Timeout: time.Duration(30) * time.Second,
-}
+//var httpClient = &http.Client{
+//	Transport: &http.Transport{
+//		TLSClientConfig:     &tls.Config{InsecureSkipVerify: true},
+//		DisableCompression:  true,
+//		MaxIdleConnsPerHost: 50,
+//	},
+//	Timeout: time.Duration(30) * time.Second,
+//}
 
 // Get ...
 func Get(url string, header map[string]string, data map[string]interface{}) ([]byte, error) {
@@ -70,7 +68,7 @@ func Get(url string, header map[string]string, data map[string]interface{}) ([]b
 		}
 	}
 
-	if resp, err = httpClient.Do(req); err != nil {
+	if resp, err = http.DefaultClient.Do(req); err != nil {
 		return nil, err
 	}
 	defer resp.Body.Close()

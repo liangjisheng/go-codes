@@ -12,8 +12,11 @@ sudo apt-get install mysql-server
 # 开放远程访问
 # 使用mysql数据库
 use mysql
-# mysql8.0需要更改加密方式
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+# 修改root密码
+# mysql5.x 修改密码
+set password for 'root'@'localhost' = password('newpass');
+# mysql8.x 修改密码
+alter user 'root'@'localhost' identified by 'password';
 
 # 开放远程访问权限(授权远程连接)
 update user set host='%' where user='root';

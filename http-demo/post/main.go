@@ -2,14 +2,12 @@ package main
 
 import (
 	"bytes"
-	"crypto/tls"
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-	"time"
 )
 
 func postJSON() {
@@ -92,14 +90,14 @@ func postForm() {
 	fmt.Println(string(body))
 }
 
-var httpClient = &http.Client{
-	Transport: &http.Transport{
-		TLSClientConfig:     &tls.Config{InsecureSkipVerify: true},
-		DisableCompression:  true,
-		MaxIdleConnsPerHost: 50,
-	},
-	Timeout: time.Duration(30) * time.Second,
-}
+//var httpClient = &http.Client{
+//	Transport: &http.Transport{
+//		TLSClientConfig:     &tls.Config{InsecureSkipVerify: true},
+//		DisableCompression:  true,
+//		MaxIdleConnsPerHost: 50,
+//	},
+//	Timeout: time.Duration(30) * time.Second,
+//}
 
 // Post ...
 func Post(url string, header map[string]string, data map[string]interface{}) ([]byte, error) {
@@ -123,7 +121,7 @@ func Post(url string, header map[string]string, data map[string]interface{}) ([]
 		}
 	}
 
-	if resp, err = httpClient.Do(req); err != nil {
+	if resp, err = http.DefaultClient.Do(req); err != nil {
 		return nil, err
 	}
 	defer resp.Body.Close()

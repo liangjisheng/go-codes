@@ -1,4 +1,4 @@
-package gorequest__test
+package gorequest_test
 
 import (
 	"encoding/json"
