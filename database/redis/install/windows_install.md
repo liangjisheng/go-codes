@@ -1,5 +1,8 @@
+# windows install
+
 下载,解压
-https://github.com/microsoftarchive/redis/releases/download/win-3.2.100/Redis-x64-3.2.100.zip
+
+[redis](https://github.com/microsoftarchive/redis/releases/download/win-3.2.100/Redis-x64-3.2.100.zip)
 
 配置成服务
 ./redis-server.exe --service-install redis.windows-service.conf --loglevel verbose
