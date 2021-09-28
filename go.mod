@@ -28,15 +28,18 @@ require (
 	github.com/fsnotify/fsnotify v1.4.9
 	github.com/garyburd/redigo v1.6.2 // indirect
 	github.com/gin-contrib/cache v1.1.0 // indirect
-	github.com/gin-gonic/gin v1.5.0
+	github.com/gin-gonic/gin v1.7.4
 	github.com/globalsign/mgo v0.0.0-20181015135952-eeefdecb41b8
 	github.com/go-kit/kit v0.8.0
 	github.com/go-ole/go-ole v1.2.5 // indirect
 	github.com/go-pg/pg v8.0.6+incompatible
-	github.com/go-playground/locales v0.13.0 // indirect
+	github.com/go-playground/validator/v10 v10.9.0 // indirect
 	github.com/go-redis/redis v6.15.6+incompatible
 	github.com/go-sql-driver/mysql v1.6.0
 	github.com/go-stomp/stomp v2.0.3+incompatible
+	github.com/go-xorm/builder v0.3.3 // indirect
+	github.com/go-xorm/core v0.6.2 // indirect
+	github.com/go-xorm/xorm v0.7.9 // indirect
 	github.com/gogf/gf v1.15.7 // indirect
 	github.com/gogo/protobuf v1.3.1
 	github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b // indirect
@@ -55,8 +58,9 @@ require (
 	github.com/iris-contrib/formBinder v5.0.0+incompatible // indirect
 	github.com/iris-contrib/go.uuid v2.0.0+incompatible // indirect
 	github.com/jcmturner/gofork v1.0.0 // indirect
+	github.com/jessevdk/go-assets v0.0.0-20160921144138-4f4301a06e15 // indirect
 	github.com/jinzhu/gorm v1.9.11
-	github.com/json-iterator/go v1.1.8
+	github.com/json-iterator/go v1.1.11
 	github.com/kataras/golog v0.0.10 // indirect
 	github.com/kataras/iris v11.1.1+incompatible
 	github.com/kjk/betterguid v0.0.0-20170621091430-c442874ba63a // indirect
@@ -66,6 +70,7 @@ require (
 	github.com/lib/pq v1.2.0
 	github.com/lithammer/shortuuid v3.0.0+incompatible // indirect
 	github.com/mailru/easyjson v0.7.1 // indirect
+	github.com/mattn/go-isatty v0.0.14 // indirect
 	github.com/mattn/go-runewidth v0.0.12 // indirect
 	github.com/mattn/go-sqlite3 v1.11.0
 	github.com/micro/go-micro v1.18.0
@@ -96,26 +101,33 @@ require (
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/spf13/viper v1.3.2
 	github.com/swaggo/gin-swagger v1.3.0 // indirect
+	github.com/thinkerou/favicon v0.1.0 // indirect
 	github.com/tklauser/go-sysconf v0.3.5 // indirect
 	github.com/uber/jaeger-client-go v2.22.1+incompatible
 	github.com/uber/jaeger-lib v2.2.0+incompatible // indirect
+	github.com/ugorji/go v1.2.6 // indirect
 	github.com/unknwon/com v1.0.1
 	github.com/unrolled/secure v1.0.8 // indirect
 	github.com/vmihailenco/msgpack v4.0.4+incompatible // indirect
 	go.etcd.io/etcd v3.3.17+incompatible
 	go.opentelemetry.io/otel v0.20.0 // indirect
 	go.uber.org/zap v1.12.0
-	golang.org/x/crypto v0.0.0-20200622213623-75b288015ac9
+	golang.org/x/crypto v0.0.0-20210817164053-32db794688a5
 	golang.org/x/net v0.0.0-20210510120150-4163338589ed // indirect
-	golang.org/x/sys v0.0.0-20210507014357-30e306a8bba5 // indirect
+	golang.org/x/sys v0.0.0-20210908233432-aa78b53d3365 // indirect
+	golang.org/x/text v0.3.7 // indirect
 	google.golang.org/appengine v1.6.7 // indirect
 	google.golang.org/grpc v1.29.1
-	google.golang.org/protobuf v1.26.0 // indirect
+	google.golang.org/protobuf v1.27.1 // indirect
 	gopkg.in/confluentinc/confluent-kafka-go.v1 v1.1.0
+	gopkg.in/go-playground/validator.v9 v9.31.0 // indirect
 	gopkg.in/jcmturner/gokrb5.v7 v7.3.0 // indirect
 	gopkg.in/mgo.v2 v2.0.0-20180705113604-9856a29383ce
 	gopkg.in/natefinch/lumberjack.v2 v2.0.0
+	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b // indirect
 	mellium.im/sasl v0.2.1 // indirect
 	moul.io/http2curl v1.0.0 // indirect
+	xorm.io/builder v0.3.9 // indirect
+	xorm.io/core v0.7.3 // indirect
 )
