@@ -1,10 +1,10 @@
 package dao
 
 import (
-	"go-demos/cgo/cgo"
-	"go-demos/cgo/dao/bean"
-	"go-demos/cgo/entity"
-	"go-demos/cgo/model"
+	"go-demos/projects/cgo/cgo"
+	"go-demos/projects/cgo/dao/bean"
+	"go-demos/projects/cgo/entity"
+	"go-demos/projects/cgo/model"
 	"log"
 )
 

@@ -1,8 +1,8 @@
 package cgo
 
 import (
-	"go-demos/cgo/session"
-	_ "go-demos/cgo/session/memory"
+	"go-demos/projects/cgo/session"
+	_ "go-demos/projects/cgo/session/memory"
 )
 
 var globalSession *session.Manager

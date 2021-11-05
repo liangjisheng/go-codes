@@ -1,8 +1,8 @@
 package service
 
 import (
-	"go-demos/cgo/dao"
-	"go-demos/cgo/entity"
+	"go-demos/projects/cgo/dao"
+	"go-demos/projects/cgo/entity"
 	"time"
 )
 

@@ -4,9 +4,9 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"go-demos/restful/auth"
-	"go-demos/restful/helper"
-	"go-demos/restful/models"
+	"go-demos/projects/restful/auth"
+	"go-demos/projects/restful/helper"
+	"go-demos/projects/restful/models"
 
 	"gopkg.in/mgo.v2/bson"
 )

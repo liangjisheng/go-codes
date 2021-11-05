@@ -1,8 +1,8 @@
 package cgo
 
 import (
-	"go-demos/cgo/constant"
-	"go-demos/cgo/utils"
+	"go-demos/projects/cgo/constant"
+	"go-demos/projects/cgo/utils"
 	"io"
 	"log"
 	"mime/multipart"

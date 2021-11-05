@@ -5,7 +5,7 @@ import (
 
 	"github.com/gorilla/mux"
 
-	"go-demos/microservice/booking/controllers"
+	"go-demos/projects/microservice/booking/controllers"
 )
 
 type Route struct {

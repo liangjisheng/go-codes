@@ -1,8 +1,8 @@
 package cgo
 
 import (
-	"go-demos/cgo/constant"
-	"go-demos/cgo/entity"
+	"go-demos/projects/cgo/constant"
+	"go-demos/projects/cgo/entity"
 	"net/http"
 )
 

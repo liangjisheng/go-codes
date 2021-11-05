@@ -6,6 +6,7 @@ import (
 	_ "github.com/GoAdminGroup/go-admin/adapter/gin"
 	_ "github.com/GoAdminGroup/go-admin/modules/db/drivers/sqlite"
 	_ "github.com/GoAdminGroup/themes/adminlte"
+	"github.com/GoAdminGroup/go-admin/context"
 
 	"github.com/GoAdminGroup/go-admin/plugins/example"
 	"github.com/GoAdminGroup/go-admin/template"
@@ -64,7 +65,7 @@ func main() {
 	//
 	// eng.AddConfig(cfg)
 
-	if err := eng.AddConfigFromJson("./config.json").
+	if err := eng.AddConfigFromJSON("./config.json").
 		AddPlugins(adminPlugin, examplePlugin).Use(r); err != nil {
 		panic(err)
 	}
@@ -74,7 +75,8 @@ func main() {
 	// customize your index page
 	r.GET("/admin", func(ctx *gin.Context) {
 		engine.Content(ctx, func(ctx interface{}) (types.Panel, error) {
-			return datamodel.GetContent()
+			contextRes := context.NewContext(nil)
+			return datamodel.GetContent(contextRes)
 		})
 	})
 

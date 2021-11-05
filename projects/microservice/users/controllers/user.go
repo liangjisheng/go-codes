@@ -3,10 +3,10 @@ package controllers
 import (
 	"encoding/json"
 	"fmt"
-	"go-demos/microservice/dao"
-	"go-demos/microservice/helper"
-	"go-demos/microservice/messaging"
-	"go-demos/microservice/models"
+	"go-demos/projects/microservice/dao"
+	"go-demos/projects/microservice/helper"
+	"go-demos/projects/microservice/messaging"
+	"go-demos/projects/microservice/models"
 	"io/ioutil"
 	"net/http"
 

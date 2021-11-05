@@ -1,10 +1,10 @@
 package controller
 
 import (
-	"go-demos/cgo/cgo"
-	"go-demos/cgo/constant"
-	"go-demos/cgo/service"
-	"go-demos/cgo/utils"
+	"go-demos/projects/cgo/cgo"
+	"go-demos/projects/cgo/constant"
+	"go-demos/projects/cgo/service"
+	"go-demos/projects/cgo/utils"
 	"log"
 	"net/http"
 )

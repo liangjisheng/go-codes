@@ -3,8 +3,8 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"go-demos/microservice/dao"
-	"go-demos/microservice/models"
+	"go-demos/projects/microservice/dao"
+	"go-demos/projects/microservice/models"
 	"io/ioutil"
 )
 

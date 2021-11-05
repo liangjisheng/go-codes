@@ -6,13 +6,13 @@ import (
 )
 
 func TestRandom1(t *testing.T) {
-	fmt.Println(Random1())
+	fmt.Println(RanNum())
 }
 
 func TestRandom2(t *testing.T) {
-	fmt.Println(Random2())
+	fmt.Println(RanBit())
 }
 
 func TestRandom3(t *testing.T) {
-	fmt.Println(Random3(100, 10000))
+	fmt.Println(RanAToB(100, 10000))
 }

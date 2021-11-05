@@ -5,5 +5,5 @@ import (
 )
 
 func RandomUUID() (uuid.UUID, error) {
-	return uuid.NewV4()
+	return uuid.NewV4(), nil
 }

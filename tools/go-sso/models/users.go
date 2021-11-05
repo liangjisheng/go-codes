@@ -2,23 +2,21 @@ package models
 
 import "time"
 
-// Users ...
 type Users struct {
-	ID     int64     `json:"id" xorm:"pk autoincr comment('主键') BIGINT(20)"`
-	Name   string    `json:"name" xorm:"not null default '' comment('用户名') VARCHAR(50)"`
-	Email  string    `json:"email" xorm:"not null default '' comment('邮箱') VARCHAR(100)"`
-	Mobile string    `json:"mobile" xorm:"not null default '' comment('手机号') VARCHAR(20)"`
-	Passwd string    `json:"passwd" xorm:"not null comment('密码') VARCHAR(50)"`
-	Salt   string    `json:"salt" xorm:"not null comment('盐值') CHAR(4)"`
-	Ext    string    `json:"ext" xorm:"not null comment('扩展字段') TEXT"`
-	Status int       `json:"status" xorm:"not null default 0 comment('状态（0：未审核,1:通过 10删除）') TINYINT(4)"`
 	Ctime  int       `json:"ctime" xorm:"not null default 0 comment('创建时间') index INT(10)"`
+	Email  string    `json:"email" xorm:"not null default '' comment('邮箱') VARCHAR(100)"`
+	Ext    string    `json:"ext" xorm:"not null comment('扩展字段') TEXT"`
+	Id     int64     `json:"id" xorm:"pk autoincr comment('主键') BIGINT(20)"`
 	Mtime  time.Time `json:"mtime" xorm:"not null default 'CURRENT_TIMESTAMP' comment('修改时间') TIMESTAMP"`
+	Name   string    `json:"name" xorm:"not null default '' comment('用户名') VARCHAR(50)"`
+	Passwd string    `json:"passwd" xorm:"not null comment('密码') VARCHAR(50)"`
+	Mobile string    `json:"mobile" xorm:"not null default '' comment('手机号') VARCHAR(20)"`
+	Salt   string    `json:"salt" xorm:"not null comment('盐值') CHAR(4)"`
+	Status int       `json:"status" xorm:"not null default 0 comment('状态（0：未审核,1:通过 10删除）') TINYINT(4)"`
 }
 
-// UserRow ...
 type UserRow struct {
-	ID     int64  `json:"id" xorm:"pk autoincr comment('主键') BIGINT(20)"`
+	Id     int64  `json:"id" xorm:"pk autoincr comment('主键') BIGINT(20)"`
 	Name   string `json:"name" xorm:"not null default '' comment('用户名') VARCHAR(50)"`
 	Email  string `json:"email" xorm:"not null default '' comment('邮箱') VARCHAR(100)"`
 	Mobile string `json:"mobile" xorm:"not null default '' comment('手机号') VARCHAR(20)"`

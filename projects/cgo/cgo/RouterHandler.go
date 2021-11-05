@@ -2,7 +2,7 @@ package cgo
 
 import (
 	"fmt"
-	"go-demos/cgo/constant"
+	"go-demos/projects/cgo/constant"
 	"net/http"
 	"strings"
 )

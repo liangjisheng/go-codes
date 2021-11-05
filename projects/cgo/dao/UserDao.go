@@ -1,8 +1,8 @@
 package dao
 
 import (
-	"go-demos/cgo/cgo"
-	"go-demos/cgo/entity"
+	"go-demos/projects/cgo/cgo"
+	"go-demos/projects/cgo/entity"
 	"log"
 )
 

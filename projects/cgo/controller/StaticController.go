@@ -1,8 +1,8 @@
 package controller
 
 import (
-	"go-demos/cgo/cgo"
-	"go-demos/cgo/constant"
+	"go-demos/projects/cgo/cgo"
+	"go-demos/projects/cgo/constant"
 	"net/http"
 )
 
