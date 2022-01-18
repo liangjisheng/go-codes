@@ -5,7 +5,7 @@ import (
 	"log"
 	"time"
 
-	"go.etcd.io/etcd/clientv3"
+	"go.etcd.io/etcd/client/v3"
 )
 
 func lease1() {
@@ -23,21 +23,23 @@ func lease1() {
 		Endpoints:   []string{"127.0.0.1:2379"},
 		DialTimeout: 5 * time.Second,
 	}
+
 	if client, err = clientv3.New(config); err != nil {
-		log.Println(err.Error())
+		log.Println("client new err", err)
 		return
 	}
-	ctx := context.TODO()
 
+	ctx := context.TODO()
+	lease := clientv3.NewLease(client)
 	// 获取一个租约 存活时间为10秒
-	if leaseResp, err = client.Grant(ctx, 10); err != nil {
-		log.Println(err)
+	if leaseResp, err = lease.Grant(ctx, 10); err != nil {
+		log.Println("create lease err", err)
 		return
 	}
 
 	// 用client也可以设置key，kv是client的一个结构，因此可以使用其方法
 	if putResp, err = client.Put(ctx, "/cron/lock/job1", "ok", clientv3.WithLease(leaseResp.ID)); err != nil {
-		log.Println(err)
+		log.Println("put key err", err)
 		return
 	}
 	log.Println("put response:", putResp.Header.Revision)
@@ -45,7 +47,7 @@ func lease1() {
 	// 由协程来帮自动续租，每秒一次
 	keepAliveChan = make(<-chan *clientv3.LeaseKeepAliveResponse)
 	if keepAliveChan, err = client.KeepAlive(ctx, leaseResp.ID); err != nil {
-		log.Println(err)
+		log.Println("keepalive err", err)
 		return
 	}
 	go func() {
@@ -65,7 +67,7 @@ func lease1() {
 	k := 20
 	for k != 0 {
 		if getResp, err = client.Get(ctx, "/cron/lock/job1"); err != nil {
-			log.Println(err)
+			log.Println("get key err", err)
 			return
 		}
 		log.Println(getResp.Kvs)

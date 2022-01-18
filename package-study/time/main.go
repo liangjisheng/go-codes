@@ -3,7 +3,7 @@ package main
 func main() {
 	// date()
 	// marshalText()
-	parse()
+	//parse()
 	// show()
 	// ticker()
 	// timeStamp()
@@ -11,4 +11,6 @@ func main() {
 	// time2()
 	// time3()
 	// time4()
+	//locale1()
+	//locale2()
 }

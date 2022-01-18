@@ -40,7 +40,11 @@ func getUUID() {
 	return
 }
 
-func getUUID1() {
+func getUUID1() string {
+	return uuid.NewV4().String()
+}
+
+func getUUID2() {
 	// Creating UUID Version 4
 	u1 := uuid.Must(uuid.NewV4(), nil)
 	fmt.Printf("UUID: %s\n", u1.String())

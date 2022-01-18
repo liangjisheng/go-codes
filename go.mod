@@ -31,6 +31,7 @@ require (
 	github.com/coreos/etcd v3.3.17+incompatible
 	github.com/coreos/go-etcd v2.0.0+incompatible // indirect
 	github.com/cpuguy83/go-md2man v1.0.10 // indirect
+	github.com/didip/tollbooth/v6 v6.1.1 // indirect
 	github.com/dynport/gossh v0.0.0-20170809141523-122e3ee2a6b0 // indirect
 	github.com/eapache/go-resiliency v1.2.0 // indirect
 	github.com/eknkc/amber v0.0.0-20171010120322-cdade1c07385 // indirect
@@ -38,7 +39,8 @@ require (
 	github.com/fsnotify/fsnotify v1.5.1
 	github.com/garyburd/redigo v1.6.2 // indirect
 	github.com/gin-contrib/cache v1.1.0 // indirect
-	github.com/gin-gonic/gin v1.7.4
+	github.com/gin-contrib/cors v1.3.1 // indirect
+	github.com/gin-gonic/gin v1.7.7
 	github.com/globalsign/mgo v0.0.0-20181015135952-eeefdecb41b8
 	github.com/go-kit/kit v0.10.0
 	github.com/go-ole/go-ole v1.2.5 // indirect
@@ -47,8 +49,9 @@ require (
 	github.com/go-playground/form/v4 v4.2.0 // indirect
 	github.com/go-playground/pure/v5 v5.2.0 // indirect
 	github.com/go-playground/universal-translator v0.18.0 // indirect
-	github.com/go-playground/validator/v10 v10.9.0 // indirect
+	github.com/go-playground/validator/v10 v10.10.0 // indirect
 	github.com/go-redis/redis v6.15.6+incompatible
+	github.com/go-resty/resty/v2 v2.7.0 // indirect
 	github.com/go-sql-driver/mysql v1.6.0
 	github.com/go-stomp/stomp v2.0.3+incompatible
 	github.com/go-xorm/builder v0.3.3 // indirect
@@ -57,6 +60,7 @@ require (
 	github.com/gobuffalo/logger v1.0.4 // indirect
 	github.com/gobuffalo/packr/v2 v2.8.1 // indirect
 	github.com/goccy/go-json v0.7.10 // indirect
+	github.com/gofrs/uuid v4.1.0+incompatible // indirect
 	github.com/gogf/gf v1.16.6 // indirect
 	github.com/gogf/gf/v2 v2.0.0-alpha // indirect
 	github.com/gogf/mysql v1.6.1-0.20210603073548-16164ae25579 // indirect
@@ -68,6 +72,7 @@ require (
 	github.com/google/gops v0.3.18
 	github.com/google/uuid v1.1.1 // indirect
 	github.com/google/wire v0.4.0
+	github.com/googollee/go-socket.io v1.6.1 // indirect
 	github.com/gorilla/mux v1.7.3
 	github.com/gorilla/schema v1.1.0 // indirect
 	github.com/gorilla/websocket v1.4.2 // indirect
@@ -92,7 +97,7 @@ require (
 	github.com/labstack/gommon v0.3.0 // indirect
 	github.com/lib/pq v1.10.2
 	github.com/lithammer/shortuuid v3.0.0+incompatible // indirect
-	github.com/mailru/easyjson v0.7.1 // indirect
+	github.com/mailru/easyjson v0.7.7 // indirect
 	github.com/mattn/go-colorable v0.1.11 // indirect
 	github.com/mattn/go-isatty v0.0.14 // indirect
 	github.com/mattn/go-runewidth v0.0.12 // indirect
@@ -115,6 +120,7 @@ require (
 	github.com/pierrec/lz4 v2.4.0+incompatible // indirect
 	github.com/prashantv/gostub v1.0.0
 	github.com/prometheus/client_golang v1.3.0
+	github.com/rakyll/statik v0.1.7 // indirect
 	github.com/rivo/uniseg v0.2.0 // indirect
 	github.com/robfig/cron/v3 v3.0.1 // indirect
 	github.com/rs/xid v1.3.0 // indirect
@@ -127,7 +133,9 @@ require (
 	github.com/sony/sonyflake v1.0.0 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/spf13/viper v1.4.0
-	github.com/swaggo/gin-swagger v1.3.0 // indirect
+	github.com/swaggo/files v0.0.0-20210815190702-a29dd2bc99b2 // indirect
+	github.com/swaggo/gin-swagger v1.3.3 // indirect
+	github.com/swaggo/swag v1.7.8 // indirect
 	github.com/syyongx/ii18n v0.0.0-20190531015407-03d063505fc9 // indirect
 	github.com/thinkerou/favicon v0.1.0 // indirect
 	github.com/tklauser/go-sysconf v0.3.5 // indirect
@@ -145,16 +153,20 @@ require (
 	go.uber.org/ratelimit v0.2.0 // indirect
 	go.uber.org/zap v1.19.1
 	goji.io v2.0.2+incompatible // indirect
-	golang.org/x/crypto v0.0.0-20210921155107-089bfa567519
-	golang.org/x/sys v0.0.0-20211101204403-39c9dd37992c // indirect
+	golang.org/x/crypto v0.0.0-20211215153901-e495a2d5b3d3
+	golang.org/x/net v0.0.0-20220107192237-5cfca573fb4d // indirect
+	golang.org/x/sys v0.0.0-20211216021012-1d35b9e2eb4e // indirect
 	golang.org/x/term v0.0.0-20210927222741-03fcf44c2211 // indirect
 	golang.org/x/text v0.3.7 // indirect
+	golang.org/x/time v0.0.0-20210723032227-1f47c861a9ac // indirect
+	golang.org/x/tools v0.1.8 // indirect
 	google.golang.org/appengine v1.6.7 // indirect
 	google.golang.org/grpc v1.29.1
 	google.golang.org/protobuf v1.27.1 // indirect
 	gopkg.in/confluentinc/confluent-kafka-go.v1 v1.1.0
 	gopkg.in/go-playground/pool.v3 v3.1.1 // indirect
 	gopkg.in/go-playground/validator.v9 v9.31.0 // indirect
+	gopkg.in/gomail.v2 v2.0.0-20160411212932-81ebce5c23df // indirect
 	gopkg.in/ini.v1 v1.63.2 // indirect
 	gopkg.in/jcmturner/gokrb5.v7 v7.3.0 // indirect
 	gopkg.in/mgo.v2 v2.0.0-20180705113604-9856a29383ce

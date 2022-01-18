@@ -86,11 +86,15 @@ func defaultFunc(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "%v\n", string(mjson))
 }
 
+func defaultFunc1(w http.ResponseWriter, r *http.Request) {
+	w.Write(nil)
+}
+
 // curl "http://127.0.0.1:8080/"
 // curl "http://127.0.0.1:8080/?name=ljs&toturial=gostudy&topic=web"
 
 func main() {
-	http.HandleFunc("/", defaultFunc)
+	http.HandleFunc("/", defaultFunc1)
 	addr := "127.0.0.1:8080"
 	log.Println("http server start at:", addr)
 	if err := http.ListenAndServe(addr, nil); err != nil {

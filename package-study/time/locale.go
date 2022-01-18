@@ -45,3 +45,24 @@ func msg(locale, key string) string {
 	}
 	return ""
 }
+
+func locale2() {
+	fmt.Println(time.Now().Unix())
+	fmt.Println(time.Now().UTC().Unix())
+
+	currentTime := time.Now().UTC()
+	fmt.Println(time.Date(currentTime.Year(),
+		currentTime.Month(), currentTime.Day(),
+		currentTime.Hour(), currentTime.Minute(),
+		currentTime.Second(), currentTime.Nanosecond(),
+		currentTime.Location()).Unix())
+
+	//loc, _ := time.LoadLocation("Asia/Shanghai")
+	//loc, _ := time.LoadLocation("America/Chicago")
+	//loc, _ := time.LoadLocation("Asia/Jerusalem")
+	loc, _ := time.LoadLocation("UTC")
+	t := time.Now()
+	fmt.Println(t.Format(time.RFC3339), t.Unix())
+	t = t.In(loc)
+	fmt.Println(t.Format(time.RFC3339), t.Unix())
+}

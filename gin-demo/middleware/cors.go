@@ -3,6 +3,7 @@ package middleware
 //https://github.com/gin-contrib/cors
 
 import (
+	"github.com/gin-contrib/cors"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -33,4 +34,9 @@ func Cors() gin.HandlerFunc {
 		// 处理请求
 		c.Next()
 	}
+}
+
+//使用cors默认配置的方法
+func Cors1() gin.HandlerFunc {
+	return cors.Default()
 }

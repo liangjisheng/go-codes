@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"time"
 
-	"go.etcd.io/etcd/clientv3"
+	"go.etcd.io/etcd/client/v3"
 )
 
 func curd1() {
@@ -33,18 +33,15 @@ func curd1() {
 	if putResp, err = client.Put(ctx, "test", "haha"); err != nil {
 		return
 	}
-	fmt.Println(putResp.Header)
+	fmt.Println("put test ", putResp.Header)
 
 	kv := clientv3.NewKV(client)
 	// 用kv设置key
-	if putResp, err = kv.Put(ctx, "/cron/jobs/job2", "hello", clientv3.WithPrevKV()); err != nil {
+	if putResp, err = kv.Put(ctx, "/cron/jobs/job2", "hello"); err != nil {
 		fmt.Println(err)
 		return
 	}
-	// fmt.Println(putResp.Header)
-	if putResp.PrevKv != nil {
-		fmt.Println(string(putResp.PrevKv.Value))
-	}
+	fmt.Println("put job2 ", putResp.Header.String())
 
 	// 用kv获取Key
 	if getResp, err = kv.Get(ctx, "/cron/jobs/", clientv3.WithPrefix()); err != nil {
@@ -54,9 +51,9 @@ func curd1() {
 	fmt.Println(getResp.Kvs)
 
 	// 用kv删除key
-	if delResp, err = kv.Delete(ctx, "/cron/jobs/job2", clientv3.WithPrevKV()); err != nil {
+	if delResp, err = kv.Delete(ctx, "/cron/jobs/job2"); err != nil {
 		fmt.Println(err)
 		return
 	}
-	fmt.Println(len(delResp.PrevKvs))
+	fmt.Println(delResp.Deleted)
 }

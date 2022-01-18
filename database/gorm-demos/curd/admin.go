@@ -1,6 +1,9 @@
 package mysql
 
-import "github.com/jinzhu/gorm"
+import (
+	"github.com/jinzhu/gorm"
+	"time"
+)
 
 const (
 	// AdminTableName ...
@@ -9,10 +12,14 @@ const (
 
 // Admin ...
 type Admin struct {
-	ID       int64  `json:"id" gorm:"primary_key; auto_increment; column:id"`
-	User     string `json:"user" gorm:"not null; default:'ljs'; type:char(255); index:i_user; comment:'user name'"`
-	Password string `json:"password" gorm:"not null; default:18; type:char(255); index:i_password; comment:'user password'"`
-	CreateAt int64  `json:"create_at" gorm:"not null;"`
+	ID       int64     `gorm:"column:id; primary_key; auto_increment"`
+	User     string    `gorm:"column:user; not null; default:'ljs'; type:varchar(255); index:i_user; comment:'user name'"`
+	Name     string    `gorm:"column:name; not null; unique:idx_uni_name; type:varchar(255)"`
+	Password string    `gorm:"column:password; not null; default:18; type:char(255); index:i_password; comment:'user password'"`
+	CreateAt int64     `gorm:"column:create_at; type:bigint; not null;"`
+	T1       time.Time `gorm:"column:t1; autoCreateTime:nano"`
+	T2       time.Time `gorm:"column:t2; autoUpdateTime:milli"`
+	T3       time.Time `gorm:"column:t3; autoCreateTime"`
 }
 
 // TableName ...

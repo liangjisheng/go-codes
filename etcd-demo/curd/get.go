@@ -2,16 +2,15 @@ package main
 
 import (
 	"context"
-	"fmt"
 	"log"
 	"time"
 
-	"go.etcd.io/etcd/clientv3"
+	"go.etcd.io/etcd/client/v3"
 )
 
-func get1() {
+func get() {
 	cli, err := clientv3.New(clientv3.Config{
-		Endpoints:   []string{"117.51.148.112:2379"},
+		Endpoints:   []string{"127.0.0.1:2379"},
 		DialTimeout: 5 * time.Second,
 	})
 	if err != nil {
@@ -19,25 +18,30 @@ func get1() {
 		return
 	}
 	defer cli.Close()
-	fmt.Println("conn success")
 
 	ctx, cancelFunc := context.WithTimeout(context.Background(), 5*time.Second)
-	_, err = cli.Put(ctx, "name", "ljs")
-	cancelFunc()
+	putResp, err := cli.Put(ctx, "name", "ljs")
+	defer cancelFunc()
 	if err != nil {
 		log.Println("cli.Put", err.Error())
 		return
 	}
+	log.Printf("Header %+v\n", putResp.Header)
 
 	ctx, cancelFunc = context.WithTimeout(context.Background(), 5*time.Second)
 	res, err := cli.Get(ctx, "name")
-	cancelFunc()
+	defer cancelFunc()
 	if err != nil {
 		log.Println("cli.Get", err.Error())
 		return
 	}
 
-	for k, v := range res.Kvs {
-		fmt.Println("res", k, string(v.Key), string(v.Value))
+	for _, v := range res.Kvs {
+		log.Println("CreateRevision", v.CreateRevision)
+		log.Println("Version", v.Version)
+		log.Println("ModRevision", v.ModRevision)
+		log.Println("Lease", v.Lease)
+		log.Println("key:", string(v.Key))
+		log.Println("value:", string(v.Value))
 	}
 }

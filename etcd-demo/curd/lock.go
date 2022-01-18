@@ -5,7 +5,7 @@ import (
 	"log"
 	"time"
 
-	"go.etcd.io/etcd/clientv3"
+	"go.etcd.io/etcd/client/v3"
 )
 
 func lock1() {
@@ -21,26 +21,27 @@ func lock1() {
 		DialTimeout: 5 * time.Second,
 	}
 	if client, err = clientv3.New(config); err != nil {
-		log.Println(err.Error())
+		log.Println("client new err", err)
 		return
 	}
 
-	ctxWithTimeout, cancelFunc := context.WithCancel(context.TODO())
+	lease := clientv3.NewLease(client)
+	ctx, cancelFunc := context.WithCancel(context.TODO())
 	// 做分布式锁相关,执行事务
 	// 建立租约、用租约抢key，抢到后执行业务逻辑，抢失败返回。函数退出时要defer吧租约关闭
-	if leaseResp, err = client.Grant(ctxWithTimeout, 10); err != nil {
-		log.Println(err)
+	if leaseResp, err = lease.Grant(ctx, 10); err != nil {
+		log.Println("create lease err", err)
 		cancelFunc()
 		return
 	}
 
 	// defer逻辑可以保证租约被清理，防止长期占用key
-	defer client.Revoke(ctxWithTimeout, leaseResp.ID)
+	defer client.Revoke(ctx, leaseResp.ID)
 	defer cancelFunc()
 
 	keepAliveChan = make(<-chan *clientv3.LeaseKeepAliveResponse)
-	if keepAliveChan, err = client.KeepAlive(ctxWithTimeout, leaseResp.ID); err != nil {
-		log.Println(err)
+	if keepAliveChan, err = client.KeepAlive(ctx, leaseResp.ID); err != nil {
+		log.Println("lease keepalive err", err)
 		return
 	}
 	go func() {
@@ -50,7 +51,12 @@ func lock1() {
 	}()
 
 	// 打开下面可以看锁已经被抢占的情况
-	// client.Put(ctxWithTimeout, "/cron/txn/job1", "I GET FIRST", clientv3.WithLease(leaseResp.ID))
+	putResp, err := client.Put(ctx, "/cron/txn/job1", "I GET FIRST", clientv3.WithLease(leaseResp.ID))
+	if err != nil {
+		log.Println("put key err:", err)
+		return
+	}
+	log.Println(putResp.Header.String())
 
 	select {}
 }
