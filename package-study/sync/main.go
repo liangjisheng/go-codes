@@ -16,5 +16,8 @@ func main() {
 	// pool2()
 	// pool3()
 	// pool4()
-	pool5()
+	//pool5()
+	//errGroupDemo()
+	//atomic1()
+	atomic2()
 }

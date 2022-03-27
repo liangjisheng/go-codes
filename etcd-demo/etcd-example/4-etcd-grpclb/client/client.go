@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
+	"google.golang.org/grpc/balancer/roundrobin"
 	"log"
 	"strconv"
 	"time"
@@ -16,7 +17,7 @@ import (
 
 var (
 	// EtcdEndpoints etcd地址
-	EtcdEndpoints = []string{"117.51.148.112:2379"}
+	EtcdEndpoints = []string{"127.0.0.1:2379"}
 	// SerName 服务名称
 	SerName    = "simple_grpc"
 	grpcClient pb.SimpleClient
@@ -29,7 +30,8 @@ func main() {
 	target := fmt.Sprintf("%s:///%s", r.Scheme(), SerName)
 	conn, err := grpc.Dial(
 		target,
-		grpc.WithBalancerName("round_robin"),
+		//grpc.WithBalancerName("round_robin"),
+		grpc.WithDefaultServiceConfig(fmt.Sprintf(`{"LoadBalancingPolicy": "%s"}`, roundrobin.Name)),
 		grpc.WithInsecure(),
 	)
 	if err != nil {
@@ -39,7 +41,7 @@ func main() {
 
 	// 建立gRPC连接
 	grpcClient = pb.NewSimpleClient(conn)
-	for i := 0; i < 100; i++ {
+	for i := 0; i < 20; i++ {
 		time.Sleep(1 * time.Second)
 		route(i)
 	}

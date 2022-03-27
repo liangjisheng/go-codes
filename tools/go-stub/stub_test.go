@@ -1,4 +1,4 @@
-package main
+package stubdemo
 
 import (
 	"fmt"
@@ -12,7 +12,8 @@ import (
 // 使用GoConvey测试框架和GoStub测试框架编写的测试用例如下
 func TestFuncDemo(t *testing.T) {
 	Convey("TestFuncDemo", t, func() {
-		Convey("for succ", func() {
+
+		Convey("for success", func() {
 			stubs := gostub.Stub(&counter, 200)
 			defer stubs.Reset()
 
@@ -26,5 +27,6 @@ func TestFuncDemo(t *testing.T) {
 			fmt.Println(timeNow().Day())
 			Cleanup("hello go")
 		})
+
 	})
 }

@@ -37,7 +37,7 @@ func NewServiceDiscovery(endpoints []string) *ServiceDiscovery {
 }
 
 // Build 为给定目标创建一个新的`resolver`，当调用`grpc.Dial()`时执行
-func (s *ServiceDiscovery) Build(target resolver.Target, cc resolver.ClientConn, opts resolver.BuildOption) (resolver.Resolver, error) {
+func (s *ServiceDiscovery) Build(target resolver.Target, cc resolver.ClientConn, opts resolver.BuildOptions) (resolver.Resolver, error) {
 	log.Println("Build")
 	s.cc = cc
 	s.serverList = make(map[string]resolver.Address)
@@ -58,7 +58,7 @@ func (s *ServiceDiscovery) Build(target resolver.Target, cc resolver.ClientConn,
 }
 
 // ResolveNow 监视目标更新
-func (s *ServiceDiscovery) ResolveNow(rn resolver.ResolveNowOption) {
+func (s *ServiceDiscovery) ResolveNow(rn resolver.ResolveNowOptions) {
 	log.Println("ResolveNow")
 }
 

@@ -6,7 +6,7 @@ import (
 	"net/url"
 	"os"
 
-	"go-demos/jaeger-demo/opentracing-tutorial/lib"
+	"jaeger/opentracing-tutorial/lib"
 
 	"github.com/opentracing/opentracing-go"
 	"github.com/opentracing/opentracing-go/ext"
@@ -34,8 +34,10 @@ func main() {
 
 	ctx := opentracing.ContextWithSpan(context.Background(), rootSpan)
 
-	helloStr := formatString(ctx, helloTo)
-	printHello(ctx, helloStr)
+	formatString(ctx, helloTo)
+
+	//helloStr := formatString(ctx, helloTo)
+	//printHello(ctx, helloStr)
 }
 
 func formatString(ctx context.Context, helloTo string) string {
@@ -53,6 +55,7 @@ func formatString(ctx context.Context, helloTo string) string {
 	ext.SpanKindRPCClient.Set(span)
 	ext.HTTPUrl.Set(span, url)
 	ext.HTTPMethod.Set(span, "GET")
+	// Transmit the span's TraceContext as HTTP headers on our outbound request
 	span.Tracer().Inject(
 		span.Context(),
 		opentracing.HTTPHeaders,
@@ -65,10 +68,9 @@ func formatString(ctx context.Context, helloTo string) string {
 	}
 
 	helloStr := string(resp)
-
 	span.LogFields(
-		log.String("event", "string-format"),
-		log.String("value", helloStr),
+		log.String("event formatString", "string-format"),
+		log.String("value formatString", helloStr),
 	)
 
 	return helloStr

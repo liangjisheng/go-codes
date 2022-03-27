@@ -8,7 +8,7 @@ import (
 	"github.com/opentracing/opentracing-go"
 	"github.com/opentracing/opentracing-go/log"
 
-	"go-demos/jaeger-demo/opentracing-tutorial/lib"
+	"jaeger/opentracing-tutorial/lib"
 )
 
 func main() {

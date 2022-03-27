@@ -6,7 +6,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/coreos/etcd/mvcc/mvccpb"
+	"go.etcd.io/etcd/api/v3/mvccpb"
 	"go.etcd.io/etcd/clientv3"
 )
 
@@ -56,7 +56,7 @@ func (s *ServiceDiscovery) watcher(prefix string) {
 	log.Printf("watching prefix:%s now...", prefix)
 	for wresp := range rch {
 		for _, ev := range wresp.Events {
-			switch ev.Type {
+			switch mvccpb.Event_EventType(ev.Type) {
 			case mvccpb.PUT: // 修改或者新增
 				s.SetServiceList(string(ev.Kv.Key), string(ev.Kv.Value))
 			case mvccpb.DELETE: // 删除

@@ -25,7 +25,8 @@ func SendMail(mailTo []string, subject string, body string) error {
 	mailConn := map[string]string{
 		"user": "liangjisheng@zks.org",
 		"pass": "Ljs199711",
-		"host": "smtp.gmail.com",
+		//"host": "smtp.gmail.com",
+		"host": "smtp-relay.gmail.com",
 		"port": "587",
 	}
 

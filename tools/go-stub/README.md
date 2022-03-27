@@ -1,3 +1,4 @@
-# REAEME
+# README
 
-[blog](https://studygolang.com/articles/17868?fr=sidebar)
+[example](https://github.com/prashantv/gostub)
+[article](https://studygolang.com/articles/17868)

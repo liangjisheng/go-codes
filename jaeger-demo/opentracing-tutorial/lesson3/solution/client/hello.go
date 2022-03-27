@@ -6,7 +6,7 @@ import (
 	"net/url"
 	"os"
 
-	"go-demos/jaeger-demo/opentracing-tutorial/lib"
+	"jaeger/opentracing-tutorial/lib"
 
 	"github.com/opentracing/opentracing-go"
 	"github.com/opentracing/opentracing-go/ext"

@@ -43,24 +43,26 @@ func NewServiceRegister(endpoints []string, key, val string, lease int64) (*Serv
 }
 
 // 申请租约并绑定key
-func (s *ServiceRegister) putKeyWithLease(lease int64) error {
+func (s *ServiceRegister) putKeyWithLease(ttl int64) error {
+	lease := clientv3.NewLease(s.cli)
 	// 设置租约时间
-	resp, err := s.cli.Grant(context.Background(), lease)
+	resp, err := lease.Create(context.Background(), ttl)
 	if err != nil {
 		return err
 	}
+	leaseID := clientv3.LeaseID(resp.ID)
 	// 注册服务并绑定租约
-	_, err = s.cli.Put(context.Background(), s.key, s.val, clientv3.WithLease(resp.ID))
+	_, err = s.cli.Put(context.Background(), s.key, s.val, clientv3.WithLease(leaseID))
 	if err != nil {
 		return err
 	}
 
 	// 设置续租 定期发送需求请求
-	leaseRespChan, err := s.cli.KeepAlive(context.Background(), resp.ID)
+	leaseRespChan, err := s.cli.KeepAlive(context.Background(), leaseID)
 	if err != nil {
 		return err
 	}
-	s.leaseID = resp.ID
+	s.leaseID = leaseID
 	s.keepAliveChan = leaseRespChan
 	log.Printf("Put key:%s  val:%s  success!", s.key, s.val)
 	return nil

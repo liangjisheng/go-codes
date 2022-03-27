@@ -5,3 +5,6 @@
 [pool](https://www.cnblogs.com/sunsky303/p/9706210.html)
 [pool](https://blog.csdn.net/weixin_42117918/article/details/83268396)
 [pool](https://studygolang.com/articles/18743?fr=sidebar)
+
+[atomic](https://www.cnblogs.com/ricklz/p/13648859.html)
+[atomic](https://zhuanlan.zhihu.com/p/365706814)

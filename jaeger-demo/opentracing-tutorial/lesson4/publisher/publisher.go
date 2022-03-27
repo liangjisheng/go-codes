@@ -1,7 +1,7 @@
 package main
 
 import (
-	"go-demos/jaeger-demo/opentracing-tutorial/lib"
+	"jaeger/opentracing-tutorial/lib"
 	"log"
 	"net/http"
 

@@ -24,7 +24,7 @@ const (
 )
 
 // EtcdEndpoints etcd地址
-var EtcdEndpoints = []string{"117.51.148.112:2379"}
+var EtcdEndpoints = []string{"127.0.0.1:2379"}
 
 func main() {
 	// 监听本地端口

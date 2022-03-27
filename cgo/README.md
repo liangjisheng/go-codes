@@ -4,6 +4,8 @@
 [article](https://blog.csdn.net/fengfengdiandia/article/details/82747515)
 [article](https://blog.csdn.net/fengfengdiandia/article/details/82748007)
 [article](https://www.cnblogs.com/linguanh/p/8323487.html)
+[article](http://blog.codeg.cn/post/blog/2016-04-20-golang-cgo/)
+[linux-so](https://blog.csdn.net/qq_30549833/article/details/99714237)
 
 开发注意事项：
 

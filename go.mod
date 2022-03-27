@@ -1,9 +1,8 @@
 module go-demos
 
-go 1.16
+go 1.18
 
 require (
-	bou.ke/monkey v1.0.2
 	github.com/BurntSushi/toml v0.4.1
 	github.com/GoAdminGroup/go-admin v1.2.23 // indirect
 	github.com/GoAdminGroup/themes v0.0.43 // indirect
@@ -66,7 +65,7 @@ require (
 	github.com/gogf/mysql v1.6.1-0.20210603073548-16164ae25579 // indirect
 	github.com/gogo/protobuf v1.3.1
 	github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b // indirect
-	github.com/golang/mock v1.4.3
+	github.com/golang/mock v1.6.0
 	github.com/golang/protobuf v1.5.2
 	github.com/golang/snappy v0.0.4 // indirect
 	github.com/google/gops v0.3.18
@@ -115,11 +114,12 @@ require (
 	github.com/olivere/elastic v6.2.27+incompatible
 	github.com/olivere/elastic/v7 v7.0.11
 	github.com/opentracing-contrib/go-stdlib v0.0.0-20190519235532-cf7a6c988dc9
-	github.com/opentracing/opentracing-go v1.1.0
+	github.com/opentracing/opentracing-go v1.2.0
 	github.com/parnurzeal/gorequest v0.2.16 // indirect
 	github.com/pierrec/lz4 v2.4.0+incompatible // indirect
 	github.com/prashantv/gostub v1.0.0
 	github.com/prometheus/client_golang v1.3.0
+	github.com/rainycape/dl v0.0.0-20151222075243-1b01514224a1 // indirect
 	github.com/rakyll/statik v0.1.7 // indirect
 	github.com/rivo/uniseg v0.2.0 // indirect
 	github.com/robfig/cron/v3 v3.0.1 // indirect
@@ -129,7 +129,7 @@ require (
 	github.com/shirou/gopsutil v3.21.4+incompatible // indirect
 	github.com/sirupsen/logrus v1.8.1 // indirect
 	github.com/smallnest/rpcx v0.0.0-20191228024106-2e3195bbbddb
-	github.com/smartystreets/goconvey v1.6.4
+	github.com/smartystreets/goconvey v1.7.2
 	github.com/sony/sonyflake v1.0.0 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/spf13/viper v1.4.0
@@ -139,8 +139,8 @@ require (
 	github.com/syyongx/ii18n v0.0.0-20190531015407-03d063505fc9 // indirect
 	github.com/thinkerou/favicon v0.1.0 // indirect
 	github.com/tklauser/go-sysconf v0.3.5 // indirect
-	github.com/uber/jaeger-client-go v2.22.1+incompatible
-	github.com/uber/jaeger-lib v2.2.0+incompatible // indirect
+	github.com/uber/jaeger-client-go v2.30.0+incompatible
+	github.com/uber/jaeger-lib v2.4.1+incompatible // indirect
 	github.com/ugorji/go v1.2.6 // indirect
 	github.com/unknwon/com v1.0.1
 	github.com/unrolled/secure v1.0.8 // indirect
@@ -175,6 +175,7 @@ require (
 	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b // indirect
 	mellium.im/sasl v0.2.1 // indirect
 	moul.io/http2curl v1.0.0 // indirect
+	rsc.io/quote/v3 v3.1.0 // indirect
 	xorm.io/builder v0.3.9 // indirect
 	xorm.io/core v0.7.3 // indirect
 	xorm.io/xorm v1.2.5 // indirect
