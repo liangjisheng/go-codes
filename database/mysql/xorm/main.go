@@ -10,7 +10,7 @@ import (
 )
 
 var engine *xorm.Engine
-var dsn = "root:ljs199711@tcp(117.51.148.112:3306)/study?charset=utf8"
+var dsn = "user:pass@tcp(117.51.148.112:3306)/study?charset=utf8"
 
 func init() {
 	var err error

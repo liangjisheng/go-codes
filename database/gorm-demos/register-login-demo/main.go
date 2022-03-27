@@ -29,7 +29,7 @@ var err error
 
 func init() {
 	var err error
-	db, err = gorm.Open("mysql", "root:ljs199711@tcp(localhost:3306)/study?charset=utf8&parseTime=True&loc=Local")
+	db, err = gorm.Open("mysql", "user:pass@tcp(localhost:3306)/study?charset=utf8&parseTime=True&loc=Local")
 	if err != nil {
 		fmt.Println("open db error", err)
 	} else {

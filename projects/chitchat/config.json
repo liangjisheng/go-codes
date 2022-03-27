@@ -10,7 +10,7 @@
       "Driver": "mysql",
       "Address": "117.51.148.112:3306",
       "Database": "chitchat",
-      "User": "root",
-      "Password": "ljs199711"
+      "User": "user",
+      "Password": "pass"
     }
 }

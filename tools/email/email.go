@@ -10,7 +10,7 @@ func SendMail(mailTo []string, subject string, body string) error {
 	//qq邮箱
 	//mailConn := map[string]string{
 	//	"user": "1294851990@qq.com",
-	//	"pass": "barjhejrzhvrgfih",
+	//	"pass": "code",
 	//	"host": "smtp.qq.com",
 	//	"port": "465",
 	//}
@@ -24,7 +24,7 @@ func SendMail(mailTo []string, subject string, body string) error {
 
 	mailConn := map[string]string{
 		"user": "liangjisheng@zks.org",
-		"pass": "Ljs199711",
+		"pass": "pass",
 		//"host": "smtp.gmail.com",
 		"host": "smtp-relay.gmail.com",
 		"port": "587",

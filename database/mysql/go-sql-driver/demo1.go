@@ -8,7 +8,7 @@ import (
 )
 
 func demo1() {
-	db, err := sql.Open("mysql", "root:ljs199711@tcp(127.0.0.1:3306)/05blog?charset=utf8")
+	db, err := sql.Open("mysql", "user:pass@tcp(127.0.0.1:3306)/05blog?charset=utf8")
 	if err != nil {
 		fmt.Println("open db fail", err)
 	}
