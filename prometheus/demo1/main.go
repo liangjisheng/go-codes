@@ -2,14 +2,14 @@ package main
 
 import (
 	"flag"
+	"github.com/prometheus/client_golang/prometheus"
+	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"log"
 	"math/rand"
 	"net/http"
 	"strconv"
 	"sync"
 	"time"
-
-	"github.com/prometheus/client_golang/prometheus"
 )
 
 var (
@@ -74,7 +74,7 @@ func main() {
 	go createJobs(jobsChannel)
 
 	handler := http.NewServeMux()
-	handler.Handle("/metrics", prometheus.Handler())
+	handler.Handle("/metrics", promhttp.Handler())
 
 	log.Println("[INFO] starting HTTP server on port :9009")
 	log.Fatal(http.ListenAndServe(":9009", handler))

@@ -5,9 +5,9 @@ package main
 import (
 	"context"
 	"fmt"
-	"go-demos/jaeger-demo/demo/tracer"
 	"io"
 	"io/ioutil"
+	"jaeger/demo/tracer"
 	"log"
 	"net/http"
 

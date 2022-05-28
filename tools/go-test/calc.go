@@ -1,6 +1,4 @@
-package calc
-
-import "net/http"
+package gotest
 
 // Add ...
 func Add(a int, b int) int {
@@ -10,8 +8,4 @@ func Add(a int, b int) int {
 // Mul ...
 func Mul(a int, b int) int {
 	return a * b
-}
-
-func helloHandler(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("hello world"))
 }

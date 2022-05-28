@@ -2,12 +2,11 @@ package main
 
 import (
 	"fmt"
-
-	"github.com/liyue201/gostl/ds/list/simple_list"
+	"github.com/liyue201/gostl/ds/list/simplelist"
 )
 
 func listTest() {
-	l := simple_list.New()
+	l := simplelist.New()
 	l.PushBack(1)
 	l.PushFront(2)
 	l.PushFront(3)

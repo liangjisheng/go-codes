@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"math/rand"
 	"net/http"
 	"time"
@@ -28,6 +29,13 @@ var httpRequestDuration = prometheus.NewSummaryVec(
 	prometheus.SummaryOpts{
 		Name: "http_request_duration",
 		Help: "http request duration",
+		Objectives: map[float64]float64{
+			0.2: 0,
+			0.4: 0,
+			0.5: 0,
+			0.8: 0,
+			0.9: 0,
+		},
 	},
 	[]string{"endpoint"},
 )
@@ -38,10 +46,26 @@ func init() {
 	prometheus.MustRegister(httpRequestDuration)
 }
 
+//curl "http://127.0.0.1:8080/index"
+//curl "http://127.0.0.1:8080/metrics"
+
 func main() {
 	http.Handle("/metrics", promhttp.Handler())
 	http.HandleFunc("/index", index)
 	fmt.Println("server start 127.0.0.1:8080")
+
+	go func() {
+		rand.Seed(time.Now().UnixNano())
+		for {
+			start := time.Now()
+			tmp := 1 + rand.Intn(1000)
+			time.Sleep(time.Duration(tmp) * time.Millisecond)
+			elapsed := float64(time.Since(start).Milliseconds())
+			log.Println("elapsed:", elapsed)
+			httpRequestDuration.WithLabelValues("/index").Observe(elapsed)
+		}
+	}()
+
 	err := http.ListenAndServe("127.0.0.1:8080", nil)
 	if err != nil {
 		fmt.Println(err)
@@ -50,17 +74,12 @@ func main() {
 
 func index(w http.ResponseWriter, r *http.Request) {
 	httpRequestCount.WithLabelValues(r.URL.Path).Inc()
-	start := time.Now()
 	n := rand.Intn(100)
 	if n >= 90 {
 		orderNum.Dec()
-		time.Sleep(100 * time.Millisecond)
 	} else {
 		orderNum.Inc()
-		time.Sleep(50 * time.Millisecond)
 	}
 
-	elapsed := (float64)(time.Since(start) / time.Millisecond)
-	httpRequestDuration.WithLabelValues(r.URL.Path).Observe(elapsed)
 	w.Write([]byte("ok"))
 }

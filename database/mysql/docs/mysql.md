@@ -108,34 +108,20 @@ alter table infos add ex tinyint not null default '0';
 alter table table_name add field_name field_type;
 ```
 
-修改字段名
-
 ```sql
+-- 修改字段名
 alter table Persons add Birthday date
-```
-
-改变列的类型
-
-```sql
+-- 改变列的类型
 alter table t1 change b b bigint not null;
 alter table tb_article modify column name char(50);
 ```
 
-删除列
-
 ```sql
+-- 删除列
 alter table t2 drop column c;
-```
-
-重命名列
-
-```sql
+-- 重命名列
 alter table t1 change a b integer;
-```
-
-重命名表
-
-```sql
+-- 重命名表
 alter table t1 rename t2;
 ```
 
@@ -260,4 +246,13 @@ set autocommit = 1;
 -- begin 开始一个新的事务
 -- commit 提交事务
 -- rollback 回滚事务
+```
+
+mysql time
+
+```sql
+select unix_timestamp('2022-03-23 18:00:00');
+select unix_timestamp();
+select from_unixtime(1648029600, '%Y-%m-%d %H:%i:%S');
+select from_unixtime(1648029600);
 ```

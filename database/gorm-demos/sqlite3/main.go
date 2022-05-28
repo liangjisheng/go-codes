@@ -1,10 +1,10 @@
 package main
 
 import (
+	"gorm.io/driver/sqlite"
 	"log"
 
-	"github.com/jinzhu/gorm"
-	_ "github.com/jinzhu/gorm/dialects/sqlite"
+	"gorm.io/gorm"
 )
 
 // Product ...
@@ -15,12 +15,13 @@ type Product struct {
 }
 
 func main() {
-	db, err := gorm.Open("sqlite3", "./test.db")
-	checkErr(err)
-	defer db.Close()
+	db, err := gorm.Open(sqlite.Open("test.db"), &gorm.Config{})
+	if err != nil {
+		panic("failed to connect database")
+	}
 
 	// Migrate the schema
-	err = db.AutoMigrate(&Product{}).Error
+	err = db.AutoMigrate(&Product{})
 	checkErr(err)
 
 	// Create

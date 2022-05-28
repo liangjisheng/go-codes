@@ -36,7 +36,7 @@ func (a *aliyun) Upload(file *multipart.FileHeader) (path string, key string, er
 	objectAcl := oss.ObjectACL(oss.ACLPublicRead)                  // 指定访问权限为公共读，缺省为继承bucket的权限。
 	objectName := GetObjectName(file.Filename)                     // 文件对象名
 
-	if a.err = a.bucket.PutObject(objectName, a.file, StorageClassType("Standard"), objectType, objectAcl); a.err != nil { // 上传文件到阿里云
+	if a.err = a.bucket.PutObject(objectName, a.file, a.StorageClassType("Standard"), objectType, objectAcl); a.err != nil { // 上传文件到阿里云
 		g.Log().Error("function bucket.PutObject() Failed!", g.Map{"err": a.err})
 		return path, key, a.err
 	}

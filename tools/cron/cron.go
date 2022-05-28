@@ -19,7 +19,10 @@ type ZKCron struct {
 func Instance() *ZKCron {
 	once.Do(func() {
 		zkCron = &ZKCron{
-			cron: cron.New(cron.WithChain(cron.SkipIfStillRunning(&CLog{}))),
+			cron: cron.New(
+				cron.WithSeconds(),
+				cron.WithChain(cron.SkipIfStillRunning(&CLog{}), cron.Recover(&CLog{})),
+			),
 		}
 		zkCron.cron.Start()
 	})

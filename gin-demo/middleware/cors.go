@@ -28,7 +28,7 @@ func Cors() gin.HandlerFunc {
 		c.Header("Access-Control-Max-Age", "172800")
 
 		// 放行所有OPTIONS方法
-		if method == "OPTIONS" {
+		if method == "OPTIONS" || method == "HEAD" {
 			c.AbortWithStatus(http.StatusNoContent)
 		}
 		// 处理请求
@@ -36,7 +36,7 @@ func Cors() gin.HandlerFunc {
 	}
 }
 
-//使用cors默认配置的方法
+//Cors1 使用 cors 默认配置的方法
 func Cors1() gin.HandlerFunc {
 	return cors.Default()
 }

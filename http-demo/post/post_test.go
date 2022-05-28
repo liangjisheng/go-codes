@@ -3,7 +3,7 @@ package post_test
 import (
 	"encoding/json"
 	"fmt"
-	"go-demos/http-demo/post"
+	"httpdemo/post"
 	"testing"
 	"time"
 )

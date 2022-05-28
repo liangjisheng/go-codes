@@ -2,9 +2,8 @@ package main
 
 import (
 	"fmt"
+	"github.com/gbrlsnchs/jwt/v3"
 	"time"
-
-	"github.com/gbrlsnchs/jwt"
 )
 
 type customPayload struct {

@@ -1,14 +1,6 @@
-package calc
+package gotest
 
 import (
-	"bytes"
-	"fmt"
-	"html/template"
-	"io/ioutil"
-	"net"
-	"net/http"
-	"net/http/httptest"
-	"os"
 	"testing"
 )
 
@@ -88,86 +80,5 @@ func createMulTestCase(t *testing.T, c *calcCase) {
 func TestMul3(t *testing.T) {
 	createMulTestCase(t, &calcCase{2, 3, 6})
 	createMulTestCase(t, &calcCase{-2, 3, -6})
-	createMulTestCase(t, &calcCase{2, 0, 1})
-}
-
-// 如果在同一个测试文件中，每一个测试用例运行前后的逻辑是相同的
-// 一般会写在 setup 和 teardown 函数中。例如执行前需要实例化待
-// 测试的对象，如果这个对象比较复杂，很适合将这一部分逻辑提取出来
-// 执行后可能会做一些资源回收类的工作 例如关闭网络连接 释放文件等
-
-func setup() {
-	fmt.Println("Before all tests")
-}
-
-func teardown() {
-	fmt.Println("After all tests")
-}
-
-func TestMain(m *testing.M) {
-	setup()
-	code := m.Run()
-	teardown()
-	os.Exit(code)
-}
-
-// 测试某个 API 接口的 handler 能够正常工作
-
-func handleError(t *testing.T, err error) {
-	t.Helper()
-	if err != nil {
-		t.Fatal("failed", err)
-	}
-}
-
-func TestConn(t *testing.T) {
-	ln, err := net.Listen("tcp", "127.0.0.1:8080")
-	handleError(t, err)
-	defer ln.Close()
-
-	http.HandleFunc("/hello", helloHandler)
-	go http.Serve(ln, nil)
-
-	resp, err := http.Get("http://" + ln.Addr().String() + "/hello")
-	handleError(t, err)
-
-	defer resp.Body.Close()
-	body, err := ioutil.ReadAll(resp.Body)
-	handleError(t, err)
-
-	if string(body) != "hello world" {
-		t.Fatal("expected hello world, but got", string(body))
-	}
-}
-
-// 针对 http 开发的场景，使用标准库 net/http/httptest 进行测试更为高效
-// 使用 httptest 模拟请求对象(req)和响应对象(w)，达到了相同的目的
-func TestConn1(t *testing.T) {
-	req := httptest.NewRequest("GET", "http://example.com/foo", nil)
-	w := httptest.NewRecorder()
-	helloHandler(w, req)
-
-	bytes, _ := ioutil.ReadAll(w.Result().Body)
-	if string(bytes) != "hello world" {
-		t.Fatal("expected hello world, but got", string(bytes))
-	}
-}
-
-func BenchmarkHello(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		_ = fmt.Sprintf("hello")
-	}
-}
-
-// 使用 RunParallel 测试并发性能
-func BenchmarkParallel(b *testing.B) {
-	templ := template.Must(template.New("test").Parse("Hello, {{.}}!"))
-	b.RunParallel(func(pb *testing.PB) {
-		var buf bytes.Buffer
-		for pb.Next() {
-			// 所有 goroutine 一起，循环一共执行 b.N 次
-			buf.Reset()
-			templ.Execute(&buf, "World")
-		}
-	})
+	//createMulTestCase(t, &calcCase{2, 0, 1})
 }

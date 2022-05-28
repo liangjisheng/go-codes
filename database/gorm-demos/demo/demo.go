@@ -1,6 +1,9 @@
 package mysql
 
-import "time"
+import (
+	"gorm.io/gorm"
+	"time"
+)
 
 const (
 	DemoTableName = "demo"
@@ -12,17 +15,40 @@ const (
 //JSON数据类型是没有默认值的（声明时"DEFAULT NULL"）
 
 type Demo struct {
-	ID          int64     `gorm:"column:id; primary_key; AUTO_INCREMENT"`
+	ID          int64     `gorm:"column:id; primaryKey; AUTO_INCREMENT"`
 	CreateTime  time.Time `gorm:"column:create_time; type:timestamp; default:CURRENT_TIMESTAMP; comment:'创建时间'"`
 	CreateTime1 time.Time `gorm:"column:create_time_1; type:datetime; default:CURRENT_TIMESTAMP"`
+	CreateTime2 int64     `gorm:"column:create_time_2; type:bigint; autoCreateTime"`
 	JsonData    string    `gorm:"column:json_data; type:json; default:null;"`
 	UpdateTime  time.Time `gorm:"column:update_time; type:timestamp; default:CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"`
+	//autoUpdateTime:milli 使用时间戳毫秒数填充更新时间
+	//autoUpdateTime:nano 使用时间戳填纳秒数充更新时间
+	UpdateTime1 int64          `gorm:"column:update_time_1; type:bigint; autoUpdateTime"`
+	DeletedAt   gorm.DeletedAt `gorm:"column:deleted_at; type:timestamp"`
 }
 
-func (d *Demo) TableName() string {
+func (Demo) TableName() string {
 	return DemoTableName
 }
 
 func (s *Store) AddDemo(demo *Demo) error {
-	return s.db.Table(DemoTableName).Create(demo).Error
+	var tmp Demo
+	err := s.db.Table(DemoTableName).Where("`id` = ?", demo.ID).First(&tmp).Error
+
+	if err != nil && err != gorm.ErrRecordNotFound {
+		return err
+	} else if err == gorm.ErrRecordNotFound {
+		return s.db.Create(demo).Error
+	} else {
+		return s.db.Updates(demo).Error
+	}
+}
+
+func (s *Store) GetDemo() ([]Demo, error) {
+	res := make([]Demo, 0)
+	err := s.db.Table(DemoTableName).Find(&res).Error
+	if err != nil {
+		return []Demo{}, err
+	}
+	return res, nil
 }

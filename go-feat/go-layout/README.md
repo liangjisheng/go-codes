@@ -1,5 +1,10 @@
 # go layout
 
+[marmotedu/go-standards](https://github.com/marmotedu/go-standards)
+[go-engineering](https://www.yipwinghong.com/2021/08/04/Go_engineering-standard/#/cmd)
+[go-engineering](https://www.yipwinghong.com/2021/12/10/Go_engineering-specification-design)
+[go layout](https://github.com/marmotedu/iam)
+
 概述 go 项目布局
 
 /cmd 项目主干, 不要在这个目录中放置太多代码。如果你认为代码可以导入并在其他项目中使用，那么它应该位于 /pkg 目录中。

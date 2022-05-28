@@ -26,7 +26,7 @@ type Token struct {
 	Scope       string `json:"scope"`      // 这个字段也没用到
 }
 
-// 返回欢迎页面
+// Hello 返回欢迎页面
 func Hello(w http.ResponseWriter, r *http.Request) {
 	// 解析指定文件生成模板对象
 	var temp *template.Template
@@ -43,7 +43,7 @@ func Hello(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-// 认证并获取用户信息
+// Oauth 认证并获取用户信息
 func Oauth(w http.ResponseWriter, r *http.Request) {
 	var err error
 	// 获取 code
@@ -76,7 +76,7 @@ func Oauth(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-// 通过code获取token认证url
+// GetTokenAuthUrl 通过code获取token认证url
 func GetTokenAuthUrl(code string) string {
 	return fmt.Sprintf(
 		"https://github.com/login/oauth/access_token?client_id=%s&client_secret=%s&code=%s",
@@ -84,7 +84,7 @@ func GetTokenAuthUrl(code string) string {
 	)
 }
 
-// 获取 token
+// GetToken 获取 token
 func GetToken(url string) (*Token, error) {
 	var req *http.Request
 	var err error
@@ -107,9 +107,9 @@ func GetToken(url string) (*Token, error) {
 	return &token, nil
 }
 
-// 获取用户信息
+// GetUserInfo 获取用户信息
 func GetUserInfo(token *Token) (map[string]interface{}, error) {
-	var userInfoUrl = "https://api.github.com/user"	// github用户信息获取接口
+	var userInfoUrl = "https://api.github.com/user" // github用户信息获取接口
 	var req *http.Request
 	var err error
 	if req, err = http.NewRequest(http.MethodGet, userInfoUrl, nil); err != nil {
@@ -133,7 +133,7 @@ func GetUserInfo(token *Token) (map[string]interface{}, error) {
 
 func main() {
 	http.HandleFunc("/", Hello)
-	http.HandleFunc("/oauth/redirect", Oauth)	// 这个和 Authorization callback URL 有关
+	http.HandleFunc("/oauth/redirect", Oauth) // 这个和 Authorization callback URL 有关
 
 	log.Println("server listen on 0.0.0.0:8080")
 	if err := http.ListenAndServe("0.0.0.0:8080", nil); err != nil {
