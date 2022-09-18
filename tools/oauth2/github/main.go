@@ -15,8 +15,8 @@ type Conf struct {
 }
 
 var conf = Conf{
-	ClientId:     "cc003f0f435dcb70e6a4",
-	ClientSecret: "ddf6dbc1e7627cf114daaba0d3b0d38cfdb62337",
+	ClientId:     "",
+	ClientSecret: "",
 	RedirectUrl:  "http://localhost:8080/oauth/redirect",
 }
 

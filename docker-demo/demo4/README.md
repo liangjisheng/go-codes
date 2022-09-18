@@ -1,6 +1,8 @@
 # README
 
 [docker go](https://mp.weixin.qq.com/s/773INmwebAIy6zDtGHOEoQ)
+[multi stage build](https://zhuanlan.zhihu.com/p/535414655)
+[multi stage build](https://blog.csdn.net/MyySophia/article/details/121138073)
 
 docker build -f Dockerfile1 -t test-go-docker:latest .
 

@@ -82,7 +82,6 @@ func exec2() {
 	}
 }
 
-
 func exec3() {
 	cmd := exec.Command("tr", "a-z", "A-Z")
 	cmd.Stdin = strings.NewReader("some input")
@@ -147,4 +146,14 @@ func exec6() {
 		return
 	}
 	fmt.Println(string(content))
+}
+
+func shell(str string) (string, error) {
+	cmd := exec.Command("/bin/sh", "-c", str)
+	res, err := cmd.Output()
+	if err != nil {
+		return "", err
+	}
+
+	return string(res), nil
 }

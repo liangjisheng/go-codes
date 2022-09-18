@@ -11,7 +11,8 @@ COPY . .
 RUN go build -o /project/go-docker/build/myapp .
 
 FROM alpine:latest
-COPY --from=builder /project/go-docker/build/myapp /project/go-docker/build/myapp
+WORKDIR /app/
+COPY --from=builder /project/go-docker/build/myapp .
 
 EXPOSE 8080
-ENTRYPOINT [ "/project/go-docker/build/myapp" ]
+ENTRYPOINT [ "./myapp" ]
