@@ -7,6 +7,7 @@ require (
 	github.com/GoAdminGroup/go-admin v1.2.23
 	github.com/GoAdminGroup/themes v0.0.43
 	github.com/PuerkitoBio/goquery v1.8.0
+	github.com/SebastiaanKlippert/go-wkhtmltopdf v1.8.1
 	github.com/Shopify/sarama v1.24.1
 	github.com/UncleBig/goCache v0.0.0-20210922020634-d21b9ad7508d
 	github.com/afex/hystrix-go v0.0.0-20180502004556-fa1af6a1f4f5
@@ -45,7 +46,7 @@ require (
 	github.com/go-stomp/stomp v2.0.3+incompatible
 	github.com/gogf/gf v1.16.6
 	github.com/gogf/gf/v2 v2.0.0-alpha
-	github.com/gogo/protobuf v1.3.1
+	github.com/gogo/protobuf v1.3.2
 	github.com/golang/freetype v0.0.0-20170609003504-e2365dfdc4a0
 	github.com/golang/protobuf v1.5.2
 	github.com/gomodule/redigo v2.0.0+incompatible
@@ -57,6 +58,7 @@ require (
 	github.com/json-iterator/go v1.1.12
 	github.com/kjk/betterguid v0.0.0-20170621091430-c442874ba63a
 	github.com/labstack/echo v3.3.10+incompatible
+	github.com/ledongthuc/pdf v0.0.0-20220302134840-0c2507a12d80
 	github.com/lib/pq v1.10.2
 	github.com/lithammer/shortuuid v3.0.0+incompatible
 	github.com/liyue201/gostl v1.0.1
@@ -67,6 +69,7 @@ require (
 	github.com/nsqio/go-nsq v1.0.8
 	github.com/oklog/ulid v1.3.1
 	github.com/olivere/elastic/v7 v7.0.11
+	github.com/pkg/errors v0.9.1
 	github.com/prashantv/gostub v1.0.0
 	github.com/rainycape/dl v0.0.0-20151222075243-1b01514224a1
 	github.com/robfig/cron/v3 v3.0.1
@@ -100,6 +103,7 @@ require (
 	google.golang.org/grpc v1.29.1
 	google.golang.org/protobuf v1.27.1
 	gopkg.in/confluentinc/confluent-kafka-go.v1 v1.1.0
+	gopkg.in/eapache/queue.v1 v1.1.0
 	gopkg.in/go-playground/pool.v3 v3.1.1
 	gopkg.in/go-playground/validator.v9 v9.31.0
 	gopkg.in/gomail.v2 v2.0.0-20160411212932-81ebce5c23df
@@ -226,7 +230,6 @@ require (
 	github.com/opentracing/opentracing-go v1.2.0 // indirect
 	github.com/pelletier/go-toml v1.2.0 // indirect
 	github.com/pierrec/lz4 v2.4.0+incompatible // indirect
-	github.com/pkg/errors v0.9.1 // indirect
 	github.com/power-devops/perfstat v0.0.0-20220216144756-c35f1ee13d7c // indirect
 	github.com/rcrowley/go-metrics v0.0.0-20190826022208-cac0b30c2563 // indirect
 	github.com/rivo/uniseg v0.2.0 // indirect
@@ -267,7 +270,6 @@ require (
 	golang.org/x/term v0.0.0-20210927222741-03fcf44c2211 // indirect
 	google.golang.org/appengine v1.6.7 // indirect
 	gopkg.in/alexcesaro/quotedprintable.v3 v3.0.0-20150716171945-2caba252f4dc // indirect
-	gopkg.in/eapache/queue.v1 v1.1.0 // indirect
 	gopkg.in/go-playground/assert.v1 v1.2.1 // indirect
 	gopkg.in/ini.v1 v1.63.2 // indirect
 	gopkg.in/jcmturner/aescts.v1 v1.0.1 // indirect
