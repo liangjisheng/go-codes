@@ -7,6 +7,7 @@ import (
 	"net"
 	"net/http"
 	"os"
+	"strings"
 )
 
 var getIP = flag.String("get_ip", "", "external|internal")
@@ -48,4 +49,29 @@ func getInternal() {
 			}
 		}
 	}
+}
+
+// GetClientIP 获取用户ip
+func GetClientIP(r *http.Request) (ip string) {
+	ip = r.Header.Get("X-Real-Ip")
+	if ip == "" {
+		ip = strings.Split(r.RemoteAddr, ":")[0]
+	}
+	return
+}
+
+// HostName 获得本机名
+func HostName() (string, error) {
+	hostNamePrefix := ""
+	host, err := os.Hostname()
+	if err != nil {
+		return "", err
+	}
+	if err == nil {
+		parts := strings.SplitN(host, ".", 2)
+		if len(parts) > 0 {
+			hostNamePrefix = parts[0]
+		}
+	}
+	return hostNamePrefix, nil
 }

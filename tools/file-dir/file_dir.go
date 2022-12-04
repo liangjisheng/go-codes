@@ -3,10 +3,12 @@ package filedir
 import (
 	"fmt"
 	"go.uber.org/zap"
+	"io"
 	"io/ioutil"
 	"log"
 	"os"
 	"path"
+	"strings"
 )
 
 // MkDirAll 创建多级目录
@@ -86,7 +88,7 @@ func PathExists(path string) (bool, error) {
 	return false, err
 }
 
-func CreateDir(dirs ...string) (err error) {
+func CreateDir(dirs ...string) error {
 	for _, v := range dirs {
 		exist, err := PathExists(v)
 		if err != nil {
@@ -100,5 +102,38 @@ func CreateDir(dirs ...string) (err error) {
 			}
 		}
 	}
+	return nil
+}
+
+// DeleteFile 删除文件或文件夹
+func DeleteFile(absDir string) error {
+	return os.RemoveAll(absDir)
+}
+
+// GetModelPath 获取程序运行目录
+func GetModelPath() string {
+	dir, _ := os.Getwd()
+	return strings.Replace(dir, "\\", "/", -1)
+}
+
+// MoveFile 移动文件或文件夹(/结尾)
+func MoveFile(from, to string) error {
+	return os.Rename(from, to)
+}
+
+func CopyFile(src, des string) error {
+	srcFile, err := os.Open(src)
+	if err != nil {
+		return err
+	}
+	defer srcFile.Close()
+
+	desFile, err := os.Create(des)
+	if err != nil {
+		return err
+	}
+	defer desFile.Close()
+
+	_, err = io.Copy(desFile, srcFile)
 	return err
 }

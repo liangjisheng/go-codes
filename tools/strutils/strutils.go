@@ -1,12 +1,18 @@
 package strutils
 
 import (
+	"bytes"
+	"encoding/json"
+	"errors"
 	"fmt"
 	"github.com/asaskevich/govalidator"
+	"io"
 	"log"
 	"regexp"
 	"strconv"
 	"strings"
+	"time"
+	"unicode"
 	"unicode/utf8"
 	"unsafe"
 
@@ -194,4 +200,244 @@ func Reverse(s string) string {
 		utf8.EncodeRune(buf[size-start:], r)
 	}
 	return string(buf)
+}
+
+// AsString 转成string
+func AsString(src interface{}) string {
+	switch v := src.(type) {
+	case string:
+		return v
+	case []byte:
+		return string(v)
+	case int:
+		return strconv.Itoa(v)
+	case int32:
+		return strconv.FormatInt(int64(v), 10)
+	case int64:
+		return strconv.FormatInt(v, 10)
+	case float32:
+		return strconv.FormatFloat(float64(v), 'f', -1, 64)
+	case float64:
+		return strconv.FormatFloat(v, 'f', -1, 64)
+	case time.Time:
+		return v.Format("2006-01-02 15:04:05")
+	case bool:
+		return strconv.FormatBool(v)
+	default:
+		{
+			b, _ := json.Marshal(v)
+			return string(b)
+		}
+	}
+	// return fmt.Sprintf("%v", src)
+}
+
+// UnicodeEmojiDecode Emoji表情解码
+func UnicodeEmojiDecode(s string) string {
+	//emoji表情的数据表达式
+	re := regexp.MustCompile("\\[[\\\\u0-9a-zA-Z]+\\]")
+	//提取emoji数据表达式
+	reg := regexp.MustCompile("\\[\\\\u|]")
+	src := re.FindAllString(s, -1)
+	for i := 0; i < len(src); i++ {
+		e := reg.ReplaceAllString(src[i], "")
+		p, err := strconv.ParseInt(e, 16, 32)
+		if err == nil {
+			s = strings.Replace(s, src[i], string(rune(p)), -1)
+		}
+	}
+	return s
+}
+
+// UnicodeEmojiCode Emoji表情转换
+func UnicodeEmojiCode(s string) string {
+	ret := ""
+	rs := []rune(s)
+	for i := 0; i < len(rs); i++ {
+		if len(string(rs[i])) == 4 {
+			u := `[\u` + strconv.FormatInt(int64(rs[i]), 16) + `]`
+			ret += u
+		} else {
+			ret += string(rs[i])
+		}
+	}
+	return ret
+}
+
+// DbcToSbc 全角转半角
+func DbcToSbc(str string) string {
+	numConv := unicode.SpecialCase{
+		unicode.CaseRange{
+			Lo: 0x3002, // Lo 全角句号
+			Hi: 0x3002, // Hi 全角句号
+			Delta: [unicode.MaxCase]rune{
+				0,               // UpperCase
+				0x002e - 0x3002, // LowerCase 转成半角句号
+				0,               // TitleCase
+			},
+		},
+		//
+		unicode.CaseRange{
+			Lo: 0xFF01, // 从全角！
+			Hi: 0xFF19, // 到全角 9
+			Delta: [unicode.MaxCase]rune{
+				0,               // UpperCase
+				0x0021 - 0xFF01, // LowerCase 转成半角
+				0,               // TitleCase
+			},
+		},
+		unicode.CaseRange{
+			Lo: 0xff21, // Lo: 全角 Ａ
+			Hi: 0xFF5A, // Hi:到全角 ｚ
+			Delta: [unicode.MaxCase]rune{
+				0,               // UpperCase
+				0x0041 - 0xff21, // LowerCase 转成半角
+				0,               // TitleCase
+			},
+		},
+	}
+
+	return strings.ToLowerSpecial(numConv, str)
+}
+
+// RemoveMark 去掉标点符号
+func RemoveMark(text string) string {
+	// 全角转半角
+	var out []rune
+	tmp := []rune(DbcToSbc(text))
+	for i := 0; i < len(tmp); i++ {
+		// if find := strings.Contains(",:-、.;?!…", string(tmp[i])); find {
+		if !isPunct(tmp[i]) {
+			out = append(out, tmp[i])
+		}
+	}
+
+	return string(out)
+}
+
+// 判断是否是标点 !,—.:;?…、
+func isPunct(r rune) bool {
+	if r == '!' || r == ',' || r == '—' || r == '.' || r == ':' || r == ';' || r == '?' || r == '…' || r == '、' {
+		return true
+	}
+
+	return false
+}
+
+// SubStr 截取字符串，并返回实际截取的长度和子串
+func SubStr(str string, start, length int64) (int64, string, error) {
+	reader := strings.NewReader(str)
+
+	// Calling NewSectionReader method with its parameters
+	r := io.NewSectionReader(reader, start, length)
+
+	// Calling Copy method with its parameters
+	var buf bytes.Buffer
+	n, err := io.Copy(&buf, r)
+	return n, buf.String(), err
+}
+
+// SubstrTarget 在字符串中查找指定子串，并返回left或right部分
+func SubstrTarget(str string, target string, turn string, hasPos bool) (string, error) {
+	pos := strings.Index(str, target)
+
+	if pos == -1 {
+		return "", nil
+	}
+
+	if turn == "left" {
+		if hasPos == true {
+			pos = pos + 1
+		}
+		return str[:pos], nil
+	} else if turn == "right" {
+		if hasPos == false {
+			pos = pos + 1
+		}
+		return str[pos:], nil
+	} else {
+		return "", errors.New("params 3 error")
+	}
+}
+
+// GetStringUtf8Len 获得字符串按照uft8编码的长度
+func GetStringUtf8Len(str string) int {
+	return utf8.RuneCountInString(str)
+}
+
+// Utf8Index 按照uft8编码匹配子串，返回开头的索引
+func Utf8Index(str, substr string) int {
+	index := strings.Index(str, substr)
+	if index < 0 {
+		return -1
+	}
+	return utf8.RuneCountInString(str[:index])
+}
+
+// JoinStringAndOther 连接字符串和其他类型
+func JoinStringAndOther(val ...interface{}) string {
+	return fmt.Sprint(val...)
+}
+
+// CamelToSnake 驼峰转蛇形
+func CamelToSnake(s string) string {
+	data := make([]byte, 0, len(s)*2)
+	j := false
+	num := len(s)
+	for i := 0; i < num; i++ {
+		d := s[i]
+		// or通过ASCII码进行大小写的转化
+		// 65-90（A-Z），97-122（a-z）
+		// 判断如果字母为大写的A-Z就在前面拼接一个_
+		if i > 0 && d >= 'A' && d <= 'Z' && j {
+			data = append(data, '_')
+		}
+		if d != '_' {
+			j = true
+		}
+		data = append(data, d)
+	}
+	// ToLower把大写字母统一转小写
+	return strings.ToLower(string(data[:]))
+}
+
+// SnakeToCamel 蛇形转驼峰
+func SnakeToCamel(s string) string {
+	data := make([]byte, 0, len(s))
+	j := false
+	k := false
+	num := len(s) - 1
+	for i := 0; i <= num; i++ {
+		d := s[i]
+		if k == false && d >= 'A' && d <= 'Z' {
+			k = true
+		}
+		if d >= 'a' && d <= 'z' && (j || k == false) {
+			d = d - 32
+			j = false
+			k = true
+		}
+		if k && d == '_' && num > i && s[i+1] >= 'a' && s[i+1] <= 'z' {
+			j = true
+			continue
+		}
+		data = append(data, d)
+	}
+	return string(data[:])
+}
+
+// UcFirst 首字母大写
+func UcFirst(str string) string {
+	for i, v := range str {
+		return string(unicode.ToUpper(v)) + str[i+1:]
+	}
+	return ""
+}
+
+// LcFirst 首字母小写
+func LcFirst(str string) string {
+	for i, v := range str {
+		return string(unicode.ToLower(v)) + str[i+1:]
+	}
+	return ""
 }

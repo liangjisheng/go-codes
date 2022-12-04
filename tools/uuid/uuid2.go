@@ -41,7 +41,9 @@ func getUUID() {
 }
 
 func getUUID1() string {
-	return uuid.NewV4().String()
+	res := uuid.NewV4().String()
+	log.Println(res)
+	return res
 }
 
 func getUUID2() {

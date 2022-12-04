@@ -256,3 +256,43 @@ select unix_timestamp();
 select from_unixtime(1648029600, '%Y-%m-%d %H:%i:%S');
 select from_unixtime(1648029600);
 ```
+
+查看 mysql 配置文件
+
+```shell
+# 通过进程查看是否启动命令是否指定配置文件
+ps -aux |grep mysql |grep 'my.cnf'
+# 若无，则说明MySQL启动时采用的是默认配置文件，输入命令
+mysql --help |grep 'my.cnf'
+mysqld --verbose --help |grep -A 1 'Default options'
+```
+
+清除 binlog 自动删除
+
+```conf
+; 查看binlog文件
+show binary logs
+; 查看binlog文件过期时间
+show variables like 'expire_logs_days';
+
+; 永久生效：修改MySQL配置文件my.cnf，配置binlog的过期时间，重启生效
+expire_logs_days=30
+
+; -- 设置过期时间为30天 临时生效：即时生效，重启后失效 mysql 终端
+set global expire_logs_days=30;
+```
+
+手动删除
+手动删除前需要先确认主从库当前在用的 binlog 文件
+主库: show master status;
+从库: show slave status;
+
+假设当前在用的binlog文件为master-bin.000277，现需要删除master-bin.000277之前的所有binlog日志文件(不删master-bin.000277):
+
+```shell
+# mysql 终端
+purge master logs to 'master-bin.000277';
+purge master logs before '2017-05-01 13:09:51';
+purge binary logs to 'master-bin.000277';
+purge binary logs before '2017-05-01 13:09:51';
+```

@@ -18,6 +18,7 @@ require (
 	github.com/beego/i18n v0.0.0-20161101132742-e9308947f407
 	github.com/bits-and-blooms/bloom/v3 v3.2.0
 	github.com/boltdb/bolt v1.3.1
+	github.com/boombuler/barcode v1.0.1
 	github.com/bsm/sarama-cluster v2.1.15+incompatible
 	github.com/bwmarrin/snowflake v0.3.0
 	github.com/chilts/sid v0.0.0-20190607042430-660e94789ec9
@@ -26,6 +27,7 @@ require (
 	github.com/dynport/gossh v0.0.0-20170809141523-122e3ee2a6b0
 	github.com/ethereum/go-ethereum v1.10.23
 	github.com/fatih/color v1.12.0
+	github.com/fogleman/gg v1.3.0
 	github.com/fsnotify/fsnotify v1.5.1
 	github.com/garyburd/redigo v1.6.2
 	github.com/gin-gonic/contrib v0.0.0-20201101042839-6a891bf89f19
@@ -44,6 +46,7 @@ require (
 	github.com/gogf/gf v1.16.6
 	github.com/gogf/gf/v2 v2.0.0-alpha
 	github.com/gogo/protobuf v1.3.1
+	github.com/golang/freetype v0.0.0-20170609003504-e2365dfdc4a0
 	github.com/golang/protobuf v1.5.2
 	github.com/gomodule/redigo v2.0.0+incompatible
 	github.com/google/uuid v1.2.0
@@ -58,6 +61,7 @@ require (
 	github.com/lithammer/shortuuid v3.0.0+incompatible
 	github.com/liyue201/gostl v1.0.1
 	github.com/mattn/go-sqlite3 v2.0.3+incompatible
+	github.com/mojocn/base64Captcha v1.3.5
 	github.com/nicksnyder/go-i18n/v2 v2.1.2
 	github.com/nladuo/go-zk-fifo v0.0.0-20151228050926-7d50ad2d07f2
 	github.com/nsqio/go-nsq v1.0.8
@@ -71,24 +75,28 @@ require (
 	github.com/shirou/gopsutil v3.21.4+incompatible
 	github.com/shirou/gopsutil/v3 v3.22.3
 	github.com/shopspring/decimal v1.2.0
+	github.com/skip2/go-qrcode v0.0.0-20200617195104-da1b6568686e
 	github.com/smallnest/rpcx v0.0.0-20191228024106-2e3195bbbddb
 	github.com/smartystreets/goconvey v1.7.2
 	github.com/sony/sonyflake v1.0.0
-	github.com/spf13/cobra v0.0.6
+	github.com/spf13/cobra v1.0.0
 	github.com/spf13/pflag v1.0.5
 	github.com/spf13/viper v1.4.0
 	github.com/streadway/amqp v0.0.0-20190827072141-edfb9018d271
 	github.com/syndtr/goleveldb v1.0.1-0.20210819022825-2ae1ddf74ef7
 	github.com/syyongx/ii18n v0.0.0-20190531015407-03d063505fc9
+	github.com/xxjwxc/gowp v0.0.0-20220528192505-f87b7668d4ff
 	go.uber.org/ratelimit v0.2.0
 	go.uber.org/zap v1.19.1
 	goji.io v2.0.2+incompatible
 	golang.org/x/crypto v0.0.0-20220331220935-ae2d96664a29
-	golang.org/x/net v0.0.0-20220607020251-c690dde0001d
+	golang.org/x/image v0.0.0-20221017200508-ffcb3fe7d1bf
+	golang.org/x/net v0.0.0-20220722155237-a158d28d115b
 	golang.org/x/oauth2 v0.0.0-20190226205417-e64efc72b421
-	golang.org/x/sys v0.0.0-20220520151302-bc2c85ada10a
-	golang.org/x/text v0.3.7
+	golang.org/x/sys v0.0.0-20220722155257-8c9f86f7a55f
+	golang.org/x/text v0.4.0
 	golang.org/x/time v0.0.0-20210723032227-1f47c861a9ac
+	google.golang.org/genproto v0.0.0-20191028173616-919d9bdd9fe6
 	google.golang.org/grpc v1.29.1
 	google.golang.org/protobuf v1.27.1
 	gopkg.in/confluentinc/confluent-kafka-go.v1 v1.1.0
@@ -97,6 +105,7 @@ require (
 	gopkg.in/gomail.v2 v2.0.0-20160411212932-81ebce5c23df
 	gopkg.in/mgo.v2 v2.0.0-20180705113604-9856a29383ce
 	gopkg.in/yaml.v2 v2.4.0
+	mvdan.cc/xurls/v2 v2.4.0
 )
 
 require (
@@ -246,6 +255,7 @@ require (
 	github.com/valyala/fasttemplate v1.0.1 // indirect
 	github.com/vmihailenco/msgpack v4.0.4+incompatible // indirect
 	github.com/xtaci/kcp-go v5.4.4+incompatible // indirect
+	github.com/xxjwxc/public v0.0.0-20210518123934-6cc0965f0bc5 // indirect
 	github.com/youmark/pkcs8 v0.0.0-20201027041543-1326539a0a0a // indirect
 	github.com/yusufpapurcu/wmi v1.2.2 // indirect
 	go.etcd.io/etcd v3.3.17+incompatible // indirect
@@ -255,17 +265,15 @@ require (
 	go.uber.org/atomic v1.9.0 // indirect
 	go.uber.org/multierr v1.7.0 // indirect
 	golang.org/x/term v0.0.0-20210927222741-03fcf44c2211 // indirect
-	golang.org/x/tools v0.1.10 // indirect
 	google.golang.org/appengine v1.6.7 // indirect
-	google.golang.org/genproto v0.0.0-20191028173616-919d9bdd9fe6 // indirect
 	gopkg.in/alexcesaro/quotedprintable.v3 v3.0.0-20150716171945-2caba252f4dc // indirect
+	gopkg.in/eapache/queue.v1 v1.1.0 // indirect
 	gopkg.in/go-playground/assert.v1 v1.2.1 // indirect
 	gopkg.in/ini.v1 v1.63.2 // indirect
 	gopkg.in/jcmturner/aescts.v1 v1.0.1 // indirect
 	gopkg.in/jcmturner/dnsutils.v1 v1.0.1 // indirect
 	gopkg.in/jcmturner/gokrb5.v7 v7.3.0 // indirect
 	gopkg.in/jcmturner/rpc.v1 v1.1.0 // indirect
-	gopkg.in/natefinch/lumberjack.v2 v2.0.0 // indirect
 	gopkg.in/redis.v5 v5.2.9 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 	mellium.im/sasl v0.2.1 // indirect

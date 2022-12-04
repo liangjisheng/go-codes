@@ -22,3 +22,5 @@ mac font location
 ```shell
 https://fonts.google.com/
 ```
+
+go 开发的客户端压缩工具 [free-image-resize](https://github.com/wangbjun/free-image-resize)

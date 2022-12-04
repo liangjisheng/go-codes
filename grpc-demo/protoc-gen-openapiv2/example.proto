@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package examplepb;
+
+option go_package = "./;examplepb";
+
+import "google/api/annotations.proto";
+//import "google/api/client.proto";
+
+service Greeter {
+//  option (google.api.default_host) = "library-example.googleapis.com";
+
+  // Sends a greeting
+  rpc SayHello (HelloRequest) returns (HelloReply) {
+    option (google.api.http) = {
+      post: "/v1/example/echo"
+      body: "*"
+    };
+  }
+}
+
+message HelloRequest {
+  string name = 1;
+}
+
+message HelloReply {
+  string message = 1;
+}
+
+message MyMessage {
+  int64 code = 1;
+  string address = 2;
+  string name = 3;
+}

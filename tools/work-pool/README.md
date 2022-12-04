@@ -4,3 +4,4 @@
 [go-playground-pool](https://github.com/go-playground/pool/tree/v3/examples)
 [workpool](https://github.com/gammazero/workerpool)
 [workpool](https://github.com/ivpusic/grpool)
+[work pool](https://github.com/xxjwxc/gowp)

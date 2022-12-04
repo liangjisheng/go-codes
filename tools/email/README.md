@@ -1,5 +1,8 @@
 # README
 
+[send email](https://gitee.com/zhucheer/orange/tree/master/mailer)
+[send email doc](https://www.kancloud.cn/chase688/orange_framework/1481191)
+
 [golang send email](https://pkg.go.dev/gopkg.in/gomail.v2#example-package)
 [gmail 邮箱开启 IMAP&SMTP](https://support.google.com/mail/answer/7126229)
 
@@ -11,9 +14,6 @@ gmail 需要去 [这里](https://support.google.com/accounts/answer/6010255?auth
 QQ 邮箱
 POP3 服务器地址：qq.com（端口：995）
 SMTP 服务器地址：smtp.qq.com（端口：465/587）
-1294851990@qq.com
-qq邮箱授权码
-barjhejrzhvrgfih
 
 163 邮箱
 POP3 服务器地址：pop.163.com（端口：110）
