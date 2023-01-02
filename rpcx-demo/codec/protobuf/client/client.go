@@ -5,7 +5,7 @@ import (
 	"flag"
 	"log"
 
-	"go-demos/rpcx-demo/codec/protobuf/pb"
+	"rpcx-demo/codec/protobuf/pb"
 
 	"github.com/smallnest/rpcx/client"
 	"github.com/smallnest/rpcx/protocol"
@@ -22,7 +22,7 @@ func main() {
 	option := client.DefaultOption
 	option.SerializeType = protocol.ProtoBuffer
 
-	d := client.NewPeer2PeerDiscovery("tcp@"+*addr, "")
+	d, _ := client.NewPeer2PeerDiscovery("tcp@"+*addr, "")
 	xclient := client.NewXClient("Arith", client.Failtry, client.RandomSelect, d, option)
 	defer xclient.Close()
 

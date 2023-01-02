@@ -6,7 +6,7 @@ import (
 	"log"
 	"time"
 
-	"go-demos/rpcx-demo/service"
+	"rpcx-demo/service"
 
 	"github.com/smallnest/rpcx/client"
 )
@@ -25,7 +25,7 @@ func main() {
 		return client.NewConsecCircuitBreaker(5, 30*time.Second)
 	}
 
-	d := client.NewMultipleServersDiscovery([]*client.KVPair{{Key: *addr1}, {Key: *addr2}})
+	d, _ := client.NewMultipleServersDiscovery([]*client.KVPair{{Key: *addr1}, {Key: *addr2}})
 	option.Retries = 10
 	xclient := client.NewXClient("Arith", client.Failfast, client.RandomSelect, d, option)
 	defer xclient.Close()

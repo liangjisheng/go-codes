@@ -3,8 +3,8 @@ package main
 import (
 	"context"
 	"flag"
-	"go-demos/rpcx-demo/service"
 	"log"
+	"rpcx-demo/service"
 	"time"
 
 	"github.com/smallnest/rpcx/client"
@@ -17,7 +17,7 @@ var (
 func main() {
 	flag.Parse()
 
-	d := client.NewPeer2PeerDiscovery("tcp@"+*addr, "")
+	d, _ := client.NewPeer2PeerDiscovery("tcp@"+*addr, "")
 	xclient := client.NewXClient("Arith", client.Failtry, client.RandomSelect, d, client.DefaultOption)
 	defer xclient.Close()
 

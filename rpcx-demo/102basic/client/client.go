@@ -5,7 +5,7 @@ import (
 	"flag"
 	"log"
 
-	"go-demos/rpcx-demo/service"
+	"rpcx-demo/service"
 
 	"github.com/smallnest/rpcx/client"
 	"github.com/smallnest/rpcx/protocol"
@@ -18,7 +18,7 @@ var (
 func main() {
 	flag.Parse()
 
-	d := client.NewPeer2PeerDiscovery("tcp@"+*addr, "")
+	d, _ := client.NewPeer2PeerDiscovery("tcp@"+*addr, "")
 	opt := client.DefaultOption
 	opt.SerializeType = protocol.JSON
 

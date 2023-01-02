@@ -3,8 +3,8 @@ package main
 import (
 	"flag"
 
-	"go-demos/rpcx-demo/codec/iterator/codec"
-	"go-demos/rpcx-demo/service"
+	"rpcx-demo/codec/iterator/codec"
+	"rpcx-demo/service"
 
 	"github.com/smallnest/rpcx/protocol"
 	"github.com/smallnest/rpcx/server"

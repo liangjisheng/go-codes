@@ -6,7 +6,7 @@ import (
 	"log"
 	"time"
 
-	"go-demos/rpcx-demo/service"
+	"rpcx-demo/service"
 
 	"github.com/smallnest/rpcx/client"
 )
@@ -19,7 +19,7 @@ var (
 func main() {
 	flag.Parse()
 
-	d := client.NewMultipleServersDiscovery([]*client.KVPair{{Key: *addr1}, {Key: *addr2}})
+	d, _ := client.NewMultipleServersDiscovery([]*client.KVPair{{Key: *addr1}, {Key: *addr2}})
 	xclient := client.NewXClient("Arith", client.Failover, client.RoundRobin, d, client.DefaultOption)
 	defer xclient.Close()
 

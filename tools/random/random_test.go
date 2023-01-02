@@ -14,5 +14,6 @@ func TestRandom2(t *testing.T) {
 }
 
 func TestRandom3(t *testing.T) {
-	fmt.Println(RanAToB(100, 10000))
+	//fmt.Println(RanAToB(100, 10000))
+	t.Log(GetRandomString(12))
 }

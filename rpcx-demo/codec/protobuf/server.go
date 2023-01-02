@@ -5,7 +5,7 @@ import (
 	"flag"
 	"fmt"
 
-	"go-demos/rpcx-demo/codec/protobuf/pb"
+	"rpcx-demo/codec/protobuf/pb"
 
 	"github.com/smallnest/rpcx/server"
 )

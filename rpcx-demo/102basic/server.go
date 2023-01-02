@@ -5,7 +5,7 @@ import (
 	"flag"
 	"fmt"
 
-	"go-demos/rpcx-demo/service"
+	"rpcx-demo/service"
 
 	"github.com/smallnest/rpcx/server"
 )

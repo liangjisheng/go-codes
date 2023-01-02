@@ -7,7 +7,7 @@ import (
 	"net/http"
 	_ "net/http/pprof"
 
-	"go-demos/rpcx-demo/service"
+	"rpcx-demo/service"
 
 	"github.com/smallnest/rpcx/client"
 )
@@ -21,7 +21,7 @@ func main() {
 	flag.Parse()
 
 	go http.ListenAndServe("127.0.0.1:9099", nil)
-	d := client.NewPeer2PeerDiscovery("tcp@"+*addr, "")
+	d, _ := client.NewPeer2PeerDiscovery("tcp@"+*addr, "")
 	xclient = client.NewXClient("Arith", client.Failtry, client.RandomSelect, d, client.DefaultOption)
 	defer xclient.Close()
 

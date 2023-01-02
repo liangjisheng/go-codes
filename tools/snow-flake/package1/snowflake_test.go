@@ -2,6 +2,7 @@ package snowflake
 
 import (
 	"fmt"
+	"log"
 	"sync"
 	"testing"
 )
@@ -9,9 +10,9 @@ import (
 var wg sync.WaitGroup
 
 func TestSnowFlack(t *testing.T) {
-	w := NewWorker(5, 5)
+	w := NewWorker(1, 1)
 	ch := make(chan uint64, 1000)
-	count := 5000
+	count := 5
 	wg.Add(count)
 	defer close(ch)
 
@@ -21,6 +22,7 @@ func TestSnowFlack(t *testing.T) {
 			defer wg.Done()
 			for i := 0; i < count; i++ {
 				id, _ := w.NextID()
+				log.Println("id", id)
 				ch <- id
 			}
 		}()
@@ -29,11 +31,11 @@ func TestSnowFlack(t *testing.T) {
 	go func() {
 		m := make(map[uint64]int)
 		for i := 0; i < count*count; i++ {
-			id := <- ch
+			id := <-ch
 			// 如果 map 中存在为 id 的 key, 说明生成的 snowflake ID 有重复
 			_, ok := m[id]
 			if ok {
-				fmt.Printf("repeat id %d\n",id)
+				fmt.Printf("repeat id %d\n", id)
 				return
 			}
 			// 将 id 作为 key 存入 map

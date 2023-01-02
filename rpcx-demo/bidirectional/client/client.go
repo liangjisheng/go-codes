@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"log"
 
-	"go-demos/rpcx-demo/service"
+	"rpcx-demo/service"
 
 	"github.com/smallnest/rpcx/client"
 	"github.com/smallnest/rpcx/protocol"

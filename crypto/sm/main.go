@@ -3,11 +3,9 @@ package main
 import (
 	"bytes"
 	"crypto/cipher"
-	"log"
-
-	"github.com/tjfoc/gmsm/sm2"
 	"github.com/tjfoc/gmsm/sm3"
 	"github.com/tjfoc/gmsm/sm4"
+	"log"
 )
 
 // HashSM3 消息摘要 可以用MD5作为对比理解。该算法已公开。校验结果为256位
@@ -83,31 +81,31 @@ func pkcs5UnPadding(src []byte) []byte {
 
 // SM2 为非对称加密, 基于ECC 该算法已公开
 func SM2() {
-	priv, err := sm2.GenerateKey() // 生成密钥对
-	if err != nil {
-		log.Fatal(err)
-	}
-	msg := []byte("Tongji Fintech Research Institute")
-	pub := &priv.PublicKey
-	ciphertxt, err := pub.Encrypt(msg)
-	if err != nil {
-		log.Fatal(err)
-	}
-	log.Printf("加密结果: %x\n", ciphertxt)
-	plaintxt, err := priv.Decrypt(ciphertxt)
-	if err != nil {
-		log.Fatal(err)
-	}
-	if !bytes.Equal(msg, plaintxt) {
-		log.Fatal("原文不匹配")
-	}
-
-	r, s, err := sm2.Sign(priv, msg)
-	if err != nil {
-		log.Fatal(err)
-	}
-	isok := sm2.Verify(pub, msg, r, s)
-	log.Printf("Verified: %v\n", isok)
+	//priv, err := sm2.GenerateKey(rand.Reader) // 生成密钥对
+	//if err != nil {
+	//	log.Fatal(err)
+	//}
+	//msg := []byte("Tongji Fintech Research Institute")
+	//pub := &priv.PublicKey
+	//ciphertxt, err := pub.Encrypt(msg)
+	//if err != nil {
+	//	log.Fatal(err)
+	//}
+	//log.Printf("加密结果: %x\n", ciphertxt)
+	//plaintxt, err := priv.Decrypt(ciphertxt)
+	//if err != nil {
+	//	log.Fatal(err)
+	//}
+	//if !bytes.Equal(msg, plaintxt) {
+	//	log.Fatal("原文不匹配")
+	//}
+	//
+	//r, s, err := sm2.Sign(priv, msg)
+	//if err != nil {
+	//	log.Fatal(err)
+	//}
+	//isok := sm2.Verify(pub, msg, r, s)
+	//log.Printf("Verified: %v\n", isok)
 }
 
 func main() {

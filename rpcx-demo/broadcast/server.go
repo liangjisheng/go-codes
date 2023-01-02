@@ -4,7 +4,7 @@ import (
 	"context"
 	"flag"
 
-	"go-demos/rpcx-demo/service"
+	"rpcx-demo/service"
 
 	"github.com/smallnest/rpcx/server"
 )

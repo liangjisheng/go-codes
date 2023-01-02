@@ -5,7 +5,7 @@ import (
 	"errors"
 	"flag"
 
-	"go-demos/rpcx-demo/service"
+	"rpcx-demo/service"
 
 	"github.com/smallnest/rpcx/protocol"
 	"github.com/smallnest/rpcx/server"
