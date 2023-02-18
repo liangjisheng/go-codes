@@ -9,7 +9,7 @@ require (
 	github.com/mattn/go-sqlite3 v1.14.12
 	github.com/parnurzeal/gorequest v0.2.16
 	github.com/stretchr/testify v1.8.1
-	golang.org/x/net v0.2.0
+	golang.org/x/net v0.7.0
 )
 
 require (
@@ -31,8 +31,8 @@ require (
 	github.com/smartystreets/goconvey v1.7.2 // indirect
 	github.com/ugorji/go/codec v1.2.7 // indirect
 	golang.org/x/crypto v0.3.0 // indirect
-	golang.org/x/sys v0.2.0 // indirect
-	golang.org/x/text v0.4.0 // indirect
+	golang.org/x/sys v0.5.0 // indirect
+	golang.org/x/text v0.7.0 // indirect
 	google.golang.org/protobuf v1.28.1 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
