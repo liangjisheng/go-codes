@@ -7,7 +7,7 @@ import (
 )
 
 func init() {
-	rand.Seed(time.Now().Unix())
+	rand.Seed(time.Now().UnixNano())
 }
 
 func RanNum() int64 {
@@ -112,4 +112,28 @@ func GetLowerRandom(len int) []byte {
 	}
 
 	return result
+}
+
+func StringSliceItem(array []string) string {
+	length := len(array)
+	if length == 0 {
+		return ""
+	}
+
+	index := rand.Intn(length)
+	return array[index]
+}
+
+const (
+	addressAlNum = "0123456789abcdefABCDEF"
+)
+
+func Address() string {
+	length := len(addressAlNum)
+	var res []byte
+	for i := 0; i < 40; i++ {
+		index := rand.Intn(length)
+		res = append(res, addressAlNum[index])
+	}
+	return "0x" + string(res)
 }

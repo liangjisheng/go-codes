@@ -10,9 +10,9 @@ import (
 //直到桶里的令牌数满，多余的请求会被丢弃。当请求来的时候，从桶里移除一个令牌，如果桶是空的则拒绝请求或者阻塞
 
 type TokenBucket struct {
-	rate int64 // 固定的token放入速率, r/s
-	capacity int64 // 桶的容量
-	tokens int64 // 桶中当前token数量
+	rate         int64 // 固定的token放入速率, r/s
+	capacity     int64 // 桶的容量
+	tokens       int64 // 桶中当前token数量
 	lastTokenSec int64 // 桶上次放token的时间戳 s
 
 	lock sync.Mutex
@@ -30,7 +30,7 @@ func (l *TokenBucket) Allow() bool {
 	defer l.lock.Unlock()
 
 	now := time.Now().Unix()
-	l.tokens = l.tokens + (now - l.lastTokenSec) * l.rate // 先添加令牌
+	l.tokens = l.tokens + (now-l.lastTokenSec)*l.rate // 先添加令牌
 	if l.tokens > l.capacity {
 		l.tokens = l.capacity
 	}
@@ -46,7 +46,7 @@ func (l *TokenBucket) Allow() bool {
 	}
 }
 
-// rate 固定的token放入速率 r/s, capacity 桶容量
+// LimitMiddleware rate 固定的token放入速率 r/s, capacity 桶容量
 func LimitMiddleware(rate, capacity int64) gin.HandlerFunc {
 	var limiter TokenBucket
 	limiter.Set(rate, capacity)

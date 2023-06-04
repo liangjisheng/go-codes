@@ -17,10 +17,10 @@ nohup /usr/local/prometheus/node_exporter-0.18.1.linux-amd64/node_exporter --web
 
 
 # 安装 prometheus
-wget https://github.com/prometheus/prometheus/releases/download/v2.16.0/prometheus-2.16.0.linux-amd64.tar.gz
-tar zxf prometheus-2.16.0.linux-amd64.tar.gz
-cd prometheus-2.16.0.linux-amd64
-nohup /usr/local/prometheus/prometheus-2.16.0.linux-amd64/prometheus >nohup.out 2>&1 &
+wget https://github.com/prometheus/prometheus/releases/download/v2.42.0/prometheus-2.42.0.linux-amd64.tar.gz
+tar zxf prometheus-2.42.0.linux-amd64.tar.gz
+cd prometheus-2.42.0.linux-amd64
+nohup /usr/local/prometheus/prometheus-2.42.0.linux-amd64/prometheus >nohup.out 2>&1 &
 
 # 查看状态
 # http://117.51.148.112:9090/status
@@ -28,10 +28,10 @@ nohup /usr/local/prometheus/prometheus-2.16.0.linux-amd64/prometheus >nohup.out 
 
 # 安装 grafana
 # https://grafana.com/grafana/download
-wget https://dl.grafana.com/oss/release/grafana-6.6.2.linux-amd64.tar.gz
-tar zxf grafana-6.6.2.linux-amd64.tar.gz
-cd grafana-6.6.2
-nohup /usr/local/prometheus/grafana-6.6.2/bin/grafana-server >nohup.out 2>&1 &
+wget https://dl.grafana.com/enterprise/release/grafana-enterprise-9.4.3.linux-amd64.tar.gz
+tar -zxvf grafana-enterprise-9.4.3.linux-amd64.tar.gz
+cd grafana-9.4.3
+nohup /usr/local/prometheus/grafana-9.4.3/bin/grafana-server >nohup.out 2>&1 &
 
 # http://117.51.148.112:3000/
 

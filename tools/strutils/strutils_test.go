@@ -1,6 +1,7 @@
 package strutils
 
 import (
+	"fmt"
 	"testing"
 )
 
@@ -17,4 +18,15 @@ func TestDiff(t *testing.T) {
 	if len(result) != 1 || result[0] != "hello" {
 		t.Fatalf("Diff failed")
 	}
+}
+
+func TestTwoSet(t *testing.T) {
+	slice1 := []string{"1", "2", "3", "3", "6", "8", "8"}
+	slice2 := []string{"2", "3", "3", "5", "0"}
+	un := Union(slice1, slice2)
+	fmt.Println("slice1与slice2的并集为：", un)
+	in := Intersect(slice1, slice2)
+	fmt.Println("slice1与slice2的交集为：", in)
+	di := Difference(slice1, slice2)
+	fmt.Println("slice1与slice2的差集为：", di)
 }

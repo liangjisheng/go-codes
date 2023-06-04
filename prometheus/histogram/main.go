@@ -2,11 +2,12 @@ package main
 
 import (
 	"fmt"
-	"github.com/prometheus/client_golang/prometheus"
-	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"math/rand"
 	"net/http"
 	"time"
+
+	"github.com/prometheus/client_golang/prometheus"
+	"github.com/prometheus/client_golang/prometheus/promhttp"
 )
 
 //这里的 histogram 是累积直方图, 而不是非累积直方图

@@ -89,17 +89,28 @@ func Int64ArrayToString(a []int64, delim string) string {
 	return strings.Join(b, delim)
 }
 
-func RemoveDuplicates(strs []string) []string {
+func RemoveDuplicates(array []string) []string {
 	result := make([]string, 0)
 	m := make(map[string]bool)
 
-	for _, v := range strs {
+	for _, v := range array {
 		if _, ok := m[v]; !ok {
 			result = append(result, v)
 			m[v] = true
 		}
 	}
 
+	return result
+}
+
+func RemoveRepeatedElement(ss []string) (result []string) {
+	tmp := make(map[string]bool)
+	for _, s := range ss {
+		tmp[s] = true
+	}
+	for s := range tmp {
+		result = append(result, s)
+	}
 	return result
 }
 
@@ -155,17 +166,6 @@ func Diff(base, exclude []string) (result []string) {
 		if !excludeMap[s] {
 			result = append(result, s)
 		}
-	}
-	return result
-}
-
-func Unique(ss []string) (result []string) {
-	smap := make(map[string]bool)
-	for _, s := range ss {
-		smap[s] = true
-	}
-	for s := range smap {
-		result = append(result, s)
 	}
 	return result
 }
@@ -440,4 +440,82 @@ func LcFirst(str string) string {
 		return string(unicode.ToLower(v)) + str[i+1:]
 	}
 	return ""
+}
+
+func RemoveTarget(array []string, target string) []string {
+	length := len(array)
+	if length == 0 {
+		return array
+	}
+
+	array = RemoveDuplicates(array)
+
+	var res []string
+	for i, _ := range array {
+		if strings.EqualFold(array[i], target) {
+			res = append(res, array[0:i]...)
+			res = append(res, array[i+1:]...)
+			return res
+		}
+	}
+	return array
+}
+
+func Union(slice1, slice2 []string) []string {
+	slice1 = RemoveDuplicates(slice1)
+	slice2 = RemoveDuplicates(slice2)
+
+	m := make(map[string]bool)
+	res := make([]string, 0)
+	for _, v := range slice1 {
+		m[v] = true
+		res = append(res, v)
+	}
+
+	for _, v := range slice2 {
+		exist, _ := m[v]
+		if !exist {
+			res = append(res, v)
+		}
+	}
+	return res
+}
+
+func Intersect(slice1, slice2 []string) []string {
+	slice1 = RemoveDuplicates(slice1)
+	slice2 = RemoveDuplicates(slice2)
+
+	m := make(map[string]bool)
+	for _, v := range slice1 {
+		m[v] = true
+	}
+
+	res := make([]string, 0)
+	for _, v := range slice2 {
+		exist, _ := m[v]
+		if exist {
+			res = append(res, v)
+		}
+	}
+	return res
+}
+
+func Difference(slice1, slice2 []string) []string {
+	slice1 = RemoveDuplicates(slice1)
+	slice2 = RemoveDuplicates(slice2)
+
+	m := make(map[string]bool)
+	inter := Intersect(slice1, slice2)
+	for _, v := range inter {
+		m[v] = true
+	}
+
+	res := make([]string, 0)
+	for _, value := range slice1 {
+		exist, _ := m[value]
+		if !exist {
+			res = append(res, value)
+		}
+	}
+	return res
 }

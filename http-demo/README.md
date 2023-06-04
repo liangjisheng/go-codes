@@ -2,4 +2,5 @@
 
 go http 代码样例
 
-[sling](https://github.com/dghubble/sling)
+[go http request](https://github.com/dghubble/sling)
+[reuse tcp](https://zhuanlan.zhihu.com/p/581989166)

@@ -5,6 +5,7 @@
 [mysql](https://juejin.cn/column/7066633353490858021)
 [mysql](https://juejin.cn/column/7140138832598401054)
 
+[分布式数据库是伪需求吗](https://mp.weixin.qq.com/s/-eaCoZR9Z5srQ-1YZm1QJA)
 [分库分表](https://mp.weixin.qq.com/s?__biz=MzIwMDgzMjc3NA==&mid=2247483939&idx=1&sn=7abbf7865b705057ae56a1ba797f6d79&chksm=96f6604aa181e95c47f6d1534bf3695f567ddbc5f39749f9d4644266e4a7ce51fc4e779908fd&scene=21#wechat_redirect)
 [分库分表](https://www.cnblogs.com/butterfly100/p/9034281.html)
 [分库分表](https://mp.weixin.qq.com/s?__biz=MzI3NDA4OTk1OQ==&mid=2649901698&idx=1&sn=17a02530ca71cf545b344d6a3b88cc1e&chksm=f31fb80ac468311cc78e4da20218974ce2008452446116a6774be56fbffc3d9042abbb8663c9&mpshare=1&scene=23&srcid=0731cE3hPRSbzEf25KTWhD0J#rd)
