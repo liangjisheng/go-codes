@@ -1,9 +1,11 @@
 package mysql
 
 import (
+	"database/sql"
+	"time"
+
 	"gorm.io/gorm"
 	"gorm.io/plugin/soft_delete"
-	"time"
 )
 
 const (
@@ -17,9 +19,11 @@ type User struct {
 	//使用值类型, create,update 时如果 go struct 的字段是默认值, 则 gorm 不会使用 go 的默认值, 而是会使用 default 定义的默认值
 	Age int `gorm:"column:age; not null; type:smallint; check:age >= 0; default:1"`
 	//使用指针可以解决上面的问题
-	Age1      *int      `gorm:"column:age1; not null; type:smallint; check:age >= 0; default:1"`
-	CreatedAt int64     `gorm:"column:created_at; type:bigint; not null; autoCreateTime"`
-	UpdatedAt time.Time `gorm:"column:updated_at; type:datetime; not null; default:now() ON UPDATE CURRENT_TIMESTAMP"`
+	Age1 *int `gorm:"column:age1; not null; type:smallint; check:age >= 0; default:1"`
+	//使用 sql.NullInt32 也可以解决 go struct 字段默认值的 create,update 问题
+	Age2      sql.NullInt32 `gorm:"column:age2; type:smallint; default:0"`
+	CreatedAt int64         `gorm:"column:created_at; type:bigint; not null; autoCreateTime"`
+	UpdatedAt time.Time     `gorm:"column:updated_at; type:datetime; not null; default:now() ON UPDATE CURRENT_TIMESTAMP"`
 	//yyyy-mm-dd hh:mm:ss
 	//DeletedAt gorm.DeletedAt `gorm:"column:deleted_at; type:timestamp"`
 	//gorm:"softDelete:milli" or gorm:"softDelete:nano" 支持毫秒或者纳秒

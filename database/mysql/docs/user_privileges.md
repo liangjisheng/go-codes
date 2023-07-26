@@ -60,3 +60,8 @@ show grants for username;
 -- current_user() 当前登录用户
 show grants for current_user();
 ```
+
+登录使用 auth_socket 插件， 首先，这种验证方式不要求输入密码，即使输入了密码也不验证。这个特点让很多人觉得很不安全，
+实际仔细研究一下这种方式，发现还是相当安全的，因为它有另外两个限制；
+只能用 UNIX 的 socket 方式登陆，这就保证了只能本地登陆，用户在使用这种登陆方式时已经通过了操作系统的安全验证；
+操作系统的用户和 MySQL 数据库的用户名必须一致，例如你要登陆 MySQL 的 root 用户，必须用操作系统的 root 用户登陆

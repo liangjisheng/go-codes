@@ -3,21 +3,20 @@
 [redis](https://redis.io/download)
 
 ```shell
-wget http://download.redis.io/releases/redis-5.0.7.tar.gz
-tar zxf redis-5.0.7.tar.gz
-mkdir /usr/local/redis
-make PREFIX=/usr/local/redis install
-cp redis.conf /usr/local/redis/
-cp sentinel.conf /usr/local/redis/
+cd /usr/local
+sudo wget https://github.com/redis/redis/archive/7.0.11.tar.gz
+sudo tar zxf 7.0.11.tar.gz
+cd redis-7.0.11
+sudo make PREFIX=/usr/local/redis-7.0.11 install
 ```
 
-vim /usr/local/redis/redis.conf
+sudo vim /usr/local/redis-7.0.11/redis.conf
 
 ```conf
 daemonize yes     # (如果用supervisor监控的话需要改成no)
 port 6379         # 默认是6379 需要安全组开放端口
 bind 127.0.0.1    # 远程访问改成 *
-dir /usr/local/redis
+dir /usr/local/redis-7.0.11
 appendonly yes
 requirepass 123456
 pidfile /usr/local/redis/redis.pid
