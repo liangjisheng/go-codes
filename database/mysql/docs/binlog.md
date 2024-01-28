@@ -1,8 +1,14 @@
 # binlog
 
 ```sql
+-- 二进制日志位置
+show variables like '%log_bin%';
 -- 查看现有 binlog
 show binary logs;
+-- 查看当前使用的日志格式
+show variables like '%format%';
+-- 查看当前使用的二进制日志文件
+show master status;
 -- 设置 binlog 过期时间
 set global expire_logs_days=7;
 -- 下面操作会触发过期日志清除操作,开始新的 binlog

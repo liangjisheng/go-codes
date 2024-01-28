@@ -98,3 +98,10 @@ set global innodb_adaptive_hash_index=off;
 -- datadir = /data/var/lib/mysql/ 其中一个数据库是 web3_test, 执行下列命令得到表结构和索引
 system ls -l /data/var/lib/mysql/web3_test
 ```
+
+## show
+
+```sql
+show engines;
+show variables like "%storage_engine%";
+```

@@ -2,6 +2,7 @@
 
 [swag](https://github.com/swaggo/swag/blob/master/README_zh-CN.md)
 [article](https://www.cnblogs.com/gao88/p/9824184.html)
+[article](https://ieevee.com/tech/2018/04/19/go-swag.html)
 
 项目根目录
 

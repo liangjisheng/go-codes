@@ -1,6 +1,6 @@
 module gofeat
 
-go 1.18
+go 1.21
 
 require github.com/xyctruth/stream v0.0.0-20220325105552-13545ab17c4f
 

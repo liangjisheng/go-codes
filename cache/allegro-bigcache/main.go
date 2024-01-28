@@ -3,30 +3,43 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/allegro/bigcache/v3"
 	"log"
 	"time"
+
+	"github.com/allegro/bigcache/v3"
 )
 
-func main() {
-	cache, _ := bigcache.New(context.Background(), bigcache.DefaultConfig(10*time.Minute))
+func defaultConfig() {
+	cache, _ := bigcache.New(context.Background(), bigcache.DefaultConfig(2*time.Second))
 
-	cache.Set("my-unique-key", []byte("value"))
+	go func() {
+		for i := 0; i < 5; i++ {
+			cache.Set("my-unique-key", []byte("value"))
+			time.Sleep(time.Second)
+		}
+	}()
 
-	entry, _ := cache.Get("my-unique-key")
-	fmt.Println(string(entry))
+	time.Sleep(time.Second)
+	for i := 0; i < 5; i++ {
+		if entry, err := cache.Get("my-unique-key"); err == nil {
+			fmt.Println(string(entry))
+		}
+		time.Sleep(time.Second)
+	}
+}
 
+func customConfig() {
 	config := bigcache.Config{
 		// number of shards (must be a power of 2)
 		Shards: 1024,
 
 		// time after which entry can be evicted
-		LifeWindow: 10 * time.Minute,
+		LifeWindow: 2 * time.Second,
 
 		// Interval between removing expired entries (clean up).
 		// If set to <= 0 then no action is performed.
 		// Setting to < 1 second is counterproductive — bigcache has a one second resolution.
-		CleanWindow: 5 * time.Minute,
+		CleanWindow: 2 * time.Second,
 
 		// rps * lifeWindow, used only in initial memory allocation
 		MaxEntriesInWindow: 1000 * 10 * 60,
@@ -61,7 +74,15 @@ func main() {
 
 	cache1.Set("my-unique-key", []byte("value"))
 
-	if entry, err := cache1.Get("my-unique-key"); err == nil {
-		fmt.Println(string(entry))
+	for i := 0; i < 6; i++ {
+		if entry, err := cache1.Get("my-unique-key"); err == nil {
+			fmt.Println(string(entry))
+		}
+		time.Sleep(time.Second)
 	}
+}
+
+func main() {
+	defaultConfig()
+	//customConfig()
 }

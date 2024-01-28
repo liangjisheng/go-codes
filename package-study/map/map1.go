@@ -2,27 +2,51 @@ package main
 
 import "fmt"
 
-// map是无序的,key不能重复，如果重复，相当于覆盖
+func MapKeys[K comparable, V any](m map[K]V) []K {
+	r := make([]K, 0, len(m))
+	for k := range m {
+		r = append(r, k)
+	}
+	return r
+}
 
-func test1() {
-	var map1 map[string]map[string]string
+type List[T any] struct {
+	head, tail *element[T]
+}
 
-	map1 = make(map[string]map[string]string)
+type element[T any] struct {
+	next *element[T]
+	val  T
+}
 
-	map1["no1"] = make(map[string]string)
-	map1["no1"]["name"] = "ljs1"
-	map1["no1"]["hobby"] = "soccer"
-	map1["no1"]["age"] = "20"
+func (lst *List[T]) Push(v T) {
+	if lst.tail == nil {
+		lst.head = &element[T]{val: v}
+		lst.tail = lst.head
+	} else {
+		lst.tail.next = &element[T]{val: v}
+		lst.tail = lst.tail.next
+	}
+}
 
-	map1["no2"] = make(map[string]string)
-	map1["no2"]["name"] = "ljs2"
-	map1["no2"]["hobby"] = "soccer"
-	map1["no2"]["age"] = "21"
+func (lst *List[T]) GetAll() []T {
+	var elems []T
+	for e := lst.head; e != nil; e = e.next {
+		elems = append(elems, e.val)
+	}
+	return elems
+}
 
-	map1["no2"] = make(map[string]string)
-	map1["no2"]["name"] = "ljs3"
-	map1["no2"]["hobby"] = "soccer"
-	map1["no2"]["age"] = "22"
+func genericMap() {
+	var m = map[int]string{1: "2", 2: "4", 4: "8"}
 
-	fmt.Println(map1)
+	fmt.Println("keys:", MapKeys(m))
+
+	_ = MapKeys[int, string](m)
+
+	lst := List[int]{}
+	lst.Push(10)
+	lst.Push(13)
+	lst.Push(23)
+	fmt.Println("list:", lst.GetAll())
 }

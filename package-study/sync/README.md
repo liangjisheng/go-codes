@@ -15,5 +15,3 @@
 [semaphore](https://github.com/marusama/semaphore)
 
 [bytebufferpool](https://github.com/valyala/bytebufferpool)
-[workpool](https://github.com/gammazero/workerpool)
-[workpool](https://github.com/ivpusic/grpool)

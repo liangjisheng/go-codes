@@ -1,4 +1,4 @@
-package main
+package simple_worker_pool
 
 import (
 	"fmt"
@@ -9,14 +9,14 @@ import (
 
 // Job ...
 type Job struct {
-	id       int
-	randomno int
+	id        int
+	randomNum int
 }
 
 // Result ...
 type Result struct {
 	job         Job
-	sumofdigits int
+	sumOfDigits int
 }
 
 var jobs = make(chan Job, 10)
@@ -35,9 +35,9 @@ func digits(number int) int {
 	return sum
 }
 
-func worker(wg *sync.WaitGroup) {
+func worker2(wg *sync.WaitGroup) {
 	for job := range jobs {
-		output := Result{job, digits(job.randomno)}
+		output := Result{job, digits(job.randomNum)}
 		results <- output
 	}
 	wg.Done() // 引用计数减1
@@ -47,7 +47,7 @@ func createWorkerPool(noOfWorkers int) {
 	var wg sync.WaitGroup
 	for i := 0; i < noOfWorkers; i++ {
 		wg.Add(1)
-		go worker(&wg)
+		go worker2(&wg)
 	}
 	wg.Wait()
 	close(results) // 所有协程结束后，关闭输出结果信道
@@ -56,8 +56,8 @@ func createWorkerPool(noOfWorkers int) {
 // 分配工作协程
 func allocate(noOfJobs int) {
 	for i := 0; i < noOfJobs; i++ {
-		ranodmno := rand.Intn(999)
-		job := Job{i, ranodmno}
+		randomNum := rand.Intn(999)
+		job := Job{i, randomNum}
 		jobs <- job
 	}
 	close(jobs) // 所有工作分配完后，关闭输入工作信道
@@ -65,24 +65,9 @@ func allocate(noOfJobs int) {
 
 // 读取结果协程
 func result(done chan bool) {
-	for result := range results {
+	for r := range results {
 		fmt.Printf("Job id %d, input random no %d, sum of digits %d\n",
-			result.job.id, result.job.randomno, result.sumofdigits)
+			r.job.id, r.job.randomNum, r.sumOfDigits)
 	}
 	done <- true // 所有结果读取完成后，给主协程发个通知
-}
-
-func workerPool() {
-	startTime := time.Now()
-	noOfJobs := 100
-	go allocate(noOfJobs)
-	done := make(chan bool)
-	go result(done)
-	noOfWorkers := 10
-	createWorkerPool(noOfWorkers)
-	<-done // 主协程等待读取结果协程将所有结果读取完毕
-
-	endTime := time.Now()
-	diff := endTime.Sub(startTime)
-	fmt.Println("total time taken", diff.Seconds(), "seconds")
 }

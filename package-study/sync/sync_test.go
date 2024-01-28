@@ -43,24 +43,3 @@ func TestMutex(t *testing.T) {
 	fmt.Printf("waitings: %d, isLocked: %t, woken: %t, starving: %t\n",
 		mu.Count(), mu.IsLocked(), mu.IsWoken(), mu.IsStarving())
 }
-
-func TestBlockingQueue(t *testing.T) {
-	q := NewQueue(5)
-
-	go func() {
-		res := q.Poll()
-		t.Log("G1", res)
-	}()
-
-	time.Sleep(100 * time.Millisecond)
-	go func() {
-		res := q.Poll()
-		t.Log("G2", res)
-	}()
-
-	time.Sleep(100 * time.Millisecond)
-	q.Add(1)
-	time.Sleep(100 * time.Millisecond)
-	q.Add(2)
-	time.Sleep(100 * time.Millisecond)
-}

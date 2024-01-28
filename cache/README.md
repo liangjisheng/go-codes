@@ -7,3 +7,4 @@
 [groupcache](https://github.com/golang/groupcache)
 [gcache](https://github.com/bluele/gcache)
 [ccache](https://github.com/karlseguin/ccache)
+[golang-lru](https://github.com/hashicorp/golang-lru/)

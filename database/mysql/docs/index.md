@@ -44,3 +44,21 @@ select * from t_base_user where type=10 and status=1 and created_at<"2017-11-03"
 
 二级索引就是我们常见字段上的索引，由于二级索引的创建，删除，不涉及创建临时表，复制数据等操作，所以其修改成本相对低很多。效率也更高
 二级索引只包含了索引键和主键值，所以在创建，删除时不需要进行数据复制，从而不会进行锁表。也就允许线上DML操作。不影响生产使用
+
+主键索引和唯一索引非常相似。相同点：该列中的数据都不能有相同值；不同点：主键索引不能有null值，但是唯一索引可以有null值。
+
+```sql
+-- 创建单值索引
+create index idx_dept on tb(dept);
+alter table tb add index dept_index(dept);
+-- 创建唯一索引
+create unique index name_index on tb(name);
+alter table tb add unique index name_index(name);
+-- 创建复合索引
+create index dept_name_index on tb(dept,name);
+alter table tb add index dept_name_index(dept,name);
+-- 索引删除
+drop index name_index on tb;
+-- 索引查询
+show index from tb;
+```

@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bytes"
 	"fmt"
 	"sync"
 	"time"
@@ -31,7 +32,7 @@ var r6Pool = sync.Pool{
 	},
 }
 
-func usePool() {
+func withPool() {
 	startTime := time.Now()
 	for i := 0; i < 10000; i++ {
 		sr6 := r6Pool.Get().(*structR6)
@@ -40,6 +41,7 @@ func usePool() {
 	}
 	fmt.Println("pool Used:", time.Since(startTime))
 }
+
 func standard() {
 	startTime := time.Now()
 	for i := 0; i < 10000; i++ {
@@ -49,7 +51,34 @@ func standard() {
 	fmt.Println("standard Used:", time.Since(startTime))
 }
 
-func pool3() {
-	standard()
-	usePool()
+var (
+	pool1 = &sync.Pool{
+		New: func() interface{} {
+			return &bytes.Buffer{}
+		},
+	}
+)
+
+func withoutPool1() {
+	start := time.Now()
+
+	for i := 0; i < 1000000; i++ {
+		buf := &bytes.Buffer{}
+		buf.WriteString("hello")
+		buf.WriteString("world")
+	}
+	fmt.Println("Without pool:", time.Since(start))
+}
+
+func withPool1() {
+	start := time.Now()
+
+	for i := 0; i < 1000000; i++ {
+		buf := pool1.Get().(*bytes.Buffer)
+		buf.WriteString("hello")
+		buf.WriteString("world")
+		pool1.Put(buf)
+	}
+
+	fmt.Println("With pool:", time.Since(start))
 }

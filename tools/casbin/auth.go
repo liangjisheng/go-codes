@@ -2,10 +2,12 @@ package middleware
 
 import (
 	"fmt"
+	"net/http"
+	"strings"
+
 	"github.com/casbin/casbin/v2"
 	gormadapter "github.com/casbin/gorm-adapter/v3"
 	"github.com/gin-gonic/gin"
-	"strings"
 )
 
 var enforcer *casbin.Enforcer
@@ -27,10 +29,15 @@ func InitCasbin(modelsFile string) {
 		panic(err)
 	}
 
-	//add default policy
-	_, _ = enforcer.AddPolicy(UserRoleAdmin, "/api/*", "GET")
-	_, _ = enforcer.AddPolicy(UserRoleAdmin, "/api/*", "POST")
-	_, _ = enforcer.AddPolicy(UserRoleVisitor, "/api/*", "GET")
+	//上面是将基本策略写入 mysql 中，下面这句也可以将基本策略放到一个 csv 文件中,
+	//就是基本策略存放的地方不一样而已
+	//enforcer, err = casbin.NewEnforcer("rbac_models.conf", "rbac2.csv")
+
+	//add default policy, 会在 mysql 中写入3条数据
+	//表示一个 role 能对一个 obj(url资源) 进行什么样的操作(get or post)
+	_, _ = enforcer.AddPolicy(UserRoleAdmin, "/api/admin/*", "GET")
+	_, _ = enforcer.AddPolicy(UserRoleAdmin, "/api/admin/*", "POST")
+	_, _ = enforcer.AddPolicy(UserRoleVisitor, "/api/article/*", "GET")
 }
 
 func GetEnforcer() *casbin.Enforcer {
@@ -58,9 +65,13 @@ func PermissionMiddleWare(enforcer *casbin.Enforcer) gin.HandlerFunc {
 		obj := ctx.FullPath()
 		act := strings.ToUpper(ctx.Request.Method)
 		//check the permission
-		ok, _ := enforcer.Enforce(sub, obj, act)
+		ok, err := enforcer.Enforce(sub, obj, act)
+		if err != nil {
+			ctx.AbortWithError(http.StatusInternalServerError, err)
+			return
+		}
 		if !ok {
-			ctx.Abort()
+			ctx.AbortWithError(http.StatusForbidden, fmt.Errorf("403 forbid"))
 			return
 		}
 

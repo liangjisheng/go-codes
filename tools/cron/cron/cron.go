@@ -9,46 +9,46 @@ import (
 
 var (
 	once   sync.Once
-	zkCron *ZKCron
+	myCron *MyCron
 )
 
-type ZKCron struct {
+type MyCron struct {
 	cron *cron.Cron
 }
 
-func Instance() *ZKCron {
+func Instance() *MyCron {
 	once.Do(func() {
-		zkCron = &ZKCron{
+		myCron = &MyCron{
 			cron: cron.New(
 				cron.WithSeconds(),
 				cron.WithChain(cron.SkipIfStillRunning(&CLog{}), cron.Recover(&CLog{})),
 			),
 		}
-		zkCron.cron.Start()
+		myCron.cron.Start()
 	})
-	return zkCron
+	return myCron
 }
 
 // EverySecond 每秒执行
-func (c *ZKCron) EverySecond(f func()) {
+func (c *MyCron) EverySecond(f func()) {
 	_, _ = c.cron.AddFunc("@every 1s", f)
 }
 
 // EveryMinute 每分钟执行
-func (c *ZKCron) EveryMinute(f func()) {
+func (c *MyCron) EveryMinute(f func()) {
 	_, _ = c.cron.AddFunc("@every 1m", func() {
 		f()
 	})
 }
 
 // EveryHour 每小时执行
-func (c *ZKCron) EveryHour(f func()) {
+func (c *MyCron) EveryHour(f func()) {
 	_, _ = c.cron.AddFunc("@hourly", func() {
 		f()
 	})
 }
 
-func (c *ZKCron) AddFunc(spec string, cmd func()) {
+func (c *MyCron) AddFunc(spec string, cmd func()) {
 	_, _ = c.cron.AddFunc(spec, cmd)
 }
 

@@ -33,6 +33,7 @@ require (
 	github.com/fatih/color v1.12.0
 	github.com/fogleman/gg v1.3.0
 	github.com/fsnotify/fsnotify v1.5.1
+	github.com/gammazero/workerpool v1.1.3
 	github.com/garyburd/redigo v1.6.2
 	github.com/gin-gonic/contrib v0.0.0-20201101042839-6a891bf89f19
 	github.com/gin-gonic/gin v1.7.7
@@ -53,12 +54,14 @@ require (
 	github.com/golang/freetype v0.0.0-20170609003504-e2365dfdc4a0
 	github.com/golang/protobuf v1.5.2
 	github.com/gomodule/redigo v2.0.0+incompatible
-	github.com/google/uuid v1.2.0
+	github.com/google/uuid v1.3.0
 	github.com/gookit/color v1.5.2
 	github.com/gookit/event v1.0.6
 	github.com/gookit/ini/v2 v2.2.1
 	github.com/gorilla/mux v1.8.0
 	github.com/gorilla/websocket v1.4.2
+	github.com/ivpusic/grpool v1.0.0
+	github.com/jasonlvhit/gocron v0.0.1
 	github.com/jinzhu/copier v0.3.5
 	github.com/jinzhu/now v1.1.1
 	github.com/joelnb/sofa v0.3.0
@@ -73,15 +76,17 @@ require (
 	github.com/mattn/go-isatty v0.0.14
 	github.com/mattn/go-sqlite3 v2.0.3+incompatible
 	github.com/mitchellh/go-ps v1.0.0
+	github.com/mohae/deepcopy v0.0.0-20170929034955-c48cc78d4826
 	github.com/mojocn/base64Captcha v1.3.5
 	github.com/nicksnyder/go-i18n/v2 v2.1.2
 	github.com/nladuo/go-zk-fifo v0.0.0-20151228050926-7d50ad2d07f2
 	github.com/nsqio/go-nsq v1.0.8
 	github.com/oklog/ulid v1.3.1
 	github.com/olivere/elastic/v7 v7.0.11
-	github.com/panjf2000/ants/v2 v2.7.1
+	github.com/panjf2000/ants/v2 v2.9.0
 	github.com/pkg/errors v0.9.1
 	github.com/prashantv/gostub v1.0.0
+	github.com/prometheus-community/pro-bing v0.3.0
 	github.com/rainycape/dl v0.0.0-20151222075243-1b01514224a1
 	github.com/robfig/cron/v3 v3.0.1
 	github.com/rs/xid v1.3.0
@@ -97,22 +102,24 @@ require (
 	github.com/spf13/pflag v1.0.5
 	github.com/spf13/viper v1.7.0
 	github.com/streadway/amqp v0.0.0-20190827072141-edfb9018d271
-	github.com/stretchr/testify v1.8.1
+	github.com/stretchr/testify v1.8.2
 	github.com/subosito/gotenv v1.2.0
 	github.com/syndtr/goleveldb v1.0.1-0.20210819022825-2ae1ddf74ef7
 	github.com/syyongx/ii18n v0.0.0-20190531015407-03d063505fc9
+	github.com/tatsushid/go-fastping v0.0.0-20160109021039-d7bb493dee3e
+	github.com/thoas/go-funk v0.9.3
 	github.com/tklauser/go-sysconf v0.3.10
 	github.com/tklauser/numcpus v0.4.0
 	github.com/xxjwxc/gowp v0.0.0-20220528192505-f87b7668d4ff
 	go.uber.org/ratelimit v0.2.0
 	go.uber.org/zap v1.19.1
 	goji.io v2.0.2+incompatible
-	golang.org/x/crypto v0.0.0-20220331220935-ae2d96664a29
+	golang.org/x/crypto v0.10.0
 	golang.org/x/image v0.0.0-20221017200508-ffcb3fe7d1bf
-	golang.org/x/net v0.0.0-20220722155237-a158d28d115b
+	golang.org/x/net v0.11.0
 	golang.org/x/oauth2 v0.0.0-20200107190931-bf48bf16ab8d
-	golang.org/x/sys v0.5.0
-	golang.org/x/text v0.7.0
+	golang.org/x/sys v0.9.0
+	golang.org/x/text v0.10.0
 	golang.org/x/time v0.0.0-20210723032227-1f47c861a9ac
 	google.golang.org/genproto v0.0.0-20210602131652-f16073e35f0c
 	google.golang.org/grpc v1.51.0
@@ -144,6 +151,7 @@ require (
 	github.com/dgryski/go-rendezvous v0.0.0-20200823014737-9f7001d12a5f // indirect
 	github.com/eapache/go-xerial-snappy v0.0.0-20180814174437-776d5712da21 // indirect
 	github.com/eapache/queue v1.1.0 // indirect
+	github.com/gammazero/deque v0.2.0 // indirect
 	github.com/gin-contrib/sse v0.1.0 // indirect
 	github.com/go-ole/go-ole v1.2.6 // indirect
 	github.com/go-pkgz/expirable-cache v0.0.3 // indirect
@@ -171,7 +179,6 @@ require (
 	github.com/mitchellh/mapstructure v1.5.0 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
 	github.com/modern-go/reflect2 v1.0.2 // indirect
-	github.com/mohae/deepcopy v0.0.0-20170929034955-c48cc78d4826 // indirect
 	github.com/natefinch/lumberjack v2.0.0+incompatible // indirect
 	github.com/olekukonko/tablewriter v0.0.5 // indirect
 	github.com/pelletier/go-toml v1.2.0 // indirect
@@ -188,8 +195,8 @@ require (
 	github.com/youmark/pkcs8 v0.0.0-20201027041543-1326539a0a0a // indirect
 	github.com/yusufpapurcu/wmi v1.2.2 // indirect
 	go.opentelemetry.io/otel/trace v1.1.0 // indirect
-	golang.org/x/sync v0.1.0 // indirect
-	golang.org/x/term v0.5.0 // indirect
+	golang.org/x/sync v0.3.0 // indirect
+	golang.org/x/term v0.9.0 // indirect
 	gopkg.in/jcmturner/aescts.v1 v1.0.1 // indirect
 	gopkg.in/jcmturner/dnsutils.v1 v1.0.1 // indirect
 	gopkg.in/jcmturner/rpc.v1 v1.1.0 // indirect
