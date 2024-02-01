@@ -26,7 +26,7 @@ func RanAToB(from, to int64) int64 {
 	return rand.Int63n(to-from) + from
 }
 
-//生成随机字符串
+// 生成随机字符串
 var _bytes = []byte("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
 var r *rand.Rand
 
@@ -73,7 +73,6 @@ func GetRangeNum(digit int) int {
 	if max == min {
 		return min
 	}
-	rand.Seed(time.Now().Unix())
 	return rand.Intn(max-min) + min
 }
 

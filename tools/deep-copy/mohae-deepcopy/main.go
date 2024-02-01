@@ -3,6 +3,7 @@ package main
 //https://cloud.tencent.com/developer/article/2211963
 
 import (
+	"encoding/json"
 	"errors"
 	"fmt"
 	"unsafe"
@@ -150,6 +151,43 @@ func copy5() {
 	fmt.Println("e2", e2[0].Account) // alice
 }
 
+func copy6() {
+	type S6 struct {
+		F1 int
+		F2 *int
+		F3 Email
+		F4 *Email
+	}
+
+	pi := new(int)
+	*pi = 1
+
+	d1 := S6{
+		F1: 0,
+		F2: pi,
+		F3: Email{
+			Account:  "alice",
+			Password: "123",
+		},
+		F4: &Email{
+			Account:  "alice",
+			Password: "456",
+		},
+	}
+
+	d1I := deepcopy.Copy(d1)
+	d2, _ := d1I.(S6)
+	fmt.Printf("%p\n", &d1)
+	fmt.Printf("%p\n", &d2)
+
+	d1.F3.Account = "bob"
+	d1.F4.Account = "bob"
+	b1, _ := json.Marshal(d1)
+	b2, _ := json.Marshal(d2)
+	fmt.Printf("d1 %s\n", string(b1))
+	fmt.Printf("d2 %s\n", string(b2))
+}
+
 func main() {
 	//copy1()
 	//copy2()
@@ -158,4 +196,5 @@ func main() {
 	//copyIntPoint()
 	//copyIntPoint1()
 	//copy5()
+	copy6()
 }

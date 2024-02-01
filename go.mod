@@ -1,6 +1,6 @@
 module go-demos
 
-go 1.17
+go 1.21
 
 require (
 	github.com/BurntSushi/toml v1.1.0
@@ -12,6 +12,7 @@ require (
 	github.com/UncleBig/goCache v0.0.0-20210922020634-d21b9ad7508d
 	github.com/afex/hystrix-go v0.0.0-20180502004556-fa1af6a1f4f5
 	github.com/aliyun/aliyun-oss-go-sdk v2.2.2+incompatible
+	github.com/antlabs/timer v0.0.12
 	github.com/apache/rocketmq-client-go v1.2.4
 	github.com/armon/go-radix v0.0.0-20180808171621-7fddfc383310
 	github.com/asaskevich/EventBus v0.0.0-20200907212545-49d423059eef
@@ -23,6 +24,7 @@ require (
 	github.com/bits-and-blooms/bloom/v3 v3.2.0
 	github.com/boltdb/bolt v1.3.1
 	github.com/boombuler/barcode v1.0.1
+	github.com/brianvoe/gofakeit/v6 v6.28.0
 	github.com/bsm/sarama-cluster v2.1.15+incompatible
 	github.com/bwmarrin/snowflake v0.3.0
 	github.com/chilts/sid v0.0.0-20190607042430-660e94789ec9
@@ -49,6 +51,7 @@ require (
 	github.com/go-sql-driver/mysql v1.6.0
 	github.com/go-stack/stack v1.8.0
 	github.com/go-stomp/stomp v2.0.3+incompatible
+	github.com/gocolly/colly/v2 v2.1.0
 	github.com/gogf/gf v1.16.6
 	github.com/gogf/gf/v2 v2.0.0-alpha
 	github.com/golang/freetype v0.0.0-20170609003504-e2365dfdc4a0
@@ -141,6 +144,10 @@ require (
 	github.com/NebulousLabs/fastrand v0.0.0-20181203155948-6fb6489aac4e // indirect
 	github.com/andres-erbsen/clock v0.0.0-20160526145045-9e14626cd129 // indirect
 	github.com/andybalholm/cascadia v1.3.1 // indirect
+	github.com/antchfx/htmlquery v1.2.3 // indirect
+	github.com/antchfx/xmlquery v1.2.4 // indirect
+	github.com/antchfx/xpath v1.1.8 // indirect
+	github.com/antlabs/stl v0.0.1 // indirect
 	github.com/bitly/go-simplejson v0.5.0 // indirect
 	github.com/btcsuite/btcd/btcec/v2 v2.2.0 // indirect
 	github.com/cespare/xxhash/v2 v2.1.2 // indirect
@@ -157,6 +164,8 @@ require (
 	github.com/go-pkgz/expirable-cache v0.0.3 // indirect
 	github.com/go-playground/pkg/v5 v5.2.0 // indirect
 	github.com/gobuffalo/packd v1.0.0 // indirect
+	github.com/gobwas/glob v0.2.3 // indirect
+	github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da // indirect
 	github.com/golang/snappy v0.0.4 // indirect
 	github.com/google/go-cmp v0.5.8 // indirect
 	github.com/google/go-querystring v1.1.0 // indirect
@@ -170,6 +179,7 @@ require (
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/josharian/intern v1.0.0 // indirect
 	github.com/jtolds/gls v4.20.0+incompatible // indirect
+	github.com/kennygrant/sanitize v1.2.4 // indirect
 	github.com/labstack/gommon v0.3.0 // indirect
 	github.com/leodido/go-urn v1.2.1 // indirect
 	github.com/magiconair/properties v1.8.1 // indirect
@@ -183,10 +193,12 @@ require (
 	github.com/olekukonko/tablewriter v0.0.5 // indirect
 	github.com/pelletier/go-toml v1.2.0 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
+	github.com/saintfish/chardet v0.0.0-20120816061221-3af4cd4741ca // indirect
 	github.com/samuel/go-zookeeper v0.0.0-20190923202752-2cc03de413da // indirect
 	github.com/smartystreets/assertions v1.2.0 // indirect
 	github.com/spf13/cast v1.3.0 // indirect
 	github.com/spf13/jwalterweatherman v1.0.0 // indirect
+	github.com/temoto/robotstxt v1.1.1 // indirect
 	github.com/ugorji/go/codec v1.2.6 // indirect
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
 	github.com/valyala/fasttemplate v1.2.1 // indirect
@@ -222,7 +234,7 @@ require (
 	github.com/hashicorp/errwrap v1.1.0 // indirect
 	github.com/hashicorp/go-multierror v1.1.1 // indirect
 	github.com/jcmturner/gofork v1.0.0 // indirect
-	github.com/json-iterator/go v1.1.12 // indirect
+	github.com/json-iterator/go v1.1.12
 	github.com/karrick/godirwalk v1.16.1 // indirect
 	github.com/klauspost/compress v1.9.5 // indirect
 	github.com/klauspost/cpuid/v2 v2.2.3
@@ -242,7 +254,6 @@ require (
 	go.uber.org/multierr v1.7.0 // indirect
 	google.golang.org/appengine v1.6.7 // indirect
 	gopkg.in/alexcesaro/quotedprintable.v3 v3.0.0-20150716171945-2caba252f4dc // indirect
-	gopkg.in/go-playground/assert.v1 v1.2.1 // indirect
 	gopkg.in/ini.v1 v1.67.0
 	gopkg.in/jcmturner/gokrb5.v7 v7.3.0 // indirect
 	mellium.im/sasl v0.2.1 // indirect
