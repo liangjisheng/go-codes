@@ -1,0 +1,25 @@
+{
+  "success":true,
+  "status": "ok",
+  "data": [
+    {
+      "remark": "测试环境",
+      "prefix": "",
+      "upstream": "http://127.0.0.1:8080/",
+      "rewritePrefix": "/"
+    },
+    {
+      "remark": "测试环境1",
+      "prefix": "/division1",
+      "upstream": "http://test.xxxx.cn/",
+      "rewritePrefix": ""
+    },
+    {
+      "remark": "测试环境2",
+      "prefix": "/division3",
+      "upstream": "http://test.xxxxxx.cn/",
+      "rewritePrefix": "/api/division"
+    }
+  ]
+}
+

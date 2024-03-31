@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package chat;
+
+/*
+ 服务名: Chat， 
+ 其中只有 名为“BidStream”的一个RPC服务，
+ 输入是 Request格式的数据流， 输出是 Response 格式的数据流
+*/
+service Chat {
+    rpc BidStream(stream Request) returns (stream Response) {}
+}
+
+message Request {
+    string input = 1;
+}
+
+message Response {
+    string output = 1;
+}

@@ -1,0 +1,24 @@
+version: v1
+plugins:
+  - plugin: go
+    out: .
+    opt:
+      - paths=source_relative
+  - plugin: go-grpc
+    out: .
+    opt:
+      - paths=source_relative
+  - plugin: grpc-gateway
+    out: .
+    opt:
+      - paths=source_relative
+  - plugin: openapiv2
+    out: .
+    opt:
+      - logtostderr=true
+      - json_names_for_fields=false
+      - enums_as_ints=true
+      - allow_delete_body=true
+      - output_format=json
+      - version=true
+      - generate_unbound_methods=true

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="bc6fa00a-b1b4-4065-be1a-9476af93cd00" name="默认更改列表" comment="">
+      <change beforePath="$PROJECT_DIR$/../../go-kit-demo/log-zap/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/../../go-kit-demo/log-zap/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../go-kit-demo/log-zap/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/../../go-kit-demo/log-zap/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/../../go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/../../go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../http-demo/uploadfile/client/client.go" beforeDir="false" afterPath="$PROJECT_DIR$/../../http-demo/uploadfile/client/client.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../http-demo/uploadfile/server/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/../../http-demo/uploadfile/server/server.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../package-study/os/os_1.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../package-study/os/os_2.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../package-study/os/os_exec_1.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../package-study/os/os_exec_2.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../package-study/path-filepath/GetAllFiles.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../package-study/path-filepath/filepath_walk.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cgo/cgo/ApiController.go" beforeDir="false" afterPath="$PROJECT_DIR$/../cgo/cgo/ApiController.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cgo/cgo/Controller.go" beforeDir="false" afterPath="$PROJECT_DIR$/../cgo/cgo/Controller.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cgo/cgo/GlobalSession.go" beforeDir="false" afterPath="$PROJECT_DIR$/../cgo/cgo/GlobalSession.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cgo/cgo/RouterHandler.go" beforeDir="false" afterPath="$PROJECT_DIR$/../cgo/cgo/RouterHandler.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cgo/controller/FeedbackController.go" beforeDir="false" afterPath="$PROJECT_DIR$/../cgo/controller/FeedbackController.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cgo/controller/StaticController.go" beforeDir="false" afterPath="$PROJECT_DIR$/../cgo/controller/StaticController.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cgo/controller/UserController.go" beforeDir="false" afterPath="$PROJECT_DIR$/../cgo/controller/UserController.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cgo/dao/FeedbackDao.go" beforeDir="false" afterPath="$PROJECT_DIR$/../cgo/dao/FeedbackDao.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cgo/dao/PictureDao.go" beforeDir="false" afterPath="$PROJECT_DIR$/../cgo/dao/PictureDao.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cgo/dao/UserDao.go" beforeDir="false" afterPath="$PROJECT_DIR$/../cgo/dao/UserDao.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cgo/dao/bean/TempFeedback.go" beforeDir="false" afterPath="$PROJECT_DIR$/../cgo/dao/bean/TempFeedback.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cgo/model/FeedbackResp.go" beforeDir="false" afterPath="$PROJECT_DIR$/../cgo/model/FeedbackResp.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cgo/service/FeedbackService.go" beforeDir="false" afterPath="$PROJECT_DIR$/../cgo/service/FeedbackService.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cgo/service/UserService.go" beforeDir="false" afterPath="$PROJECT_DIR$/../cgo/service/UserService.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cgo/utils/UUID.go" beforeDir="false" afterPath="$PROJECT_DIR$/../cgo/utils/UUID.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../microservice/booking/app.go" beforeDir="false" afterPath="$PROJECT_DIR$/../microservice/booking/app.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../microservice/booking/controllers/booking.go" beforeDir="false" afterPath="$PROJECT_DIR$/../microservice/booking/controllers/booking.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../microservice/booking/routes/routes.go" beforeDir="false" afterPath="$PROJECT_DIR$/../microservice/booking/routes/routes.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../microservice/database/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/../microservice/database/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../restful/auth/middleware.go" beforeDir="false" afterPath="$PROJECT_DIR$/../restful/auth/middleware.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../restful/controllers/movies.go" beforeDir="false" afterPath="$PROJECT_DIR$/../restful/controllers/movies.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../restful/controllers/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/../restful/controllers/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../restful/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/../restful/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../restful/routes/routes.go" beforeDir="false" afterPath="$PROJECT_DIR$/../restful/routes/routes.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tools/directory/directory.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tools/go-admin/demo/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/../../tools/go-admin/demo/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tools/go-ssh/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/../../tools/go-ssh/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tools/go-sso/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/../../tools/go-sso/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tools/go-sso/models/base.go" beforeDir="false" afterPath="$PROJECT_DIR$/../../tools/go-sso/models/base.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tools/go-sso/models/users.go" beforeDir="false" afterPath="$PROJECT_DIR$/../../tools/go-sso/models/users.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tools/random/random.go" beforeDir="false" afterPath="$PROJECT_DIR$/../../tools/random/random.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tools/random/random_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/../../tools/random/random_test.go" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="GOROOT" path="/usr/local/go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="w73c2smw" />
+  </component>
+  <component name="ProjectId" id="20BLOkxbKsXUJckYuUHf8jNd3dj" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="go.sdk.automatically.set" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

@@ -1,0 +1,25 @@
+[DBUG] 2020/04/21 19:46 MVC dependencies of 'controllers.BookController':
+[1] Dynamic binding: 'context.Context' for field 'Ctx context.Context'
+
+[DBUG] 2020/04/21 19:46 MVC dependencies of 'controllers.DemoController':
+[1] Dynamic binding: 'context.Context' for field 'Ctx context.Context'
+
+[DBUG] 2020/04/21 19:46 HEAD: /content/*file -> github.com/kataras/iris/core/router.StripPrefix.func1() and 2 more
+[DBUG] 2020/04/21 19:46 GET: /demo/q/p -> controllers.DemoController.GetQPS() and 2 more
+[DBUG] 2020/04/21 19:46 GET: /demo/x/m -> controllers.DemoController.GetXML() and 2 more
+[DBUG] 2020/04/21 19:46 GET: /demo/record1 -> controllers.DemoController.GetRecord1() and 2 more
+[DBUG] 2020/04/21 19:46 GET: /demo/conf -> controllers.DemoController.GetConf() and 2 more
+[DBUG] 2020/04/21 19:46 GET: /demo/err -> controllers.DemoController.GetErr() and 2 more
+[DBUG] 2020/04/21 19:46 GET: /demo/orm -> controllers.DemoController.GetOrm() and 2 more
+[DBUG] 2020/04/21 19:46 GET: /content/*file -> github.com/kataras/iris/core/router.StripPrefix.func1() and 2 more
+[DBUG] 2020/04/21 19:46 GET: /book/ajaxbooks -> controllers.BookController.GetAjaxbooks() and 2 more
+[DBUG] 2020/04/21 19:46 GET: /book -> controllers.BookController.Get() and 2 more
+[DBUG] 2020/04/21 19:46 Application: 1 registered view engine(s)
+[DBUG] 2020/04/21 19:46 Application: running using 1 host(s)
+[DBUG] 2020/04/21 19:46 Host: addr is 127.0.0.1:8080
+[DBUG] 2020/04/21 19:46 Host: virtual host is 127.0.0.1:8080
+[DBUG] 2020/04/21 19:46 Host: register startup notifier
+[DBUG] 2020/04/21 19:46 Host: register server shutdown on interrupt(CTRL+C/CMD+C)
+[DBUG] 2020/04/21 19:46 Host: server will ignore the following errors: [http: Server closed]
+Now listening on: http://127.0.0.1:8080
+Application started. Press CTRL+C to shut down.

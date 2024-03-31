@@ -1,0 +1,12 @@
+{"level":"info","ts":1584180948165,"caller":"log-zap/log.go:96","msg":"[NewLogger] success"}
+{"level":"info","ts":1584180948207,"caller":"v5user/main.go:25","msg":"server run 127.0.0.1:8080"}
+{"level":"info","ts":1584181678260,"caller":"log-zap/log.go:96","msg":"[NewLogger] success"}
+{"level":"info","ts":1584181678309,"caller":"v5user/main.go:25","msg":"server run 127.0.0.1:8080"}
+{"level":"info","ts":1584181977464,"caller":"log-zap/log.go:96","msg":"[NewLogger] success"}
+{"level":"info","ts":1584181977514,"caller":"v5user/main.go:25","msg":"server run 127.0.0.1:8080"}
+{"level":"info","ts":1584182235727,"caller":"log-zap/log.go:96","msg":"[NewLogger] success"}
+{"level":"info","ts":1584182235771,"caller":"v5user/main.go:25","msg":"server run 127.0.0.1:8080"}
+{"level":"info","ts":1584185023275,"caller":"log-zap/log.go:96","msg":"[NewLogger] success"}
+{"level":"info","ts":1584185023318,"caller":"v5user/main.go:25","msg":"server run 127.0.0.1:8080"}
+{"level":"info","ts":1584185031364,"caller":"log-zap/log.go:96","msg":"[NewLogger] success"}
+{"level":"info","ts":1584185031404,"caller":"v5user/main.go:25","msg":"server run 127.0.0.1:8080"}

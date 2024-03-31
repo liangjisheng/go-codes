@@ -1,0 +1,14 @@
+{"level":"debug","ts":1583059789197,"caller":"v2transport/transport.go:29","msg":"给请求添加uuid","UUID":"6df182f6-ccb3-599c-a017-588480431ee8"}
+{"level":"debug","ts":1583059789198,"caller":"v2transport/transport.go:55","msg":"6df182f6-ccb3-599c-a017-588480431ee8"," 开始解析请求数据":{"a":1,"b":1}}
+{"level":"debug","ts":1583059789201,"caller":"v2service/service.go:31","msg":"6df182f6-ccb3-599c-a017-588480431ee8","调用 v2_service Service":"TestAdd 处理请求"}
+{"level":"debug","ts":1583059789203,"caller":"v2service/service.go:33","msg":"6df182f6-ccb3-599c-a017-588480431ee8","调用 v2_service Service":"TestAdd 处理请求","处理返回值":{"res":2}}
+{"level":"debug","ts":1583059789204,"caller":"v2service/middleware.go:33","msg":"6df182f6-ccb3-599c-a017-588480431ee8","调用 v2_service logMiddlewareServer":"TestAdd","req":{"a":1,"b":1},"res":{"res":2}}
+{"level":"debug","ts":1583059789204,"caller":"v2endpoint/middleware.go:19","msg":"6df182f6-ccb3-599c-a017-588480431ee8","调用 v2_endpoint LoggingMiddleware":"处理完请求","耗时毫秒":5}
+{"level":"debug","ts":1583059789204,"caller":"v2transport/transport.go:60","msg":"6df182f6-ccb3-599c-a017-588480431ee8","请求结束封装返回值":{"res":2}}
+{"level":"debug","ts":1583418567302,"caller":"v2transport/transport.go:29","msg":"给请求添加uuid","UUID":"6116fa11-5b52-59a4-a8e3-c97f4645d444"}
+{"level":"debug","ts":1583418567303,"caller":"v2transport/transport.go:55","msg":"6116fa11-5b52-59a4-a8e3-c97f4645d444"," 开始解析请求数据":{"a":1,"b":1}}
+{"level":"debug","ts":1583418567306,"caller":"v2service/service.go:31","msg":"6116fa11-5b52-59a4-a8e3-c97f4645d444","调用 v2_service Service":"TestAdd 处理请求"}
+{"level":"debug","ts":1583418567306,"caller":"v2service/service.go:33","msg":"6116fa11-5b52-59a4-a8e3-c97f4645d444","调用 v2_service Service":"TestAdd 处理请求","处理返回值":{"res":2}}
+{"level":"debug","ts":1583418567306,"caller":"v2service/middleware.go:33","msg":"6116fa11-5b52-59a4-a8e3-c97f4645d444","调用 v2_service logMiddlewareServer":"TestAdd","req":{"a":1,"b":1},"res":{"res":2}}
+{"level":"debug","ts":1583418567306,"caller":"v2endpoint/middleware.go:19","msg":"6116fa11-5b52-59a4-a8e3-c97f4645d444","调用 v2_endpoint LoggingMiddleware":"处理完请求","耗时毫秒":2}
+{"level":"debug","ts":1583418567306,"caller":"v2transport/transport.go:60","msg":"6116fa11-5b52-59a4-a8e3-c97f4645d444","请求结束封装返回值":{"res":2}}

@@ -1,0 +1,4 @@
+{"level":"info","ts":1584274604063,"caller":"log-zap/log.go:96","msg":"[NewLogger] success"}
+{"level":"info","ts":1584274604102,"caller":"v7user/main.go:96","msg":"[user_agent] prometheus run 0.0.0.0:9090"}
+{"level":"info","ts":1584274604115,"caller":"v7user/main.go:85","msg":"[user_agent] grpc run 127.0.0.1:8080"}
+{"level":"info","ts":1584274992300,"caller":"v7user/main.go:110","msg":"[user_agent] quit err","error":"interrupt"}

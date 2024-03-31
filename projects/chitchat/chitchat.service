@@ -1,0 +1,17 @@
+[Unit]
+Description=chitchat
+
+[Service]
+User=root
+WorkingDirectory=/var/www/chitchat
+ExecStart=/var/www/chitchat/chitchat
+ExecStop=/bin/kill -s TERM $MAINPID
+SuccessExitStatus=0
+TimeoutStopSec=10
+Restart=always
+RestartSec=5
+KillMode=process
+Type=simple
+
+[Install]
+WantedBy=multi-user.target

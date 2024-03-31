@@ -1,0 +1,8 @@
+Info:2024/03/16 16:33:49.048236 proxy_agent.go:61: 加载本地配置数据: ./proxy_data.json
+Info:2024/03/16 16:34:19.695158 proxy_agent.go:122: RequestURI / upstream  remote 
+Info:2024/03/16 16:36:01.132369 proxy_agent.go:61: 加载本地配置数据: ./proxy_data.json
+Info:2024/03/16 16:36:06.311419 proxy_agent.go:124: RequestURI / upstream  remote 
+Info:2024/03/16 16:37:51.978275 proxy_agent.go:61: 加载本地配置数据: ./proxy_data.json
+Info:2024/03/16 16:37:53.625712 proxy_agent.go:127: RequestURI / upstream  remote 
+Info:2024/03/16 16:39:40.470250 proxy_agent.go:61: 加载本地配置数据: ./proxy_data.json
+Info:2024/03/16 16:39:55.845345 proxy_agent.go:128: RequestURI / upstream http://127.0.0.1:8080/ remote http://127.0.0.1:8080/

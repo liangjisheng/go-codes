@@ -1,0 +1,2 @@
+{"level":"info","ts":1583499579438,"caller":"log-zap/log.go:96","msg":"[NewLogger] success"}
+{"level":"info","ts":1583499579480,"caller":"v3/main.go:18","msg":"server run 127.0.0.1:8080"}

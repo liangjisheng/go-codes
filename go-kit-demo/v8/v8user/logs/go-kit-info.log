@@ -1,0 +1,5 @@
+{"level":"info","ts":1585037756060,"caller":"v8user/main.go:110","msg":"[user_agent] quit err","error":"interrupt"}
+{"level":"info","ts":1585037759570,"caller":"log-zap/log.go:96","msg":"[NewLogger] success"}
+{"level":"info","ts":1585037759618,"caller":"v8user/main.go:96","msg":"[user_agent] prometheus run 127.0.0.1:8081"}
+{"level":"info","ts":1585037759641,"caller":"v8user/main.go:85","msg":"[user_agent] grpc run 127.0.0.1:8080"}
+{"level":"info","ts":1585038250634,"caller":"v8user/main.go:110","msg":"[user_agent] quit err","error":"interrupt"}

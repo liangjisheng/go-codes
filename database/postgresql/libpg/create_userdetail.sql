@@ -1,0 +1,7 @@
+CREATE TABLE userdetail
+(
+    uid INTEGER,
+    introduce CHARACTER VARYING(100),
+    profile CHARACTER VARYING(100)
+)
+WITH (OIDS=FALSE);

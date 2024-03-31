@@ -1,0 +1,17 @@
+{"level":"info","ts":1584258121224,"caller":"log-zap/log.go:96","msg":"[NewLogger] success"}
+{"level":"info","ts":1584258121262,"caller":"v6user/main.go:25","msg":"server run 127.0.0.1:8080"}
+{"level":"info","ts":1584262265081,"caller":"log-zap/log.go:96","msg":"[NewLogger] success"}
+{"level":"info","ts":1584262265119,"caller":"v6user/main.go:82","msg":"[user_agent] run 127.0.0.1:8080"}
+{"level":"info","ts":1584262269464,"caller":"log-zap/log.go:96","msg":"[NewLogger] success"}
+{"level":"info","ts":1584262269511,"caller":"v6user/main.go:82","msg":"[user_agent] run 127.0.0.1:8081"}
+{"level":"info","ts":1584262269520,"caller":"v6user/main.go:85","msg":"[user_agent] quit err","error":"listen tcp 127.0.0.1:8080: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted."}
+{"level":"info","ts":1584262288088,"caller":"v6user/main.go:85","msg":"[user_agent] quit err","error":"interrupt"}
+{"level":"info","ts":1584262334222,"caller":"log-zap/log.go:96","msg":"[NewLogger] success"}
+{"level":"info","ts":1584262334258,"caller":"v6user/main.go:82","msg":"[user_agent] run 127.0.0.1:8080"}
+{"level":"info","ts":1584262338201,"caller":"log-zap/log.go:96","msg":"[NewLogger] success"}
+{"level":"info","ts":1584262338239,"caller":"v6user/main.go:82","msg":"[user_agent] run 127.0.0.1:8081"}
+{"level":"info","ts":1584262341620,"caller":"log-zap/log.go:96","msg":"[NewLogger] success"}
+{"level":"info","ts":1584262341661,"caller":"v6user/main.go:82","msg":"[user_agent] run 127.0.0.1:8082"}
+{"level":"info","ts":1584262695436,"caller":"v6user/main.go:85","msg":"[user_agent] quit err","error":"interrupt"}
+{"level":"info","ts":1584262696277,"caller":"v6user/main.go:85","msg":"[user_agent] quit err","error":"interrupt"}
+{"level":"info","ts":1584262699680,"caller":"v6user/main.go:85","msg":"[user_agent] quit err","error":"interrupt"}

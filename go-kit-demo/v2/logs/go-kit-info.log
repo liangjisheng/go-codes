@@ -1,0 +1,6 @@
+{"level":"info","ts":1583059744451,"caller":"log-zap/log.go:96","msg":"[NewLogger] success"}
+{"level":"info","ts":1583059744507,"caller":"v2/main.go:17","msg":"server run 127.0.0.1:8888"}
+{"level":"info","ts":1583059787361,"caller":"log-zap/log.go:96","msg":"[NewLogger] success"}
+{"level":"info","ts":1583059787438,"caller":"v2/main.go:19","msg":"server run 127.0.0.1:8080"}
+{"level":"info","ts":1583418554973,"caller":"log-zap/log.go:96","msg":"[NewLogger] success"}
+{"level":"info","ts":1583418555014,"caller":"v2/main.go:19","msg":"server run 127.0.0.1:8080"}

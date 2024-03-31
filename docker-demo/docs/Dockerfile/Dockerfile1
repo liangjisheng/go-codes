@@ -1,0 +1,19 @@
+#Dockerfile 的指令每执行一次都会在 docker 上新建一层。所以过多无意义的层，会造成镜像膨胀过大
+
+FROM centos
+RUN yum -y install wget
+RUN wget -O redis.tar.gz "http://download.redis.io/releases/redis-5.0.3.tar.gz"
+RUN tar -xvf redis.tar.gz
+
+#可简化为以下格式：
+FROM centos
+RUN yum -y install wget \
+    && wget -O redis.tar.gz "http://download.redis.io/releases/redis-5.0.3.tar.gz" \
+    && tar -xvf redis.tar.gz \
+    && rm redis.tar.gz
+
+#在后续的指令中可以通过 $NODE_VERSION 引用
+ENV NODE_VERSION 7.2.0
+
+RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.xz" \
+  && curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/SHASUMS256.txt.asc"

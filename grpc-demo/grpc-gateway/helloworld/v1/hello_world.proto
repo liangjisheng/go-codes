@@ -1,0 +1,356 @@
+syntax = "proto3";
+
+package hello.v1;
+
+//package_path;package_name
+option go_package =".;v1";
+
+import "google/api/httpbody.proto";
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "google/protobuf/field_mask.proto";
+import "protoc-gen-openapiv2/options/annotations.proto";
+
+option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_swagger) = {
+  info: {
+    title: "A Bit of Everything";
+    version: "1.0";
+    contact: {
+      name: "gRPC-Gateway project";
+      url: "https://github.com/grpc-ecosystem/grpc-gateway";
+      email: "none@example.com";
+    };
+    license: {
+      name: "BSD 3-Clause License";
+      url: "https://github.com/grpc-ecosystem/grpc-gateway/blob/main/LICENSE.txt";
+    };
+    extensions: {
+      key: "x-something-something";
+      value {string_value: "yadda"}
+    }
+  };
+  // Overwriting host entry breaks tests, so this is not done here.
+  external_docs: {
+    url: "https://github.com/grpc-ecosystem/grpc-gateway";
+    description: "More about gRPC-Gateway";
+  }
+  schemes: HTTP;
+  schemes: HTTPS;
+  schemes: WSS;
+  consumes: "application/json";
+  consumes: "application/x-foo-mime";
+  produces: "application/json";
+  produces: "application/x-foo-mime";
+  security_definitions: {
+    security: {
+      key: "BasicAuth";
+      value: {type: TYPE_BASIC}
+    }
+    security: {
+      key: "ApiKeyAuth";
+      value: {
+        type: TYPE_API_KEY;
+        in: IN_HEADER;
+        name: "X-API-Key";
+        extensions: {
+          key: "x-amazon-apigateway-authtype";
+          value {string_value: "oauth2"}
+        }
+        extensions: {
+          key: "x-amazon-apigateway-authorizer";
+          value {
+            struct_value {
+              fields {
+                key: "type";
+                value {string_value: "token"}
+              }
+              fields {
+                key: "authorizerResultTtlInSeconds";
+                value {number_value: 60}
+              }
+            }
+          }
+        }
+      }
+    }
+    security: {
+      key: "OAuth2";
+      value: {
+        type: TYPE_OAUTH2;
+        flow: FLOW_ACCESS_CODE;
+        authorization_url: "https://example.com/oauth/authorize";
+        token_url: "https://example.com/oauth/token";
+        scopes: {
+          scope: {
+            key: "read";
+            value: "Grants read access";
+          }
+          scope: {
+            key: "write";
+            value: "Grants write access";
+          }
+          scope: {
+            key: "admin";
+            value: "Grants read and write access to administrative information";
+          }
+        }
+      }
+    }
+  }
+  security: {
+    security_requirement: {
+      key: "BasicAuth";
+      value: {};
+    }
+    security_requirement: {
+      key: "ApiKeyAuth";
+      value: {};
+    }
+  }
+  security: {
+    security_requirement: {
+      key: "OAuth2";
+      value: {
+        scope: "read";
+        scope: "write";
+      }
+    }
+    security_requirement: {
+      key: "ApiKeyAuth";
+      value: {};
+    }
+  }
+  responses: {
+    key: "403";
+    value: {description: "Returned when the user does not have permission to access the resource."}
+  }
+  responses: {
+    key: "404";
+    value: {
+      description: "Returned when the resource does not exist.";
+      schema: {
+        json_schema: {type: STRING}
+      }
+    }
+  }
+  responses: {
+    key: "418";
+    value: {
+      description: "I'm a teapot.";
+      schema: {
+        json_schema: {ref: ".grpc.gateway.examples.internal.proto.examplepb.NumericEnum"}
+      }
+    }
+  }
+  responses: {
+    key: "500";
+    value: {
+      description: "Server error";
+      headers: {
+        key: "X-Correlation-Id"
+        value: {
+          description: "Unique event identifier for server requests"
+          type: "string"
+          format: "uuid"
+          default: "\"2438ac3c-37eb-4902-adef-ed16b4431030\""
+          pattern: "^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$"
+        }
+      };
+      schema: {
+        json_schema: {ref: ".grpc.gateway.examples.internal.proto.examplepb.ErrorResponse"}
+      }
+    }
+  }
+  tags: {
+    name: "echo rpc"
+    description: "Echo Rpc description"
+    extensions: {
+      key: "x-traitTag";
+      value {bool_value: true}
+    }
+  }
+  extensions: {
+    key: "x-grpc-gateway-foo";
+    value {string_value: "bar"}
+  }
+  extensions: {
+    key: "x-grpc-gateway-baz-list";
+    value {
+      list_value: {
+        values: {string_value: "one"}
+        values: {bool_value: true}
+      }
+    }
+  }
+};
+
+// The greeting service definition
+service Greeter {
+  option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_tag) = {
+    description: "ABitOfEverythingService description -- which should not be used in place of the documentation comment!"
+    external_docs: {
+      url: "https://github.com/grpc-ecosystem/grpc-gateway";
+      description: "Find out more about EchoService";
+    }
+  };
+
+  // Sends a greeting
+  rpc SayHello (HelloRequest) returns (HelloReply) {
+    option (google.api.http) = {
+      post: "/v1/example/echo"
+      body: "*"
+    };
+  }
+
+  // The HTTPBody messages allow a response message to be specified with custom data content and a
+  // custom content-type header. The values included in the HTTPBody response will be used verbatim
+  // in the returned message from the gateway. Make sure you format your response carefully!
+  rpc Hello1(google.protobuf.Empty) returns (google.api.HttpBody) {
+    option (google.api.http) = {
+      get: "/v1/hello1"
+    };
+  }
+
+  rpc Download(google.protobuf.Empty) returns (stream google.api.HttpBody) {
+    option (google.api.http) = {
+      get: "/v1/download"
+    };
+  }
+
+  rpc UpdateV2(UpdateV2Request) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      put: "/v1/example/a_bit_of_everything/{abe.uuid}"
+      body: "abe"
+      additional_bindings {
+        patch: "/v1/example/a_bit_of_everything/{abe.uuid}"
+        body: "abe"
+      }
+    };
+  }
+
+  rpc UpdateV2a(UpdateV2Request) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      patch: "/v2a/example/a_bit_of_everything/{abe.uuid}"
+      body: "*"
+    };
+  }
+
+  // GetMessage
+  // It is possible to define multiple HTTP methods for one RPC by using the additional_bindings option.
+  rpc GetMessage(GetMessageReq) returns (GetMessageResp) {
+    option (google.api.http) = {
+      get: "/v1/message/{message_id}"
+      additional_bindings {
+        get: "/v1/users/{user_id}/messages/{message_id}"
+      }
+    };
+  }
+
+  rpc UpdateMessage(UpdateMessageRequest) returns (UpdateMessageResp) {
+    option (google.api.http) = {
+      patch: "/v1/message/{message_id}"
+      body: "message"
+    };
+  }
+
+  // UpdateMessage1
+  // The special name * can be used in the body mapping to define that every
+  // field not bound by the path template should be mapped to the request body.
+  // This enables the following alternative definition of the update method:
+  rpc UpdateMessage1(UpdateMessage1Request) returns (UpdateMessage1Resp) {
+    option (google.api.http) = {
+      patch: "/v1/message1/{message_id}"
+      body: "*"
+    };
+  }
+
+  // Note that when using * in the body mapping, it is not possible to have HTTP
+  // parameters, as all fields not bound by the path end in the body. This makes
+  // this option more rarely used in practice when defining REST APIs. The common
+  // usage of * is in custom methods which don't use the URL at all for transferring data.
+}
+
+// The request message containing the user's name
+message HelloRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings
+message HelloReply {
+  string message = 1;
+}
+
+message SingleNested {
+  int64 amount = 1;
+}
+
+message ABitOfEverything {
+  option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_schema) = {
+    json_schema: {
+      title: "A bit of everything"
+      description: "Intentionaly complicated message type to cover many features of Protobuf."
+      required: ["uuid", "int64_value", "double_value"]
+    }
+    external_docs: {
+      url: "https://github.com/grpc-ecosystem/grpc-gateway";
+      description: "Find out more about ABitOfEverything";
+    }
+    example: "{\"uuid\": \"0cf361e1-4b44-483d-a159-54dabdf7e814\"}"
+//    extensions: {
+//      key: "x-irreversible";
+//      value {
+//        bool_value: true;
+//      }
+//    }
+  };
+
+  // This comment will end up directly in your Open API definition
+  string uuid = 1 [(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {description: "The UUID field."}];
+  string string_value = 2;
+  SingleNested singleNested = 3;
+}
+
+// UpdateV2Request request for update includes the message and the update mask
+message UpdateV2Request {
+  ABitOfEverything abe = 1;
+  google.protobuf.FieldMask update_mask = 2;
+}
+
+// GetMessageReq
+// Any fields in the request message which are not bound by the path template
+// automatically become HTTP query parameters if there is no HTTP request body
+message GetMessageReq {
+  message SubMessage {
+    string subfield = 1;
+  }
+  string message_id = 1; // Mapped to URL path.
+  int64 revision = 2;    // Mapped to URL query parameter `revision`.
+  SubMessage sub = 3;    // Mapped to URL query parameter `sub.subfield`.
+  string user_id = 4;
+}
+
+message GetMessageResp {
+  string text = 1; // The resource content.
+}
+
+message Message {
+  string text = 1;
+}
+
+message UpdateMessageRequest {
+  string message_id = 1; // mapped to the URL
+  Message message = 2;   // mapped to the body
+}
+
+message UpdateMessageResp {
+  string text = 1; // The resource content.
+}
+
+message UpdateMessage1Request {
+  string message_id = 1;  // mapped to the URL
+  string text = 2;        // mapped to the body
+}
+
+message UpdateMessage1Resp {
+  string text = 1; // The resource content.
+}

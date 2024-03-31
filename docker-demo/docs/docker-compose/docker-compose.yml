@@ -1,0 +1,20 @@
+version: "3.7"
+services:
+  web:
+    build: .
+    environment:
+      RACK_ENV: development
+      SHOW: 'true'
+    # depends_on 设置依赖关系, 先启动 db 和 redis，才会启动 web
+    depends_on:
+      - db
+      - redis
+
+  redis:
+    image: redis:latest
+  db:
+    image: postgres:latest
+    # 将主机的数据卷或着文件挂载到容器里
+    volumes:
+      - "/localhost/postgres.sock:/var/run/postgres/postgres.sock"
+      - "/localhost/data:/var/lib/postgresql/data"

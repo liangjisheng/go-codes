@@ -1,0 +1,2 @@
+{"level":"debug","ts":1587038900636,"caller":"zap/client_interceptors.go:48","msg":"finished client unary call","system":"grpc","span.kind":"client","grpc.service":"pb.User","grpc.method":"RPCUserLogin","grpc.code":"OK","grpc.time_ms":0.9679999947547913}
+{"level":"debug","ts":1587048895364,"caller":"zap/client_interceptors.go:48","msg":"finished client unary call","system":"grpc","span.kind":"client","grpc.service":"pb.User","grpc.method":"RPCUserLogin","grpc.code":"OK","grpc.time_ms":1.9950000047683716}

@@ -1,0 +1,43 @@
+{
+    "language": "zh-CN",
+    "messages": [
+        {
+            "id": "Welcome!",
+            "message": "Welcome!",
+            "translation": "欢迎光临"
+        },
+        {
+            "id": "{TotalBookCount} books available",
+            "message": "{TotalBookCount} books available",
+            "translation": {
+                "select": {
+                    "feature": "plural",
+                    "arg": "TotalBookCount",
+                    "cases": {
+                        "=1": {
+                            "msg": "只有1本书可读"
+                        },
+                        "other": {
+                            "msg": "总共{TotalBookCount}本书可读"
+                        }
+                    }
+                }
+            },
+            "placeholders": [
+                {
+                    "id": "TotalBookCount",
+                    "string": "%[1]d",
+                    "type": "int",
+                    "underlyingType": "int",
+                    "argNum": 1,
+                    "expr": "totalBookCount"
+                }
+            ]
+        },
+        {
+            "id": "Launching soon!",
+            "message": "Launching soon!",
+            "translation": "即将启动"
+        }
+    ]
+}

@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS `person` (
+    `id` INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    `first_name` VARCHAR(50),
+    `last_name` VARCHAR(50)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;

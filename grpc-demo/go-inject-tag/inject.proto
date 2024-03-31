@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package inject;
+
+option go_package = "./inject;inject";
+
+message MyMessage {
+  // Test legacy field name.
+  // @inject_tags: json:"code" valid:"code" yaml:"code" uri:"code"
+  int64 code = 1;
+
+  // @gotags: valid:"ip"
+  string address = 2;
+
+  // @gotags: json:"name" form:"name"
+  string name = 3;
+}

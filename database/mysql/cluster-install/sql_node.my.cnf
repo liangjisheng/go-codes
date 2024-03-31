@@ -1,0 +1,19 @@
+[mysqld]
+ndbcluster
+ndb-connectstring=172.20.101.25
+pid-file = /var/run/mysqld/mysqld.pid
+socket = /var/run/mysqld/mysqld.sock
+basedir = /usr/local/mysql
+datadir = /usr/local/mysql/data
+log-error = /usr/local/mysql/log/error.log
+port = 3306
+bind-address = 0.0.0.0
+user=mysql
+symbolic-links=0
+
+[client]
+port = 3306
+socket = /var/run/mysqld/mysqld.sock
+
+[mysql_cluster]
+ndb-connectstring=172.20.101.25

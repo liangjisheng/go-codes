@@ -1,0 +1,153 @@
+basePath: /api/v1
+definitions:
+  main.ResHello1:
+    properties:
+      name:
+        type: string
+    type: object
+  main.ResponseError:
+    properties:
+      code:
+        type: integer
+      message:
+        type: string
+    type: object
+host: 127.0.0.1:8080
+info:
+  contact:
+    email: support@swagger.io
+    name: API Support
+    url: http://www.swagger.io/support
+  description: This is a sample server Petstore server.
+  termsOfService: http://swagger.io/terms/
+  title: Swagger Example API
+  version: 0.0.1
+paths:
+  /hello/{id}:
+    get:
+      consumes:
+      - application/json
+      description: get string by ID
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: id2
+        in: query
+        name: id2
+        required: true
+        type: string
+      - description: id3
+        in: query
+        name: id3
+        required: true
+        type: integer
+      - description: id4
+        in: query
+        name: id4
+        required: true
+        type: number
+      - description: id5
+        in: query
+        name: id5
+        required: true
+        type: boolean
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: ok
+          schema:
+            type: string
+        "404":
+          description: We need ID!!
+          schema:
+            type: string
+      summary: Get pet from the store
+  /hello1:
+    post:
+      consumes:
+      - application/json
+      description: Get pet from the store
+      parameters:
+      - description: ReqHello1
+        in: body
+        name: ReqHello1
+        required: true
+        schema:
+          type: object
+      - description: uuid
+        in: header
+        name: uuid
+        required: true
+        type: string
+      - description: userID
+        in: formData
+        name: userID
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/main.ResHello1'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/main.ResponseError'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/main.ResHello1'
+      summary: Get pet from the store
+  /hello2:
+    post:
+      consumes:
+      - application/x-www-form-urlencoded
+      description: Get pet from the store
+      parameters:
+      - description: userID
+        in: formData
+        name: userID
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: userID
+          schema:
+            type: string
+        "400":
+          description: bad request
+          schema:
+            type: string
+        "404":
+          description: fail
+          schema:
+            type: string
+      summary: pet from the store
+  /helloPost:
+    post:
+      consumes:
+      - application/json
+      description: insert string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: insert ok
+          schema:
+            type: string
+        "404":
+          description: insert fail
+          schema:
+            type: string
+      summary: Add a new pet to the store post
+schemes:
+- http
+swagger: "2.0"
