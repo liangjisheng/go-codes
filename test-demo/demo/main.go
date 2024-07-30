@@ -1,7 +1,9 @@
 package main
 
 import (
+	"encoding/hex"
 	"fmt"
+	"math/big"
 	"sync"
 )
 
@@ -60,6 +62,17 @@ func demo1() {
 	fmt.Println(v1)
 }
 
+func testU128() {
+	str := "ffffffffffffffffffffffffffffffff"
+	value, ok := new(big.Int).SetString(str, 16)
+	if !ok {
+		fmt.Println("not ok")
+		return
+	}
+	fmt.Println(hex.EncodeToString(value.Bytes()))
+	fmt.Println(value.String())
+}
+
 func main() {
-	demo1()
+	testU128()
 }

@@ -4,20 +4,33 @@
 [count](https://blog.duhbb.com/2023/03/28813.html)
 
 ```shell
--- 导出数据库
-mysqldump -u username -p database > /home/ps/database.sql
-mysqldump -u mysql -p syncdb > /home/ps/database.sql
+#导出数据库
+mysqldump -u username -p dbName > /data/database.sql
+#导出某张表
+mysqldump -u mysql -p dbName tableName > /data/tableName.sql
+mysql -u mysql -p debug < /data/tableName.sql
+mysqldump -u root -p dbName tableName > /data/backup-mysql/tableName_20200814.sql
+#导出符合 where 条件的数据
+mysqldump dbName tableName --where='id > 10' > /data/tableName.sql
 
--- 导出某张表
-mysqldump -u mysql -p syncdb ljstable > /home/ps/table.sql
-mysql -u mysql -p debug < /data/usertable.sql
-mysqldump -u root -p main account_token_history > /home/ps/backup-mysql/account_token_history_20200814.sql
-mysqldump -u root -p main pair_price_history > /home/ps/backup-mysql/pair_price_history_20200814.sql
+#导入数据库
+mysql -u mysql -p dbName < /data/database.sql
+#或者进入 mysql 控制台
+mysql>source /data/database.sql;
+```
 
--- 导入数据库
-mysql -u mysql -p syncdb < /home/ps/database.sql
--- 或者进入 mysql 控制台
-mysql>source /home/ps/database.sql;
+```txt
+导出部分数据到一个文件中
+select * into outfile '/data/data.csv' from tableName order by id asc limit 100;
+
+如果遇到下面的错误，表明不能导出文件到 mysql 认为的非安全目录
+ERROR 1290 (HY000): The MySQL server is running with the --secure-file-priv option so it cannot execute this statement
+
+查看符合文件权限的目录，可以导出到对应的目录中
+SHOW VARIABLES LIKE "secure_file_priv";
+
+导出后文件的 owner,group 都是 mysql, 这时用 root 用户把导出的文件 /data/data.csv 修改为默认的用户
+chown owner:group /data/data.csv
 ```
 
 ```sql
@@ -104,4 +117,8 @@ system ls -l /data/var/lib/mysql/web3_test
 ```sql
 show engines;
 show variables like "%storage_engine%";
+    
+/* 修改连接数，这样不用重启 */
+show variables like 'max_connections';
+set global max_connections = 2000;
 ```

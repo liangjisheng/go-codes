@@ -31,7 +31,7 @@ require (
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/didip/tollbooth/v6 v6.1.1
 	github.com/dynport/gossh v0.0.0-20170809141523-122e3ee2a6b0
-	github.com/ethereum/go-ethereum v1.10.23
+	github.com/emirpasic/gods v1.18.1
 	github.com/fatih/color v1.12.0
 	github.com/fogleman/gg v1.3.0
 	github.com/fsnotify/fsnotify v1.5.1
@@ -77,16 +77,20 @@ require (
 	github.com/libi/dcron v0.3.2
 	github.com/lithammer/shortuuid v3.0.0+incompatible
 	github.com/liyue201/gostl v1.0.1
+	github.com/marcusolsson/tui-go v0.4.0
 	github.com/mattn/go-isatty v0.0.14
 	github.com/mattn/go-sqlite3 v2.0.3+incompatible
 	github.com/mitchellh/go-ps v1.0.0
 	github.com/mohae/deepcopy v0.0.0-20170929034955-c48cc78d4826
+	github.com/mohuishou/go-design-pattern v1.0.0
 	github.com/mojocn/base64Captcha v1.3.5
 	github.com/nicksnyder/go-i18n/v2 v2.1.2
 	github.com/nladuo/go-zk-fifo v0.0.0-20151228050926-7d50ad2d07f2
+	github.com/nladuo/go-zk-lock v0.0.0-20160827065904-f01e95e75d22
 	github.com/nsqio/go-nsq v1.0.8
 	github.com/oklog/ulid v1.3.1
 	github.com/olivere/elastic/v7 v7.0.11
+	github.com/oschwald/geoip2-golang v1.11.0
 	github.com/panjf2000/ants/v2 v2.9.0
 	github.com/pkg/errors v0.9.1
 	github.com/prashantv/gostub v1.0.0
@@ -106,7 +110,7 @@ require (
 	github.com/spf13/pflag v1.0.5
 	github.com/spf13/viper v1.7.0
 	github.com/streadway/amqp v0.0.0-20190827072141-edfb9018d271
-	github.com/stretchr/testify v1.8.2
+	github.com/stretchr/testify v1.9.0
 	github.com/subosito/gotenv v1.2.0
 	github.com/syndtr/goleveldb v1.0.1-0.20210819022825-2ae1ddf74ef7
 	github.com/syyongx/ii18n v0.0.0-20190531015407-03d063505fc9
@@ -122,19 +126,19 @@ require (
 	golang.org/x/image v0.0.0-20221017200508-ffcb3fe7d1bf
 	golang.org/x/net v0.11.0
 	golang.org/x/oauth2 v0.0.0-20200107190931-bf48bf16ab8d
-	golang.org/x/sys v0.9.0
+	golang.org/x/sys v0.20.0
 	golang.org/x/text v0.10.0
 	golang.org/x/time v0.0.0-20210723032227-1f47c861a9ac
 	google.golang.org/genproto v0.0.0-20210602131652-f16073e35f0c
 	google.golang.org/grpc v1.51.0
 	google.golang.org/protobuf v1.27.1
 	gopkg.in/confluentinc/confluent-kafka-go.v1 v1.1.0
-	gopkg.in/eapache/queue.v1 v1.1.0
 	gopkg.in/go-playground/pool.v3 v3.1.1
 	gopkg.in/go-playground/validator.v9 v9.31.0
 	gopkg.in/gomail.v2 v2.0.0-20160411212932-81ebce5c23df
 	gopkg.in/mgo.v2 v2.0.0-20180705113604-9856a29383ce
 	gopkg.in/yaml.v2 v2.4.0
+	gopl.io v0.0.0-20211004154805-1ae3ec64947b
 	mvdan.cc/xurls/v2 v2.4.0
 )
 
@@ -150,16 +154,17 @@ require (
 	github.com/antchfx/xpath v1.1.8 // indirect
 	github.com/antlabs/stl v0.0.1 // indirect
 	github.com/bitly/go-simplejson v0.5.0 // indirect
-	github.com/btcsuite/btcd/btcec/v2 v2.2.0 // indirect
 	github.com/cespare/xxhash/v2 v2.1.2 // indirect
 	github.com/clbanning/mxj v1.8.5-0.20200714211355-ff02cfb8ea28 // indirect
 	github.com/clbanning/mxj/v2 v2.5.5 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
-	github.com/decred/dcrd/dcrec/secp256k1/v4 v4.0.1 // indirect
+	github.com/deckarep/golang-set v1.8.0 // indirect
 	github.com/dgryski/go-rendezvous v0.0.0-20200823014737-9f7001d12a5f // indirect
 	github.com/eapache/go-xerial-snappy v0.0.0-20180814174437-776d5712da21 // indirect
 	github.com/eapache/queue v1.1.0 // indirect
 	github.com/gammazero/deque v0.2.0 // indirect
+	github.com/gdamore/encoding v0.0.0-20151215212835-b23993cbb635 // indirect
+	github.com/gdamore/tcell v1.1.0 // indirect
 	github.com/gin-contrib/sse v0.1.0 // indirect
 	github.com/go-ole/go-ole v1.2.6 // indirect
 	github.com/go-pkgz/expirable-cache v0.0.3 // indirect
@@ -184,15 +189,18 @@ require (
 	github.com/kr/text v0.2.0 // indirect
 	github.com/labstack/gommon v0.3.0 // indirect
 	github.com/leodido/go-urn v1.2.1 // indirect
+	github.com/lucasb-eyer/go-colorful v0.0.0-20180709185858-c7842319cf3a // indirect
 	github.com/magiconair/properties v1.8.1 // indirect
 	github.com/markbates/errx v1.1.0 // indirect
 	github.com/markbates/oncer v1.0.0 // indirect
 	github.com/markbates/safe v1.0.1 // indirect
+	github.com/mitchellh/go-wordwrap v1.0.0 // indirect
 	github.com/mitchellh/mapstructure v1.5.0 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
 	github.com/modern-go/reflect2 v1.0.2 // indirect
 	github.com/natefinch/lumberjack v2.0.0+incompatible // indirect
 	github.com/olekukonko/tablewriter v0.0.5 // indirect
+	github.com/oschwald/maxminddb-golang v1.13.0 // indirect
 	github.com/pelletier/go-toml v1.2.0 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/rogpeppe/go-internal v1.8.1 // indirect
@@ -212,6 +220,7 @@ require (
 	go.opentelemetry.io/otel/trace v1.1.0 // indirect
 	golang.org/x/sync v0.3.0 // indirect
 	golang.org/x/term v0.9.0 // indirect
+	gopkg.in/eapache/queue.v1 v1.1.0 // indirect
 	gopkg.in/jcmturner/aescts.v1 v1.0.1 // indirect
 	gopkg.in/jcmturner/dnsutils.v1 v1.0.1 // indirect
 	gopkg.in/jcmturner/rpc.v1 v1.1.0 // indirect
