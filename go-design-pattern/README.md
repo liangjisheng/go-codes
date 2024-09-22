@@ -1,6 +1,7 @@
 # README
 
 [blog](https://lailin.xyz/post/go-design-pattern.html)
+[github](https://github.com/mohuishou/go-design-pattern)
 
 ### 设计原则
 
@@ -21,3 +22,5 @@
 ![设计模式](imgs/img02.jpg)
 
 </details>
+
+[go-design-pattern](https://github.com/senghoo/golang-design-pattern)

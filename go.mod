@@ -21,7 +21,6 @@ require (
 	github.com/astaxie/goredis v0.0.0-20160824151742-1f1c6e6fc3a8
 	github.com/atotto/clipboard v0.1.2
 	github.com/beego/i18n v0.0.0-20161101132742-e9308947f407
-	github.com/bits-and-blooms/bloom/v3 v3.2.0
 	github.com/boltdb/bolt v1.3.1
 	github.com/boombuler/barcode v1.0.1
 	github.com/brianvoe/gofakeit/v6 v6.28.0
@@ -31,7 +30,6 @@ require (
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/didip/tollbooth/v6 v6.1.1
 	github.com/dynport/gossh v0.0.0-20170809141523-122e3ee2a6b0
-	github.com/emirpasic/gods v1.18.1
 	github.com/fatih/color v1.12.0
 	github.com/fogleman/gg v1.3.0
 	github.com/fsnotify/fsnotify v1.5.1
@@ -60,6 +58,7 @@ require (
 	github.com/google/uuid v1.3.0
 	github.com/gookit/color v1.5.2
 	github.com/gookit/event v1.0.6
+	github.com/gookit/goutil v0.6.4
 	github.com/gookit/ini/v2 v2.2.1
 	github.com/gorilla/mux v1.8.0
 	github.com/gorilla/websocket v1.4.2
@@ -75,6 +74,7 @@ require (
 	github.com/ledongthuc/pdf v0.0.0-20220302134840-0c2507a12d80
 	github.com/lib/pq v1.10.2
 	github.com/libi/dcron v0.3.2
+	github.com/lionsoul2014/ip2region/binding/golang v0.0.0-20240510055607-89e20ab7b6c6
 	github.com/lithammer/shortuuid v3.0.0+incompatible
 	github.com/liyue201/gostl v1.0.1
 	github.com/marcusolsson/tui-go v0.4.0
@@ -175,7 +175,6 @@ require (
 	github.com/golang/snappy v0.0.4 // indirect
 	github.com/google/go-cmp v0.5.8 // indirect
 	github.com/google/go-querystring v1.1.0 // indirect
-	github.com/gookit/goutil v0.6.4 // indirect
 	github.com/gorilla/context v1.1.1 // indirect
 	github.com/gorilla/securecookie v1.1.1 // indirect
 	github.com/grokify/html-strip-tags-go v0.0.1 // indirect
@@ -232,7 +231,6 @@ require (
 	github.com/StackExchange/wmi v0.0.0-20210224194228-fe8f1750fd46 // indirect
 	github.com/Unknwon/goconfig v0.0.0-20200908083735-df7de6a44db8 // indirect
 	github.com/baiyubin/aliyun-sts-go-sdk v0.0.0-20180326062324-cfa1a18b161f // indirect
-	github.com/bits-and-blooms/bitset v1.2.2 // indirect
 	github.com/boj/redistore v0.0.0-20180917114910-cd5dcc76aeff // indirect
 	github.com/customerio/gospec v0.0.0-20130710230057-a5cc0e48aa39 // indirect
 	github.com/eapache/go-resiliency v1.2.0 // indirect

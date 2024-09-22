@@ -4,23 +4,31 @@
 
 ```shell
 cd /usr/local
-sudo wget https://github.com/redis/redis/archive/refs/tags/7.2.4.tar.gz
-sudo tar zxf 7.2.4.tar.gz
-cd redis-7.2.4
-sudo make PREFIX=/usr/local/redis-7.2.4 install
+sudo wget https://github.com/redis/redis/archive/refs/tags/7.4.0.tar.gz
+sudo tar zxf 7.4.0.tar.gz
+cd redis-7.4.0
+sudo make PREFIX=/data/redis-7.4.0 install
 ```
 
-sudo vim /usr/local/redis-7.2.4/redis.conf
+sudo vim /usr/local/redis-7.4.0/redis.conf
 
 ```conf
 daemonize yes     # (如果用supervisor监控的话需要改成no)
 port 6379         # 默认是6379 需要安全组开放端口
 bind 127.0.0.1    # 远程访问改成 *
-dir /usr/local/redis-7.0.11
+dir /usr/local/redis-7.4.0
 appendonly yes
 requirepass 123456
 pidfile /usr/local/redis/redis.pid
 logfile /usr/local/redis/redis.log
+```
+
+bin 目录加入 PATH, 登录 redis
+
+```shell
+echo 'export PATH=$PATH:/data/redis-7.4.0/bin' >> ~/.bashrc
+source ~/.bashrc
+redis-cli
 ```
 
 启动 redis
