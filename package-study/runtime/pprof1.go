@@ -1,4 +1,4 @@
-package main
+package runtime_demo
 
 import (
 	"flag"
@@ -7,12 +7,12 @@ import (
 	"runtime/pprof"
 )
 
-var cpuprofile = flag.String("cpuprofile", "", "write cpu profile to file")
+var cpuProfile = flag.String("cpuprofile", "", "write cpu profile to file")
 
-func main() {
+func profile() {
 	flag.Parse()
-	if *cpuprofile != "" {
-		f, err := os.Create(*cpuprofile)
+	if *cpuProfile != "" {
+		f, err := os.Create(*cpuProfile)
 		if err != nil {
 			fmt.Println(err)
 			return

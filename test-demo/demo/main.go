@@ -4,6 +4,7 @@ import (
 	"encoding/hex"
 	"fmt"
 	"math/big"
+	"strings"
 	"sync"
 )
 
@@ -73,6 +74,17 @@ func testU128() {
 	fmt.Println(value.String())
 }
 
+func testString() {
+	str := "hello world"
+	subStr := "hello"
+	ok := strings.Contains(str, subStr)
+	if ok {
+		fmt.Println("contain")
+	} else {
+		fmt.Println("not contain")
+	}
+}
+
 func main() {
-	testU128()
+	testString()
 }

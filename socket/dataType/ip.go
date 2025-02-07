@@ -3,14 +3,12 @@ package main
 import (
 	"fmt"
 	"net"
-	"os"
-	"unsafe"
 )
 
 func main() {
 	// ipOp()
 	// ipOp1()
-	tcpaddrParse()
+	tcpAddrParse()
 }
 
 func ipOp() {
@@ -33,74 +31,59 @@ func ipOp() {
 }
 
 func ipOp1() {
-	myip := "192.168.100.100"
-	fmt.Println("myip:")
-	typeof(myip)
-	sizeof(myip)
-	fmt.Println("    len is:", len(myip))
+	myIP := "192.168.100.100"
+	fmt.Println("myIP:")
+	typeof(myIP)
+	sizeof(myIP)
+	fmt.Println("    len is:", len(myIP))
 
-	addr := net.ParseIP(myip)
+	addr := net.ParseIP(myIP)
 	fmt.Println("addr:")
 	typeof(addr)
 	sizeof(addr)
 	fmt.Println("    len is:", len(addr))
 
-	myerr := "1.1.1.1.1.1"
-	erraddr := net.ParseIP(myerr)
-	fmt.Println("erraddr is:", erraddr)
-	if erraddr == nil {
+	myErr := "1.1.1.1.1.1"
+	errAddr := net.ParseIP(myErr)
+	fmt.Println("erraddr is:", errAddr)
+	if errAddr == nil {
 		fmt.Println("no data")
 	} else {
-		typeof(erraddr)
-		sizeof(erraddr)
+		typeof(errAddr)
+		sizeof(errAddr)
 	}
 
-	myip6 := "1:1:1:1:1:1:1:1"
-	addrv6 := net.ParseIP(myip6)
+	myIP6 := "1:1:1:1:1:1:1:1"
+	addrV6 := net.ParseIP(myIP6)
 	fmt.Println("addrv6:")
-	if addrv6 == nil {
+	if addrV6 == nil {
 		fmt.Println("no data")
 	} else {
-		fmt.Println(addrv6)
-		typeof(addrv6)
-		sizeof(addrv6)
-		fmt.Println("    len is:", len(addrv6))
+		fmt.Println(addrV6)
+		typeof(addrV6)
+		sizeof(addrV6)
+		fmt.Println("    len is:", len(addrV6))
 	}
 
-	var mystr string
-	mystr = "999999999kkkkkkkkkkkkkkkkkkkkkkkkk"
+	var myStr string
+	myStr = "999999999kkkkkkkkkkkkkkkkkkkkkkkkk"
 	fmt.Println("mystr")
-	typeof(mystr)
-	sizeof(mystr)
-	fmt.Println("    len is:", len(mystr))
+	typeof(myStr)
+	sizeof(myStr)
+	fmt.Println("    len is:", len(myStr))
 }
 
-func tcpaddrParse() {
+func tcpAddrParse() {
 	addr := "www.baidu.com:80"
-	tcpaddr, err := net.ResolveTCPAddr("", addr)
+	tcpAddr, err := net.ResolveTCPAddr("", addr)
 	checkError(err)
 
-	fmt.Println("tcpaddr is:", tcpaddr)
-	fmt.Println("IP is:", tcpaddr.IP.String(), "Port is", tcpaddr.Port)
+	fmt.Println("tcpAddr is:", tcpAddr)
+	fmt.Println("IP is:", tcpAddr.IP.String(), "Port is", tcpAddr.Port)
 	typeof(addr)
-	typeof(tcpaddr)
+	typeof(tcpAddr)
 	sizeof(addr)
-	sizeof(tcpaddr)
+	sizeof(tcpAddr)
 	fmt.Println("addr len is:", len(addr))
-	fmt.Println("tcpaddr len is:", len(tcpaddr.String()))
-}
-
-func checkError(err error) {
-	if err != nil {
-		fmt.Println("Error !", err.Error())
-		os.Exit(1)
-	}
-}
-
-func typeof(v interface{}) {
-	fmt.Printf("type is:%T\n", v)
-}
-
-func sizeof(v interface{}) {
-	fmt.Println("sizeof is: ", unsafe.Sizeof(v))
+	fmt.Println("tcpaddr len is:", len(tcpAddr.String()))
 }

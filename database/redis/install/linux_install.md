@@ -4,13 +4,13 @@
 
 ```shell
 cd /usr/local
-sudo wget https://github.com/redis/redis/archive/refs/tags/7.4.0.tar.gz
-sudo tar zxf 7.4.0.tar.gz
+wget https://github.com/redis/redis/archive/refs/tags/7.4.0.tar.gz
+tar zxf 7.4.0.tar.gz
 cd redis-7.4.0
-sudo make PREFIX=/data/redis-7.4.0 install
+make PREFIX=/data/redis-7.4.0 install
 ```
 
-sudo vim /usr/local/redis-7.4.0/redis.conf
+vim /usr/local/redis-7.4.0/redis.conf
 
 ```conf
 daemonize yes     # (如果用supervisor监控的话需要改成no)

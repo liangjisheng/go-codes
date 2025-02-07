@@ -65,6 +65,7 @@ use mysql
 select user,plugin,host from user;
 
 create user user1@'%' identified by 'pass';
+alter user 'user1'@'%' IDENTIFIED WITH mysql_native_password BY 'pass';
 create database user1_db;
 grant all privileges on user1_db.* to user1;
 flush privileges;

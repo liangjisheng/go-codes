@@ -262,3 +262,10 @@
 
 [ddd1](https://developer.aliyun.com/article/942435)
 [ddd2](https://developer.aliyun.com/article/942436)
+
+## projects
+
+[go-btfs](https://github.com/bittorrent/go-btfs)  
+[website](https://www.btfs.io/)  
+[docs](https://docs.btfs.io/docs/btfs20-architecture)
+[go-btfs](https://github.com/tron-us/go-btfs)

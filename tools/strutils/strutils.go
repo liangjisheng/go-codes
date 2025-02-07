@@ -5,7 +5,6 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"github.com/asaskevich/govalidator"
 	"io"
 	"log"
 	"regexp"
@@ -16,6 +15,8 @@ import (
 	"unicode/utf8"
 	"unsafe"
 
+	"github.com/asaskevich/govalidator"
+	"github.com/duke-git/lancet/v2/strutil"
 	"github.com/shopspring/decimal"
 )
 
@@ -138,14 +139,14 @@ func CompareVersion(version1, version2 string) int {
 	return 0
 }
 
-//StrToBytes string 转为byte 高效
+// StrToBytes string 转为byte 高效
 func StrToBytes(s string) []byte {
 	x := (*[2]uintptr)(unsafe.Pointer(&s))
 	h := [3]uintptr{x[0], x[1], x[1]}
 	return *(*[]byte)(unsafe.Pointer(&h))
 }
 
-//BytesToStr byte 转为string 高效
+// BytesToStr byte 转为string 高效
 func BytesToStr(b []byte) string {
 	return *(*string)(unsafe.Pointer(&b))
 }
@@ -156,7 +157,7 @@ func IsNumber(str string) bool {
 	return result
 }
 
-//Diff Creates a slice of slice values not included in the other given slice.
+// Diff Creates a slice of slice values not included in the other given slice.
 func Diff(base, exclude []string) (result []string) {
 	excludeMap := make(map[string]bool)
 	for _, s := range exclude {
@@ -200,6 +201,10 @@ func Reverse(s string) string {
 		utf8.EncodeRune(buf[size-start:], r)
 	}
 	return string(buf)
+}
+
+func Reverse1(s string) string {
+	return strutil.Reverse(s)
 }
 
 // AsString 转成string

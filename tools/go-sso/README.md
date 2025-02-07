@@ -1,6 +1,6 @@
 # README
 
-[go-sso](https://segmentfault.com/a/1190000022909135)
+[go-sso](https://blog.csdn.net/guyan0319/article/details/106697940)
 [go-sso](https://github.com/guyan0319/go-sso)
 
 ## 注册手机号
@@ -25,25 +25,25 @@ curl -i -X POST "http://127.0.0.1:8080/login/mobile" -d '{"mobile":"13522227564"
 
 使用上面登录获取的Access_Token获取用户信息
 
-```
+```shell
 curl -i "http://127.0.0.1:8080/my/info" -b "Access_Token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOjEsImV4cCI6MTYzNjEwNjMyOH0.n59WjHkYASfdv9IhrH1ngTN6ECBMi6o1t05NrzgHnxw"
 ```
 
 ## 查看手机号是否存在
 
-```
+```shell
 curl -i -X POST "http://127.0.0.1:8080/signup/mobile/exist" -d '{"mobile":"13522227564"}'
 ```
 
 ## access token 续期
 
-```
+```shell
 curl -i -X POST "http://127.0.0.1:8080/renewal" -b "Access_Token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOjEsImV4cCI6MTYzNjEwNjMyOH0.n59WjHkYASfdv9IhrH1ngTN6ECBMi6o1t05NrzgHnxw;Refresh_Token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOjEsImV4cCI6MTYzNjEwODEyOH0.35GZNL-H0Ky5KwDM3JadmkXRFNtLP4ltR34mg7nMkno"
 ```
 
 ## 登出系统
 
-```
+```shell
 curl -i -X POST "http://127.0.0.1:8080/logout" -b "Access_Token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOjEsImV4cCI6MTYzNjEwNjMyOH0.n59WjHkYASfdv9IhrH1ngTN6ECBMi6o1t05NrzgHnxw"
 ```
 

@@ -29,6 +29,7 @@ require (
 	github.com/chilts/sid v0.0.0-20190607042430-660e94789ec9
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/didip/tollbooth/v6 v6.1.1
+	github.com/duke-git/lancet/v2 v2.3.4
 	github.com/dynport/gossh v0.0.0-20170809141523-122e3ee2a6b0
 	github.com/fatih/color v1.12.0
 	github.com/fogleman/gg v1.3.0
@@ -61,7 +62,7 @@ require (
 	github.com/gookit/goutil v0.6.4
 	github.com/gookit/ini/v2 v2.2.1
 	github.com/gorilla/mux v1.8.0
-	github.com/gorilla/websocket v1.4.2
+	github.com/gorilla/websocket v1.5.0
 	github.com/ivpusic/grpool v1.0.0
 	github.com/jasonlvhit/gocron v0.0.1
 	github.com/jinzhu/copier v0.3.5
@@ -77,6 +78,7 @@ require (
 	github.com/lionsoul2014/ip2region/binding/golang v0.0.0-20240510055607-89e20ab7b6c6
 	github.com/lithammer/shortuuid v3.0.0+incompatible
 	github.com/liyue201/gostl v1.0.1
+	github.com/lxzan/gws v1.8.8
 	github.com/marcusolsson/tui-go v0.4.0
 	github.com/mattn/go-isatty v0.0.14
 	github.com/mattn/go-sqlite3 v2.0.3+incompatible
@@ -89,6 +91,7 @@ require (
 	github.com/nladuo/go-zk-lock v0.0.0-20160827065904-f01e95e75d22
 	github.com/nsqio/go-nsq v1.0.8
 	github.com/oklog/ulid v1.3.1
+	github.com/olahol/melody v1.2.1
 	github.com/olivere/elastic/v7 v7.0.11
 	github.com/oschwald/geoip2-golang v1.11.0
 	github.com/panjf2000/ants/v2 v2.9.0
@@ -160,6 +163,7 @@ require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/deckarep/golang-set v1.8.0 // indirect
 	github.com/dgryski/go-rendezvous v0.0.0-20200823014737-9f7001d12a5f // indirect
+	github.com/dolthub/maphash v0.1.0 // indirect
 	github.com/eapache/go-xerial-snappy v0.0.0-20180814174437-776d5712da21 // indirect
 	github.com/eapache/queue v1.1.0 // indirect
 	github.com/gammazero/deque v0.2.0 // indirect
@@ -246,7 +250,7 @@ require (
 	github.com/jcmturner/gofork v1.0.0 // indirect
 	github.com/json-iterator/go v1.1.12
 	github.com/karrick/godirwalk v1.16.1 // indirect
-	github.com/klauspost/compress v1.9.5 // indirect
+	github.com/klauspost/compress v1.17.5 // indirect
 	github.com/klauspost/cpuid/v2 v2.2.3
 	github.com/lufia/plan9stats v0.0.0-20220326011226-f1430873d8db // indirect
 	github.com/mailru/easyjson v0.7.7 // indirect

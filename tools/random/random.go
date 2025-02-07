@@ -4,10 +4,16 @@ import (
 	"fmt"
 	"math/rand"
 	"time"
+
+	"github.com/duke-git/lancet/v2/random"
 )
 
-func init() {
-	rand.Seed(time.Now().UnixNano())
+func RandBytes(n int) []byte {
+	return random.RandBytes(n)
+}
+
+func RandNumeral(n int) string {
+	return random.RandNumeral(6)
 }
 
 func RanNum() int64 {
@@ -57,23 +63,6 @@ func GetRangeNumString(n int) string {
 		result = append(result, _bytes[r.Intn(len(_bytes))])
 	}
 	return string(result)
-}
-
-// GetRangeNum 生成随机整数 digit：位数
-func GetRangeNum(digit int) int {
-	var max, min int = 1, 1
-	if digit > 0 {
-		for i := 0; i < digit; i++ {
-			max = max * 10
-		}
-		for i := 0; i < digit-1; i++ {
-			min = min * 10
-		}
-	}
-	if max == min {
-		return min
-	}
-	return rand.Intn(max-min) + min
 }
 
 // GetRandInt 生成随机整数 digit：位数
